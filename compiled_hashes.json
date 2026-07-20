@@ -50,7 +50,7 @@
     "aarch64::web/calendar/style.css": "a707e0d8a669974d21906478efdbe4bf",
     "aarch64::web/shared/base.css": "111e9365468f86724c3e64e7e9ca81b7",
     "aarch64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
-    "aarch64::commit_file/commit.sh": "17ededcb316708dff4c5f0ee737a80f8",
+    "aarch64::commit_file/commit.sh": "5f8c28b39895d8541738a33c2f987333",
     "aarch64::commit_file/update.sh": "59622475ef3e4f397f9ea33c3a4196bf",
     "aarch64::frontend-build/package.json": "a1366072e231f47cfefdefba3866dbb4",
     "aarch64::frontend-build/build.js": "42034df8e46c807fc95c27a842d10813",
@@ -80,7 +80,7 @@
     "x86_64::web/calendar/style.css": "a707e0d8a669974d21906478efdbe4bf",
     "x86_64::web/shared/base.css": "111e9365468f86724c3e64e7e9ca81b7",
     "x86_64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
-    "x86_64::commit_file/commit.sh": "17ededcb316708dff4c5f0ee737a80f8",
+    "x86_64::commit_file/commit.sh": "5f8c28b39895d8541738a33c2f987333",
     "x86_64::commit_file/update.sh": "59622475ef3e4f397f9ea33c3a4196bf",
     "x86_64::frontend-build/package.json": "a1366072e231f47cfefdefba3866dbb4",
     "x86_64::frontend-build/build.js": "42034df8e46c807fc95c27a842d10813",
@@ -101,5 +101,5 @@
     "aarch64::release/taskmanage/common/__init__.py": "f388b0933c8b1d01ff05a7bed76d2da7",
     "aarch64::release/taskmanage/__init__.py": "70f03ad00007e6f44c4ecf9f822acaf0"
   },
-  "last_git_commit": "8f2d046623c2032548168c8248138686c46d979e"
+  "last_git_commit": "33322442328d4059ab7231627f6322e56c2f71ab"
 }
