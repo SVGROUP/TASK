@@ -40,7 +40,7 @@
     "aarch64::release/run.sh": "ca9679862b55edca3e2b8051141e5d52",
     "aarch64::release/run.py": "d513e37e1a9835119ff5cea39084a5fa",
     "aarch64::release/init.sh": "2307b29959a54ccf767e7c969a7594a5",
-    "aarch64::web/index.html": "c54430277e0715eded7c6089926b8d47",
+    "aarch64::web/index.html": "19fa60dd1864195dfb48aa046c560557",
     "aarch64::web/gantt.html": "85ca964d4e5341640f33a9c62ead1f8f",
     "aarch64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
     "aarch64::web/calendar.html": "26c5c4b72269abac8752a4867734b739",
@@ -70,7 +70,7 @@
     "x86_64::release/run.sh": "ca9679862b55edca3e2b8051141e5d52",
     "x86_64::release/run.py": "d513e37e1a9835119ff5cea39084a5fa",
     "x86_64::release/init.sh": "2307b29959a54ccf767e7c969a7594a5",
-    "x86_64::web/index.html": "c54430277e0715eded7c6089926b8d47",
+    "x86_64::web/index.html": "19fa60dd1864195dfb48aa046c560557",
     "x86_64::web/gantt.html": "85ca964d4e5341640f33a9c62ead1f8f",
     "x86_64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
     "x86_64::web/calendar.html": "26c5c4b72269abac8752a4867734b739",
@@ -99,7 +99,14 @@
     "aarch64::release/taskmanage/gantt/__init__.py": "db639a6270a336310d88972c48597d5a",
     "aarch64::release/taskmanage/calendar/__init__.py": "c2030f1131e03ece629444656950c744",
     "aarch64::release/taskmanage/common/__init__.py": "f388b0933c8b1d01ff05a7bed76d2da7",
-    "aarch64::release/taskmanage/__init__.py": "70f03ad00007e6f44c4ecf9f822acaf0"
+    "aarch64::release/taskmanage/__init__.py": "70f03ad00007e6f44c4ecf9f822acaf0",
+    "x86_64::web/nav.html": "9e5f6c504ea20e7b9b316895ba41b827",
+    "x86_64::web/nav/app.js": "9a4c34c5bdbb3519a82cb1fb29c7654f",
+    "x86_64::web/nav/style.css": "db3f2c2f2dcb069dc36ecc0f5433823e",
+    "aarch64::release/taskmanage/nav/__init__.py": "b5c55f0e0fedfd125f24c30d9286d589",
+    "aarch64::web/nav.html": "9e5f6c504ea20e7b9b316895ba41b827",
+    "aarch64::web/nav/app.js": "9a4c34c5bdbb3519a82cb1fb29c7654f",
+    "aarch64::web/nav/style.css": "db3f2c2f2dcb069dc36ecc0f5433823e"
   },
-  "last_git_commit": "2bedbfcceb0486103a9354501ce774e41b36334b"
+  "last_git_commit": "09fac0e833c7517f77aa3519b35b6d7a5f2c4d35"
 }
