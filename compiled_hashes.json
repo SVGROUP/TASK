@@ -43,10 +43,10 @@
     "aarch64::web/index.html": "c54430277e0715eded7c6089926b8d47",
     "aarch64::web/gantt.html": "85ca964d4e5341640f33a9c62ead1f8f",
     "aarch64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
-    "aarch64::web/calendar.html": "17df5566411f0c928c12412eacf80561",
+    "aarch64::web/calendar.html": "26c5c4b72269abac8752a4867734b739",
     "aarch64::web/gantt/app.js": "35bb6e4f3577968ec7e2584468281fbe",
     "aarch64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
-    "aarch64::web/calendar/app.js": "677571d01d3aa312972d9af9a1863f74",
+    "aarch64::web/calendar/app.js": "74b41a35e7fea4968a373b013eabdb05",
     "aarch64::web/calendar/style.css": "a3f68a06b78dacce82e1e72df2ca01fb",
     "aarch64::web/shared/base.css": "111e9365468f86724c3e64e7e9ca81b7",
     "aarch64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
@@ -73,10 +73,10 @@
     "x86_64::web/index.html": "c54430277e0715eded7c6089926b8d47",
     "x86_64::web/gantt.html": "85ca964d4e5341640f33a9c62ead1f8f",
     "x86_64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
-    "x86_64::web/calendar.html": "17df5566411f0c928c12412eacf80561",
+    "x86_64::web/calendar.html": "26c5c4b72269abac8752a4867734b739",
     "x86_64::web/gantt/app.js": "35bb6e4f3577968ec7e2584468281fbe",
     "x86_64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
-    "x86_64::web/calendar/app.js": "677571d01d3aa312972d9af9a1863f74",
+    "x86_64::web/calendar/app.js": "74b41a35e7fea4968a373b013eabdb05",
     "x86_64::web/calendar/style.css": "a3f68a06b78dacce82e1e72df2ca01fb",
     "x86_64::web/shared/base.css": "111e9365468f86724c3e64e7e9ca81b7",
     "x86_64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
@@ -101,5 +101,5 @@
     "aarch64::release/taskmanage/common/__init__.py": "f388b0933c8b1d01ff05a7bed76d2da7",
     "aarch64::release/taskmanage/__init__.py": "70f03ad00007e6f44c4ecf9f822acaf0"
   },
-  "last_git_commit": "24b617403c5df8487c4401d5e1949d4932f8f448"
+  "last_git_commit": "f04cd269bc2484561d0099eb19c357ce3ef9128d"
 }
