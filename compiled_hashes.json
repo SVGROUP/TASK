@@ -37,7 +37,7 @@
     "x86_64::./taskmanage/gantt/routes.py": "4f0772cd95ad71dd2e8eca9ea2ed9863",
     "aarch64::./taskmanage/gantt/routes.py": "4f0772cd95ad71dd2e8eca9ea2ed9863",
     "aarch64::./heal_hashes.py": "05566009f33267a269e72fe62c13657b",
-    "aarch64::release/run.sh": "7f529042b018ef3f501839ef8476c5fe",
+    "aarch64::release/run.sh": "ca9679862b55edca3e2b8051141e5d52",
     "aarch64::release/run.py": "d513e37e1a9835119ff5cea39084a5fa",
     "aarch64::release/init.sh": "2307b29959a54ccf767e7c969a7594a5",
     "aarch64::web/index.html": "c54430277e0715eded7c6089926b8d47",
@@ -67,7 +67,7 @@
     "x86_64::./taskmanage/common/db.py": "79d91a02afe9b2a4578e57ff6ea3fc00",
     "x86_64::./taskmanage/common/auth.py": "321c154e4b9105cab03535619e6819a9",
     "x86_64::./heal_hashes.py": "05566009f33267a269e72fe62c13657b",
-    "x86_64::release/run.sh": "7f529042b018ef3f501839ef8476c5fe",
+    "x86_64::release/run.sh": "ca9679862b55edca3e2b8051141e5d52",
     "x86_64::release/run.py": "d513e37e1a9835119ff5cea39084a5fa",
     "x86_64::release/init.sh": "2307b29959a54ccf767e7c969a7594a5",
     "x86_64::web/index.html": "c54430277e0715eded7c6089926b8d47",
@@ -101,5 +101,5 @@
     "aarch64::release/taskmanage/common/__init__.py": "f388b0933c8b1d01ff05a7bed76d2da7",
     "aarch64::release/taskmanage/__init__.py": "70f03ad00007e6f44c4ecf9f822acaf0"
   },
-  "last_git_commit": "f04cd269bc2484561d0099eb19c357ce3ef9128d"
+  "last_git_commit": "2bedbfcceb0486103a9354501ce774e41b36334b"
 }
