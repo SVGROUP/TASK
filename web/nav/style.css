@@ -1,4 +1,4 @@
-/* 导航页样式 */
+/* 导航页 - 简洁列表模式 */
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +25,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   color: #1a1a1a;
+  margin-right: 8px;
 }
 
 .spacer {
@@ -34,10 +35,11 @@ body {
 .auth-status {
   font-size: 13px;
   color: #666;
+  margin-right: 10px;
 }
 
 button {
-  padding: 6px 12px;
+  padding: 5px 10px;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
   background: #fff;
@@ -71,8 +73,19 @@ button.danger:hover {
   background: #ff7875;
 }
 
+button.mode-active {
+  background: #52c41a;
+  color: #fff;
+  border-color: #52c41a;
+}
+
+.mode-btn {
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
 .nav-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -103,122 +116,150 @@ button.danger:hover {
   font-size: 14px;
 }
 
-/* 导航内容 */
+/* 导航内容 - 简洁列表 */
 .nav-content {
   display: block;
 }
 
-/* 去掉标题行 */
-.nav-header {
-  display: none;
-}
-
-/* 分类卡片 */
 .category-section {
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .category-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #e8e8e8;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
 }
 
-.category-title {
+.category-header .icon {
+  font-size: 18px;
+}
+
+.category-name {
+  flex: 1;
+}
+
+/* 分类操作图标 - 模式激活时显示 */
+.category-action-icon {
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: none;
+}
+
+.category-action-icon.edit-icon {
+  color: #1890ff;
+}
+
+.category-action-icon.edit-icon:hover {
+  background: #e6f7ff;
+}
+
+.category-action-icon.del-icon {
+  color: #ff4d4f;
+}
+
+.category-action-icon.del-icon:hover {
+  background: #fff1f0;
+}
+
+.mode-edit .category-action-icon.edit-icon,
+.mode-delete .category-action-icon.del-icon {
+  display: inline-block;
+}
+
+/* 链接列表 - 无卡片 */
+.links-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px 16px;
+}
+
+.link-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.category-title .icon {
-  font-size: 20px;
-}
-
-.category-actions {
-  display: flex;
-  gap: 4px;
-}
-
-.category-actions button {
-  padding: 4px 8px;
-  font-size: 12px;
-}
-
-/* 链接网格 - 紧凑版 */
-.links-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
-}
-
-.link-card {
-  background: #fff;
-  border: 1px solid #e8e8e8;
-  border-radius: 6px;
-  padding: 12px;
-  transition: all 0.2s;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background 0.15s;
   position: relative;
 }
 
-.link-card:hover {
-  border-color: #4096ff;
-  box-shadow: 0 2px 8px rgba(64, 150, 255, 0.15);
+.link-item:hover {
+  background: #f0f5ff;
 }
 
-.link-card a {
+.link-item a {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   text-decoration: none;
   color: inherit;
+  flex: 1;
+  min-width: 0;
 }
 
 .link-icon {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1;
   flex-shrink: 0;
 }
 
 .link-title {
-  font-weight: 500;
   font-size: 14px;
-  color: #1a1a1a;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  flex: 1;
-  min-width: 0;
 }
 
-/* 隐藏URL和描述 */
-.link-url,
-.link-desc {
+/* 链接操作图标 - 模式激活时显示 */
+.link-action-icon {
+  font-size: 13px;
+  cursor: pointer;
+  padding: 1px 5px;
+  border-radius: 3px;
   display: none;
+  flex-shrink: 0;
 }
 
-.link-card-actions {
-  display: flex;
-  gap: 4px;
-  justify-content: flex-end;
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid #f0f0f0;
+.link-action-icon.edit-icon {
+  color: #1890ff;
 }
 
-.link-card-actions button {
-  padding: 3px 6px;
-  font-size: 11px;
+.link-action-icon.edit-icon:hover {
+  background: #e6f7ff;
 }
 
-.link-card a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
+.link-action-icon.del-icon {
+  color: #ff4d4f;
+}
+
+.link-action-icon.del-icon:hover {
+  background: #fff1f0;
+}
+
+.mode-edit .link-action-icon.edit-icon,
+.mode-delete .link-action-icon.del-icon {
+  display: inline-block;
+}
+
+.empty-category {
+  grid-column: 1 / -1;
+  padding: 15px;
+  color: #999;
+  font-size: 13px;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
 }
 
 /* 模态框 */
@@ -236,14 +277,12 @@ button.danger:hover {
   background: #fff;
   border-radius: 8px;
   width: 90%;
-  max-width: 480px;
-  max-height: 90vh;
-  overflow: auto;
+  max-width: 420px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .modal-header {
-  padding: 16px 20px;
+  padding: 14px 18px;
   border-bottom: 1px solid #e8e8e8;
   display: flex;
   justify-content: space-between;
@@ -251,17 +290,17 @@ button.danger:hover {
 }
 
 .modal-header h3 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .modal-close {
   border: none;
   background: none;
-  font-size: 20px;
+  font-size: 18px;
   padding: 0;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   cursor: pointer;
   color: #999;
 }
@@ -271,30 +310,29 @@ button.danger:hover {
 }
 
 .modal-body {
-  padding: 20px;
+  padding: 18px;
 }
 
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .form-group label {
   display: block;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
-  margin-bottom: 6px;
-  color: #333;
+  margin-bottom: 5px;
+  color: #555;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
   width: 100%;
-  padding: 8px 12px;
+  padding: 7px 10px;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
-  font-size: 14px;
-  transition: border-color 0.2s;
+  font-size: 13px;
 }
 
 .form-group input:focus,
@@ -306,37 +344,29 @@ button.danger:hover {
 
 .form-group textarea {
   resize: vertical;
-  min-height: 80px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  min-height: 70px;
 }
 
 .modal-footer {
-  padding: 16px 20px;
+  padding: 14px 18px;
   border-top: 1px solid #e8e8e8;
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 8px;
 }
 
-.hidden {
-  display: none !important;
+.modal-footer button {
+  padding: 6px 14px;
+  font-size: 13px;
 }
 
-/* 无分类/链接的空状态 */
-.empty-category {
+.confirm-text {
   text-align: center;
-  padding: 40px 20px;
-  background: #fff;
-  border-radius: 8px;
-  border: 1px dashed #d9d9d9;
+  font-size: 14px;
+  padding: 10px 0 20px;
 }
 
-.empty-category p {
-  color: #999;
-  font-size: 14px;
+.confirm-target {
+  color: #1890ff;
+  font-weight: 600;
 }
