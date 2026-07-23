@@ -84,6 +84,42 @@ button[data-mode="delete"].mode-active {
   border-color: #ff4d4f;
 }
 
+.font-btn {
+  font-size: 12px;
+  padding: 4px 6px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.font-btn.font-active {
+  background: #1890ff;
+  color: #fff;
+  border-color: #1890ff;
+}
+
+/* 字体大小：中=默认，±6px */
+body.font-sm .link-title {
+  font-size: calc(13px - 2px);
+}
+body.font-sm .nav-toolbar h1 {
+  font-size: calc(18px - 6px);
+}
+body.font-sm .category-header {
+  font-size: calc(16px - 4px);
+}
+
+body.font-lg .link-title {
+  font-size: calc(13px + 6px);
+}
+body.font-lg .nav-toolbar h1 {
+  font-size: calc(18px + 6px);
+}
+body.font-lg .category-header {
+  font-size: calc(16px + 4px);
+}
+
 .mode-btn {
   font-size: 12px;
   padding: 4px 8px;
