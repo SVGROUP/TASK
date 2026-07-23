@@ -150,6 +150,21 @@ li.multi-selected, .task-item.multi-selected {
   background: #e3f2fd !important;
   box-shadow: inset 2px 0 0 #2196f3;
 }
+
+/* 多选复选框（仅编辑模式下显示） */
+.multi-select-cb {
+  width: 16px;
+  height: 16px;
+  margin: 0 6px 0 0;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: #2196f3;
+  display: none;
+}
+
+body.edit-mode .multi-select-cb {
+  display: inline-block;
+}
 /* 已完成任务：操作弹窗标题也加删除线 */
 #action-title.done { text-decoration: line-through; color: var(--muted); }
 .month .cell .more { color: var(--muted); }
