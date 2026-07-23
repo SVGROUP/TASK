@@ -79,6 +79,11 @@ button.mode-active {
   border-color: #52c41a;
 }
 
+button[data-mode="delete"].mode-active {
+  background: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
 .mode-btn {
   font-size: 12px;
   padding: 4px 8px;
