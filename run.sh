@@ -1,7 +1,7 @@
 #!/bin/sh
 # TaskManage 容器启动脚本：择优 remote 拉取 + 启动 + 事件驱动自升级。
 
-APP_DIR=/TaskManage
+APP_DIR=/TASK
 PORT="${PORT:-50010}"
 UPGRADE_BLOCKED_FLAG="${UPGRADE_BLOCKED_FLAG:-$APP_DIR/upgrade_blocked}"
 UPGRADE_TAG="${UPGRADE_TAG:-TASK}"
