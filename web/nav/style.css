@@ -273,13 +273,13 @@ body.font-lg .category-header {
 /* 链接列表 - 自适应网格：一行尽量多放 */
 .links-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
-  gap: 16px 8px;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: 16px 10px;
 }
 
 .link-item {
   text-align: center;
-  padding: 12px 4px 8px;
+  padding: 12px 12px 8px;
   border-radius: 8px;
   transition: background 0.15s;
   position: relative;
