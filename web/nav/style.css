@@ -212,6 +212,7 @@ body.font-lg .category-header {
 .category-header {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   margin-bottom: 12px;
   padding-bottom: 6px;
@@ -226,7 +227,8 @@ body.font-lg .category-header {
 }
 
 .category-name {
-  flex: 1;
+  flex: 0 0 auto;
+  text-align: center;
 }
 
 /* 分类操作图标 - 模式激活时显示 */
@@ -283,11 +285,12 @@ body.font-lg .category-header {
   color: #1890ff;
 }
 
-/* 链接列表 - 自适应网格：一行尽量多放 */
+/* 链接列表 - 自适应网格：一行尽量多放，整体居中 */
 .links-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(104px, 104px));
   gap: 16px 10px;
+  justify-content: center;
 }
 
 .link-item {
