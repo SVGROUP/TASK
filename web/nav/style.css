@@ -169,9 +169,9 @@ body.font-lg .category-header {
 }
 
 .nav-container {
-  max-width: 1000px;
+  max-width: none;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 24px;
 }
 
 /* 登录态 */

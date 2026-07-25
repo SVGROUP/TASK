@@ -102,15 +102,15 @@
     "aarch64::release/taskmanage/__init__.py": "70f03ad00007e6f44c4ecf9f822acaf0",
     "x86_64::web/nav.html": "9e5f6c504ea20e7b9b316895ba41b827",
     "x86_64::web/nav/app.js": "933709aec5dd482be5c1c0a88cd94edb",
-    "x86_64::web/nav/style.css": "df3f30db81c719fa89c8b4426e5bc8ae",
+    "x86_64::web/nav/style.css": "c8accaaf89ecebda5b99b3a2308ad53f",
     "aarch64::release/taskmanage/nav/__init__.py": "b5c55f0e0fedfd125f24c30d9286d589",
     "aarch64::web/nav.html": "9e5f6c504ea20e7b9b316895ba41b827",
     "aarch64::web/nav/app.js": "933709aec5dd482be5c1c0a88cd94edb",
-    "aarch64::web/nav/style.css": "df3f30db81c719fa89c8b4426e5bc8ae",
+    "aarch64::web/nav/style.css": "c8accaaf89ecebda5b99b3a2308ad53f",
     "x86_64::./taskmanage/nav/routes.py": "b443557943e16793b236e53e7f60d5b0",
     "x86_64::./taskmanage/nav/auth.py": "be71f814885015a19961f58282422670",
     "aarch64::./taskmanage/nav/routes.py": "b443557943e16793b236e53e7f60d5b0",
     "aarch64::./taskmanage/nav/auth.py": "be71f814885015a19961f58282422670"
   },
-  "last_git_commit": "b3ae1c06002c5c74731cd6b1f0e15c8898785a24"
+  "last_git_commit": "10fc29e9ca18e7e698b999f7661eaaec40f926ec"
 }
