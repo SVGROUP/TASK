@@ -255,8 +255,21 @@ body.font-lg .category-header {
 }
 
 .mode-edit .category-action-icon.edit-icon,
+.mode-edit .category-action-icon.move-up-icon,
+.mode-edit .category-action-icon.move-down-icon,
 .mode-delete .category-action-icon.del-icon {
   display: inline-block;
+}
+
+.category-action-icon.move-up-icon,
+.category-action-icon.move-down-icon {
+  color: #52c41a;
+  font-weight: bold;
+}
+
+.category-action-icon.move-up-icon:hover,
+.category-action-icon.move-down-icon:hover {
+  background: #f6ffed;
 }
 
 /* 选中高亮 */
