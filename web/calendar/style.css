@@ -703,9 +703,9 @@ dialog menu.actions.wrap { flex-wrap: wrap; }
 
 /* 编辑模式按钮 */
 #edit-mode-toggle.active {
-  background: var(--accent);
+  background: #16a34a;
   color: white;
-  border-color: var(--accent);
+  border-color: #16a34a;
 }
 
 .task-detail-meta {
