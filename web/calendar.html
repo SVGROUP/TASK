@@ -289,12 +289,13 @@
         <button type="button" id="save-sendkey-btn" class="primary small">保存 sendkey</button>
       </fieldset>
       <fieldset>
-        <legend>飞书群通知 webhook（全局共享）</legend>
+        <legend>飞书通知（全局共享，走 ATUS 中心服务）</legend>
         <p class="hint" id="feishu-status-hint"></p>
-        <p class="hint">飞书是一个群共享的机器人 webhook，每条提醒往群里只发一次（非每人各发）。任一登录用户均可修改。</p>
-        <label>设置 / 更新 webhook<input type="text" name="feishu_webhook" placeholder="https://open.feishu.cn/...（可在末尾加 #关键词）" autocomplete="off" /></label>
-        <button type="button" id="save-feishu-btn" class="primary small">保存 webhook</button>
-        <button type="button" id="clear-feishu-btn" class="small">清除 webhook</button>
+        <p class="hint">飞书通知统一经 ATUS 转发，这里填自定义机器人的 hook_token 与可选加签 secret。全局共享，每条提醒往群里只发一次；任一登录用户均可修改。</p>
+        <label>hook_token<input type="text" name="feishu_hook_token" placeholder="飞书自定义机器人 hook token（纯 token）" autocomplete="off" /></label>
+        <label>secret（可选，未开加签留空）<input type="text" name="feishu_secret" placeholder="加签密钥（未开签名校验可不填）" autocomplete="off" /></label>
+        <button type="button" id="save-feishu-btn" class="primary small">保存</button>
+        <button type="button" id="clear-feishu-btn" class="small">清除</button>
       </fieldset>
       <menu class="actions">
         <button value="close" class="primary">关闭</button>

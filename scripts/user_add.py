@@ -13,9 +13,13 @@
     # 仅 calendar 支持：
     python -m scripts.user_add --module calendar sendkey <username> <key>
     python -m scripts.user_add --module calendar clear-sendkey <username>
-    # 飞书群 webhook 是全局配置（一个群共享，无需 username）：
-    python -m scripts.user_add --module calendar feishu <webhook>
-    python -m scripts.user_add --module calendar clear-feishu
+
+飞书通知已改为统一走 ATUS /sv/notify/send（与 PTKA 一致）。飞书密钥（hook_token + secret）
+存在 calendar.db 的 app_settings（全局共享，非每用户，挂载持久化不丢），也可在日历页配置：
+    python -m scripts.user_add --module calendar feishu-token <hook_token>
+    python -m scripts.user_add --module calendar feishu-secret <secret>   # 传空串清除 secret
+    python -m scripts.user_add --module calendar clear-feishu             # 清除 hook_token + secret
+ATUS 地址 / 总开关 / 渠道在 config.yaml 的 notify 段配置（不支持环境变量）。
 
 数据库路径与服务一致：
     calendar → 环境变量 CALENDAR_TODO_DB，否则 <data_dir>/calendar.db
@@ -210,31 +214,51 @@ def cmd_clear_sendkey(conn, cfg, username: str) -> None:
     print(f"已清除 sendkey: {username}")
 
 
-def cmd_feishu(conn, cfg, webhook: str) -> None:
-    """设置全局飞书群 webhook（存 app_settings，一个群共享，非每用户）。"""
-    wh = webhook.strip()
-    if not wh:
-        print("feishu webhook 不能为空", file=sys.stderr)
-        sys.exit(1)
-    if not (wh.startswith("http://") or wh.startswith("https://")):
-        print("feishu webhook 必须以 http(s):// 开头", file=sys.stderr)
+def cmd_feishu_token(conn, cfg, token: str) -> None:
+    """设置全局飞书 hook_token（存 app_settings.notify_feishu_hook_token，全局共享）。"""
+    tok = token.strip()
+    if not tok:
+        print("hook_token 不能为空（清除请用 clear-feishu）", file=sys.stderr)
         sys.exit(1)
     _ensure_app_settings(conn)
     conn.execute(
         "INSERT OR REPLACE INTO app_settings(key, value, updated_at) "
-        "VALUES ('feishu_webhook', ?, datetime('now'))",
-        (wh,),
+        "VALUES ('notify_feishu_hook_token', ?, datetime('now'))",
+        (tok,),
     )
     conn.commit()
-    print("已设置全局飞书群 webhook")
+    print("已设置全局飞书 hook_token")
+
+
+def cmd_feishu_secret(conn, cfg, secret: str) -> None:
+    """设置 / 清除全局飞书加签 secret（存 app_settings.notify_feishu_secret）。
+
+    传空串 → 清除 secret（未开签名校验时不需要）。
+    """
+    sec = secret.strip()
+    _ensure_app_settings(conn)
+    if not sec:
+        conn.execute("DELETE FROM app_settings WHERE key = 'notify_feishu_secret'")
+        conn.commit()
+        print("已清除全局飞书 secret")
+        return
+    conn.execute(
+        "INSERT OR REPLACE INTO app_settings(key, value, updated_at) "
+        "VALUES ('notify_feishu_secret', ?, datetime('now'))",
+        (sec,),
+    )
+    conn.commit()
+    print("已设置全局飞书 secret")
 
 
 def cmd_clear_feishu(conn, cfg) -> None:
-    """清除全局飞书群 webhook。"""
+    """清除全局飞书通知密钥（hook_token + secret），回退到 config.yaml 兜底值。"""
     _ensure_app_settings(conn)
-    conn.execute("DELETE FROM app_settings WHERE key = 'feishu_webhook'")
+    conn.execute(
+        "DELETE FROM app_settings WHERE key IN ('notify_feishu_hook_token', 'notify_feishu_secret')"
+    )
     conn.commit()
-    print("已清除全局飞书群 webhook")
+    print("已清除全局飞书通知密钥（hook_token + secret）")
 
 
 def cmd_list(conn, cfg) -> None:
@@ -244,12 +268,18 @@ def cmd_list(conn, cfg) -> None:
             f"SELECT id, username, (sendkey IS NOT NULL AND sendkey != '') AS has_key, created_at "
             f"FROM {ut} WHERE 1=1{_id_filter(cfg)} ORDER BY id"
         ).fetchall()
-        # 全局飞书群 webhook（非每用户）
+        # 全局飞书通知密钥（非每用户，走 ATUS）
         _ensure_app_settings(conn)
-        fs = conn.execute(
-            "SELECT value FROM app_settings WHERE key = 'feishu_webhook'"
+        tok = conn.execute(
+            "SELECT value FROM app_settings WHERE key = 'notify_feishu_hook_token'"
         ).fetchone()
-        print(f"全局飞书群 webhook：{'已配置' if (fs and fs[0]) else '未配置'}")
+        sec = conn.execute(
+            "SELECT value FROM app_settings WHERE key = 'notify_feishu_secret'"
+        ).fetchone()
+        print(
+            f"全局飞书通知：hook_token {'已配置' if (tok and tok[0]) else '未配置'}"
+            f"，secret {'已配置' if (sec and sec[0]) else '未配置'}"
+        )
         if not rows:
             print("(无真实用户)")
             return
@@ -285,7 +315,7 @@ def main() -> None:
     cfg = MODULES[module]
     action = args[0]
 
-    if action in ("sendkey", "clear-sendkey", "feishu", "clear-feishu") and not cfg["has_sendkey"]:
+    if action in ("sendkey", "clear-sendkey", "feishu-token", "feishu-secret", "clear-feishu") and not cfg["has_sendkey"]:
         print(f"模块 {module} 不支持该命令", file=sys.stderr)
         sys.exit(1)
 
@@ -300,8 +330,10 @@ def main() -> None:
             cmd_sendkey(conn, cfg, args[1], args[2])
         elif action == "clear-sendkey" and len(args) == 2:
             cmd_clear_sendkey(conn, cfg, args[1])
-        elif action == "feishu" and len(args) == 2:
-            cmd_feishu(conn, cfg, args[1])
+        elif action == "feishu-token" and len(args) == 2:
+            cmd_feishu_token(conn, cfg, args[1])
+        elif action == "feishu-secret" and len(args) == 2:
+            cmd_feishu_secret(conn, cfg, args[1])
         elif action == "clear-feishu" and len(args) == 1:
             cmd_clear_feishu(conn, cfg)
         elif action == "list" and len(args) == 1:
