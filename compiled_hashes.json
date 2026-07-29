@@ -99,24 +99,19 @@
     "aarch64::release/taskmanage/common/__init__.py": "f388b0933c8b1d01ff05a7bed76d2da7",
     "aarch64::release/taskmanage/__init__.py": "70f03ad00007e6f44c4ecf9f822acaf0",
     "x86_64::web/nav.html": "edfe0bc5bf07b00e3034ae5316d92f42",
-    "x86_64::web/nav/app.js": "7a0c20249a4b789c2c600c55c3c4c6fb",
-    "x86_64::web/nav/style.css": "73d52d8c04ba2d9d4f92d0f5f1c027b4",
+    "x86_64::web/nav/app.js": "ffa1a37ca8f3c363ccee72895c276095",
+    "x86_64::web/nav/style.css": "758302317fe49ce023628bb220e39171",
     "aarch64::release/taskmanage/nav/__init__.py": "b5c55f0e0fedfd125f24c30d9286d589",
     "aarch64::web/nav.html": "edfe0bc5bf07b00e3034ae5316d92f42",
-    "aarch64::web/nav/app.js": "7a0c20249a4b789c2c600c55c3c4c6fb",
-    "aarch64::web/nav/style.css": "73d52d8c04ba2d9d4f92d0f5f1c027b4",
-    "x86_64::./taskmanage/nav/routes.py": "4a2573111cbc858824eff8cbe2e9cfa1",
+    "aarch64::web/nav/app.js": "ffa1a37ca8f3c363ccee72895c276095",
+    "aarch64::web/nav/style.css": "758302317fe49ce023628bb220e39171",
+    "x86_64::./taskmanage/nav/routes.py": "5811439e8abf9ca66e98982e36862fcb",
     "x86_64::./taskmanage/nav/auth.py": "be71f814885015a19961f58282422670",
-    "aarch64::./taskmanage/nav/routes.py": "4a2573111cbc858824eff8cbe2e9cfa1",
+    "aarch64::./taskmanage/nav/routes.py": "5811439e8abf9ca66e98982e36862fcb",
     "aarch64::./taskmanage/nav/auth.py": "be71f814885015a19961f58282422670",
     "x86_64::./taskmanage/notify.py": "447dbdc2e42073349f5d08247e894921",
     "aarch64::./taskmanage/notify.py": "447dbdc2e42073349f5d08247e894921",
-    "aarch64::release/taskmanage/config.cpython-313-x86_64-linux-gnu.so": "b172b08c146971d2bb1a05825868ed21",
-    "aarch64::release/taskmanage/upgrade.cpython-313-x86_64-linux-gnu.so": "95b68d7c1268ca617a07b516fdeba97b",
-    "aarch64::release/taskmanage/notify.cpython-313-x86_64-linux-gnu.so": "a6da05a6b387cd653c0679d8e10a6125",
-    "aarch64::release/taskmanage/scheduler.cpython-313-x86_64-linux-gnu.so": "31468edf30a196d79705a6fe62243f99",
-    "aarch64::release/taskmanage/calendar/routes.cpython-313-x86_64-linux-gnu.so": "6ca28a9e0e8575043387d4ec40bd05f2",
-    "aarch64::release/taskmanage/notifier.cpython-313-x86_64-linux-gnu.so": "ea2570d978b74de7d5b24fd91826f997"
+    "aarch64::release/taskmanage/nav/routes.cpython-313-x86_64-linux-gnu.so": "9656595c8fa1855404a78f249f64b8ee"
   },
-  "last_git_commit": "d7b4823d28f88524f9dcaffbb7565bb4f1daed43"
+  "last_git_commit": "44630eed2343c59c601e24f2d4c71d2099d91b9b"
 }

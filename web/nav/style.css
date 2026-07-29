@@ -326,6 +326,14 @@ body.font-lg .category-header {
   border: none;
 }
 
+.link-icon-default {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  line-height: 1;
+}
+
 .link-title {
   font-size: 13px;
   overflow: hidden;
@@ -522,4 +530,93 @@ body.font-lg .category-header {
 .emoji-item.emoji-active {
   background: #1890ff;
   color: #fff;
+}
+
+/* ===== 图标库选择器 ===== */
+.icon-picker-box {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  background: #fafafa;
+}
+
+.icon-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 8px;
+}
+
+.icon-cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 4px;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  min-height: 64px;
+}
+
+.icon-cell:hover {
+  border-color: #1890ff;
+}
+
+.icon-cell.icon-cell-active {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  background: #e6f7ff;
+}
+
+.icon-cell img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.icon-cell-emoji {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.icon-cell-name {
+  font-size: 11px;
+  color: #888;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon-cell-del {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1;
+  display: none;
+  cursor: pointer;
+}
+
+.icon-cell:hover .icon-cell-del {
+  display: inline;
+}
+
+.icon-cell-del:hover {
+  color: #ff4d4f;
+}
+
+.icon-picker-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #aaa;
+  font-size: 12px;
+  padding: 12px;
 }
