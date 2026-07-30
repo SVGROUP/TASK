@@ -624,21 +624,27 @@ body.font-lg .category-header {
 /* ===== 图标库管理弹窗 ===== */
 .icon-lib-add {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 12px;
 }
 
 .icon-lib-add input[type="url"] {
-  flex: 2;
+  flex: 1 1 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .icon-lib-add input[type="text"] {
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .icon-lib-add button {
-  flex-shrink: 0;
+  flex: 0 0 auto;
   padding: 6px 16px;
+  box-sizing: border-box;
 }
 
 .icon-lib-grid {
