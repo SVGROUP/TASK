@@ -910,3 +910,14 @@ footer {
     display: flex;
   }
 }
+
+/* modal 主题色（与 calendar/gantt --accent 同源：indigo） */
+:root {
+  --modal-primary-start:   #4f46e5;
+  --modal-primary-end:     #4338ca;
+  --modal-primary-shadow:        rgba(79, 70, 229, 0.4);
+  --modal-primary-shadow-soft:   rgba(79, 70, 229, 0.35);
+  --modal-danger-start:    #dc2626;
+  --modal-danger-end:      #b91c1c;
+  --modal-danger-shadow:         rgba(220, 38, 38, 0.4);
+}
