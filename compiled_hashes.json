@@ -98,11 +98,11 @@
     "aarch64::release/taskmanage/calendar/__init__.py": "c2030f1131e03ece629444656950c744",
     "aarch64::release/taskmanage/common/__init__.py": "f388b0933c8b1d01ff05a7bed76d2da7",
     "aarch64::release/taskmanage/__init__.py": "70f03ad00007e6f44c4ecf9f822acaf0",
-    "x86_64::web/nav.html": "edfe0bc5bf07b00e3034ae5316d92f42",
+    "x86_64::web/nav.html": "916fd13f98985441109d055c3e65215b",
     "x86_64::web/nav/app.js": "17121d4700080704f750786f1d3eb347",
     "x86_64::web/nav/style.css": "0b21d48ec5388b50ca80e709e915fef6",
     "aarch64::release/taskmanage/nav/__init__.py": "b5c55f0e0fedfd125f24c30d9286d589",
-    "aarch64::web/nav.html": "edfe0bc5bf07b00e3034ae5316d92f42",
+    "aarch64::web/nav.html": "916fd13f98985441109d055c3e65215b",
     "aarch64::web/nav/app.js": "17121d4700080704f750786f1d3eb347",
     "aarch64::web/nav/style.css": "0b21d48ec5388b50ca80e709e915fef6",
     "x86_64::./taskmanage/nav/routes.py": "5811439e8abf9ca66e98982e36862fcb",
@@ -116,5 +116,5 @@
     "aarch64::web/shared/css/modal.css": "b5b9f7fc9245d8319b793db11634e44a",
     "aarch64::web/shared/js/modal.js": "79a7c446fa07c5ddeeff236cf7c62a52"
   },
-  "last_git_commit": "5bf4d254a7e79c1a1d7cafc269dc6c8106b9cb98"
+  "last_git_commit": "27e556ae962104a431a1cc5ec9e8df08db042bd8"
 }
