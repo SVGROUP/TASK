@@ -512,6 +512,26 @@ body.font-lg .category-header {
   padding: 12px;
 }
 
+/* ===== 图标本地上传（链接弹窗内） ===== */
+.icon-upload-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.icon-upload-row input[type="file"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 12px;
+}
+
+.icon-upload-hint {
+  flex: 0 0 auto;
+  font-size: 12px;
+  color: #52c41a;
+}
+
 /* ===== 图标库管理弹窗 ===== */
 .icon-lib-add {
   display: flex;
@@ -536,6 +556,33 @@ body.font-lg .category-header {
   flex: 0 0 auto;
   padding: 6px 16px;
   box-sizing: border-box;
+}
+
+.icon-lib-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+.icon-lib-upload-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.icon-lib-upload input[type="file"] {
+  font-size: 12px;
+  max-width: 100%;
+}
+
+.icon-lib-upload-hint {
+  font-size: 12px;
+  color: #52c41a;
+  min-height: 16px;
 }
 
 .icon-lib-grid {
