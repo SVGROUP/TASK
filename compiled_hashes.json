@@ -98,13 +98,13 @@
     "aarch64::release/taskmanage/calendar/__init__.py": "c2030f1131e03ece629444656950c744",
     "aarch64::release/taskmanage/common/__init__.py": "f388b0933c8b1d01ff05a7bed76d2da7",
     "aarch64::release/taskmanage/__init__.py": "70f03ad00007e6f44c4ecf9f822acaf0",
-    "x86_64::web/nav.html": "7467f2a7ae34e4cf765fbd1c1e4be7c2",
-    "x86_64::web/nav/app.js": "5acac5510ed1bcea339331bd0b3ddac4",
-    "x86_64::web/nav/style.css": "74a4c3ab5dcbe89c67e35c3eea614b6d",
+    "x86_64::web/nav.html": "93f8feff1dcf67ace377cce531226809",
+    "x86_64::web/nav/app.js": "b8bb8462c9603b4f59948a1b384cce4b",
+    "x86_64::web/nav/style.css": "285001966a2e6ab0661f455e974dc545",
     "aarch64::release/taskmanage/nav/__init__.py": "b5c55f0e0fedfd125f24c30d9286d589",
-    "aarch64::web/nav.html": "7467f2a7ae34e4cf765fbd1c1e4be7c2",
-    "aarch64::web/nav/app.js": "5acac5510ed1bcea339331bd0b3ddac4",
-    "aarch64::web/nav/style.css": "74a4c3ab5dcbe89c67e35c3eea614b6d",
+    "aarch64::web/nav.html": "93f8feff1dcf67ace377cce531226809",
+    "aarch64::web/nav/app.js": "b8bb8462c9603b4f59948a1b384cce4b",
+    "aarch64::web/nav/style.css": "285001966a2e6ab0661f455e974dc545",
     "x86_64::./taskmanage/nav/routes.py": "d2d4f9038e52671992e1a8bb9d28b9eb",
     "x86_64::./taskmanage/nav/auth.py": "be71f814885015a19961f58282422670",
     "aarch64::./taskmanage/nav/routes.py": "d2d4f9038e52671992e1a8bb9d28b9eb",
@@ -116,5 +116,5 @@
     "aarch64::web/shared/css/modal.css": "84b5cbc9f0eb7e8401edfec0afbe1a16",
     "aarch64::web/shared/js/modal.js": "dd0690bd42aa8d337404aa98a71cb9f1"
   },
-  "last_git_commit": "7a5e226ef25dedebced803e4afefc664a542a60f"
+  "last_git_commit": "7393b7ed8d94fe0328f4d4b2a1f85d02cbf7db34"
 }

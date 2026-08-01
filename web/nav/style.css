@@ -560,24 +560,27 @@ body.font-lg .category-header {
   padding: 12px;
 }
 
-/* ===== 图标本地上传（链接弹窗内） ===== */
-.icon-upload-row {
+/* ===== 链接弹窗内的图标区标题行（label + 「打开图标库…」按钮）=====
+ * 链接弹窗只负责选图标，新增图标一律去图标库，所以这里只放一个跳转按钮。 */
+.icon-field-head {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 8px;
+  margin-bottom: 5px;
 }
 
-.icon-upload-row input[type="file"] {
-  flex: 1 1 auto;
-  min-width: 0;
-  font-size: 12px;
+/* .form-group label 是 display:block + margin-bottom，放进 flex 行里要收掉 */
+.icon-field-head label {
+  margin-bottom: 0;
 }
 
-.icon-upload-hint {
+.icon-field-manage {
   flex: 0 0 auto;
+  padding: 3px 10px;
   font-size: 12px;
-  color: #52c41a;
+  border-radius: 6px;
+  white-space: nowrap;   /* 不允许标题被挤成省略号 */
 }
 
 /* ===== 图标库管理弹窗 ===== */
