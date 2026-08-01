@@ -387,6 +387,54 @@ body.font-lg .category-header {
 }
 
 /* Emoji 选择器 */
+/* ===== 弹窗表单（.form-group）=====
+ * nav.html 只引 nav/style.css + shared/css/modal.css，**不引 shared/base.css**，
+ * 而 .form-group 的 width:100% 只写在 base.css 里。7afd73b 清理老式 .modal-*
+ * 死代码时连 .form-group 一起删了，导致弹窗里 input/select 失去 width:100%，
+ * 退回浏览器默认宽度（input 约 181px、select 按内容宽）。这里按 nav 自己的
+ * 视觉规格补回，不引 base.css（避免 base 的全局 button/body 样式污染 nav）。 */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* file input 不适用文本框的 padding/边框，单独放行 */
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #4096ff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
 .emoji-picker {
   margin-top: 8px;
   padding: 8px;

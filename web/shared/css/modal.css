@@ -92,15 +92,21 @@
   color: #4a5568;
 }
 
-/* 正文（保留换行） */
 .modal-body {
   padding: 12px 22px 18px 22px;
   font-size: 0.95rem;
   line-height: 1.6;
   color: #4a5568;
-  white-space: pre-line;
   word-break: break-word;
   overflow-y: auto;
+}
+
+/* 纯文本正文（alert/confirm/prompt）才保留 message 里的 \n 换行。
+ * 注意：不能把 pre-line 加在 .modal-body 上 —— customModal 的 bodyHtml
+ * 通常是模板字符串拼的 HTML，标签之间的缩进/换行会被 pre-line 当成真实
+ * 空白渲染出来，表单弹窗里会冒出一堆多余空行。 */
+.modal-body-text {
+  white-space: pre-line;
 }
 
 /* 按钮区 */
