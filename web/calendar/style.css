@@ -339,14 +339,18 @@ body.edit-mode .multi-select-cb {
   height: var(--hour-height, 48px);
   color: var(--muted);
   text-align: right; padding: 0 6px;
-  position: relative; top: -7px;
+  position: relative;
   overflow: hidden;
   white-space: nowrap;
-}
-.timeline .grid .hours .hour:first-child {
-  /* 顶部首个点（0:00）不上偏，避免被列头遮住 */
-  top: 0;
+  display: flex; align-items: flex-start; justify-content: flex-end;
   padding-top: 1px;
+  line-height: 1;
+}
+.timeline .grid .hours .hour-end {
+  height: 0;
+  border-top: 1px solid var(--border);
+  padding: 0;
+  flex: 0 0 auto;
 }
 .timeline .grid .col {
   position: relative;
@@ -355,6 +359,12 @@ body.edit-mode .multi-select-cb {
     linear-gradient(to bottom, var(--border) 1px, transparent 1px);
   background-size: 100% var(--hour-height, 48px);
   cursor: pointer;
+}
+.timeline .grid .col .col-end-line {
+  position: absolute; left: 0; right: 0; top: 100%;
+  height: 0;
+  border-top: 1px solid var(--border);
+  pointer-events: none;
 }
 .timeline .grid .col.today { background-color: rgba(254, 243, 199, .35); }
 .timeline .grid .col .event {
@@ -379,6 +389,23 @@ body.edit-mode .multi-select-cb {
 }
 .timeline .grid .col .event.done { text-decoration: line-through; }
 .timeline .grid .col .event.done .title { text-decoration: line-through; }
+.timeline .grid .col .event.overnight-tail {
+  /* 当天尾巴：底部用虚线提示延续到次日 */
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.35);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.timeline .grid .col .event.overnight-head::before {
+  /* 次日头部：顶部加“↻”提示延续自昨日 */
+  content: '↻ 延续';
+  position: absolute;
+  top: 2px; right: 4px;
+  font-size: 10px;
+  opacity: 0.65;
+  background: rgba(255,255,255,0.7);
+  padding: 0 4px;
+  border-radius: 3px;
+}
 .timeline .grid .col .event .time { opacity: .8; display: block; }
 .timeline .grid .col .event .title { font-weight: 500; }
 .timeline .grid .col .event .notes {
