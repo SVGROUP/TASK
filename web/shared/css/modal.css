@@ -198,3 +198,19 @@
   border-color: var(--modal-primary-start);
   box-shadow: 0 0 0 3px var(--modal-primary-shadow-soft);
 }
+
+/* 表单内联错误提示（替换校验失败时的 alertModal 弹窗，
+   避免触发 customModal 的 _active 单例锁顶掉父弹窗导致"提示点了确认后模态框就没了"）
+   用法：每个 form-group 下面放 <div class="form-error" hidden></div>，
+   校验失败时 formError.textContent = '...'; formError.hidden = false; */
+.form-error {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--modal-danger-end);
+  background: rgba(245, 101, 101, 0.08);
+  border-left: 3px solid var(--modal-danger-start);
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+.form-error[hidden] { display: none; }

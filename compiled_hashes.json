@@ -99,11 +99,11 @@
     "aarch64::release/taskmanage/common/__init__.py": "f388b0933c8b1d01ff05a7bed76d2da7",
     "aarch64::release/taskmanage/__init__.py": "70f03ad00007e6f44c4ecf9f822acaf0",
     "x86_64::web/nav.html": "93f8feff1dcf67ace377cce531226809",
-    "x86_64::web/nav/app.js": "662eb4b629696aa61a7a089a84ec980f",
+    "x86_64::web/nav/app.js": "402f96696f48f09206c1ed3ac0437fee",
     "x86_64::web/nav/style.css": "285001966a2e6ab0661f455e974dc545",
     "aarch64::release/taskmanage/nav/__init__.py": "b5c55f0e0fedfd125f24c30d9286d589",
     "aarch64::web/nav.html": "93f8feff1dcf67ace377cce531226809",
-    "aarch64::web/nav/app.js": "662eb4b629696aa61a7a089a84ec980f",
+    "aarch64::web/nav/app.js": "402f96696f48f09206c1ed3ac0437fee",
     "aarch64::web/nav/style.css": "285001966a2e6ab0661f455e974dc545",
     "x86_64::./taskmanage/nav/routes.py": "d2d4f9038e52671992e1a8bb9d28b9eb",
     "x86_64::./taskmanage/nav/auth.py": "be71f814885015a19961f58282422670",
@@ -111,10 +111,10 @@
     "aarch64::./taskmanage/nav/auth.py": "be71f814885015a19961f58282422670",
     "x86_64::./taskmanage/notify.py": "447dbdc2e42073349f5d08247e894921",
     "aarch64::./taskmanage/notify.py": "447dbdc2e42073349f5d08247e894921",
-    "x86_64::web/shared/css/modal.css": "84b5cbc9f0eb7e8401edfec0afbe1a16",
+    "x86_64::web/shared/css/modal.css": "a081a7f8d4794b7c255fa3a1c755d775",
     "x86_64::web/shared/js/modal.js": "dd0690bd42aa8d337404aa98a71cb9f1",
-    "aarch64::web/shared/css/modal.css": "84b5cbc9f0eb7e8401edfec0afbe1a16",
+    "aarch64::web/shared/css/modal.css": "a081a7f8d4794b7c255fa3a1c755d775",
     "aarch64::web/shared/js/modal.js": "dd0690bd42aa8d337404aa98a71cb9f1"
   },
-  "last_git_commit": "baae033493bc9b3c4840c384ca877b3a9c8a5aa8"
+  "last_git_commit": "e73d07be360cd07b592aec3951f32afa298bf495"
 }
