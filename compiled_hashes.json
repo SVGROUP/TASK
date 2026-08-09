@@ -43,10 +43,10 @@
     "aarch64::web/index.html": "16afc4b784a222ed746a92fa310f11a9",
     "aarch64::web/gantt.html": "8f063f829fa1978a0e9e6744c7d001d9",
     "aarch64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
-    "aarch64::web/calendar.html": "2906d4e6ef45474a8dcea5f09f9191d0",
+    "aarch64::web/calendar.html": "cff01f27fdf10eaad0bafe0db8bc4736",
     "aarch64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "aarch64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
-    "aarch64::web/calendar/app.js": "334cd9d01d786b58a2a34f78b56240a6",
+    "aarch64::web/calendar/app.js": "bea124b5c947856f45dc01ad04f0a23c",
     "aarch64::web/calendar/style.css": "7ab07dd54bb7ade5e3306770ad54c8ed",
     "aarch64::web/shared/base.css": "8015a276b4122fdcc897ef92b8084c75",
     "aarch64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
@@ -72,10 +72,10 @@
     "x86_64::web/index.html": "16afc4b784a222ed746a92fa310f11a9",
     "x86_64::web/gantt.html": "8f063f829fa1978a0e9e6744c7d001d9",
     "x86_64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
-    "x86_64::web/calendar.html": "2906d4e6ef45474a8dcea5f09f9191d0",
+    "x86_64::web/calendar.html": "cff01f27fdf10eaad0bafe0db8bc4736",
     "x86_64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "x86_64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
-    "x86_64::web/calendar/app.js": "334cd9d01d786b58a2a34f78b56240a6",
+    "x86_64::web/calendar/app.js": "bea124b5c947856f45dc01ad04f0a23c",
     "x86_64::web/calendar/style.css": "7ab07dd54bb7ade5e3306770ad54c8ed",
     "x86_64::web/shared/base.css": "8015a276b4122fdcc897ef92b8084c75",
     "x86_64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
@@ -114,7 +114,15 @@
     "x86_64::web/shared/css/modal.css": "a081a7f8d4794b7c255fa3a1c755d775",
     "x86_64::web/shared/js/modal.js": "dd0690bd42aa8d337404aa98a71cb9f1",
     "aarch64::web/shared/css/modal.css": "a081a7f8d4794b7c255fa3a1c755d775",
-    "aarch64::web/shared/js/modal.js": "dd0690bd42aa8d337404aa98a71cb9f1"
+    "aarch64::web/shared/js/modal.js": "dd0690bd42aa8d337404aa98a71cb9f1",
+    "x86_64::web/shared/vendor/flatpickr/flatpickr.min.js": "19f49a9a1665777b11b2004ff4926d92",
+    "x86_64::web/shared/vendor/flatpickr/flatpickr.min.css": "d5a8fe5612330fee581d3f83b37ef858",
+    "x86_64::web/shared/vendor/flatpickr/airbnb.css": "f8e0536a45f802d8ce2b8dc9dbfab2a2",
+    "x86_64::web/shared/vendor/flatpickr/zh.js": "4f7592115880c98a9dd6317ce211b762",
+    "aarch64::web/shared/vendor/flatpickr/flatpickr.min.js": "19f49a9a1665777b11b2004ff4926d92",
+    "aarch64::web/shared/vendor/flatpickr/flatpickr.min.css": "d5a8fe5612330fee581d3f83b37ef858",
+    "aarch64::web/shared/vendor/flatpickr/airbnb.css": "f8e0536a45f802d8ce2b8dc9dbfab2a2",
+    "aarch64::web/shared/vendor/flatpickr/zh.js": "4f7592115880c98a9dd6317ce211b762"
   },
-  "last_git_commit": "e73d07be360cd07b592aec3951f32afa298bf495"
+  "last_git_commit": "70ffcd3f959240e5e69b60f2dc4b1be289d33c3d"
 }
