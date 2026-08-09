@@ -1,3 +1,11 @@
+/* flatpickr 注入的 .flatpickr-calendar 节点默认 z-index: 99999，
+   会盖住 .timeline（z-index 3）导致周/日视图点击不动。
+   压到 2，并排在 .dialog-backdrop (999) / dialog (1000) 之下。 */
+.flatpickr-calendar,
+.flatpickr-calendar.open {
+  z-index: 2 !important;
+}
+
 :root {
   --bg: #f6f7fb;
   --panel: #ffffff;
