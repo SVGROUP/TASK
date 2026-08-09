@@ -46,7 +46,7 @@
     "aarch64::web/calendar.html": "cff01f27fdf10eaad0bafe0db8bc4736",
     "aarch64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "aarch64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
-    "aarch64::web/calendar/app.js": "bea124b5c947856f45dc01ad04f0a23c",
+    "aarch64::web/calendar/app.js": "ed6125bcb363c93b603a10dea881b52f",
     "aarch64::web/calendar/style.css": "7ab07dd54bb7ade5e3306770ad54c8ed",
     "aarch64::web/shared/base.css": "8015a276b4122fdcc897ef92b8084c75",
     "aarch64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
@@ -75,7 +75,7 @@
     "x86_64::web/calendar.html": "cff01f27fdf10eaad0bafe0db8bc4736",
     "x86_64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "x86_64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
-    "x86_64::web/calendar/app.js": "bea124b5c947856f45dc01ad04f0a23c",
+    "x86_64::web/calendar/app.js": "ed6125bcb363c93b603a10dea881b52f",
     "x86_64::web/calendar/style.css": "7ab07dd54bb7ade5e3306770ad54c8ed",
     "x86_64::web/shared/base.css": "8015a276b4122fdcc897ef92b8084c75",
     "x86_64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
@@ -124,5 +124,5 @@
     "aarch64::web/shared/vendor/flatpickr/airbnb.css": "f8e0536a45f802d8ce2b8dc9dbfab2a2",
     "aarch64::web/shared/vendor/flatpickr/zh.js": "4f7592115880c98a9dd6317ce211b762"
   },
-  "last_git_commit": "70ffcd3f959240e5e69b60f2dc4b1be289d33c3d"
+  "last_git_commit": "c7a63ad49c6ce5bcf82b3150c2504668edea259a"
 }
