@@ -1086,4 +1086,4 @@ body.readonly-mode #settings-dialog .color-name-input {
   margin: 0;
 }
 #end-date-picker-host li { list-style: none; }
-#end-date-picker-host .picker-switch { display: none; }
+#end-date-picker-host li.picker-switch { display: none; }
