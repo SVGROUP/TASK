@@ -913,3 +913,120 @@ body.readonly-mode #settings-dialog .color-name-input {
    - 真正原因: <dialog> 创建新 stacking context, Eonasdan 算 dropdown 位置
      会偏高偏左, 上一轮 36dc960/c4727cc 试了 widgetParent/fixed/z-index
      都有问题, 这轮换思路不走 dropdown */
+
+/* 2026-08-13 21:54: Eonasdan inline 面板里的 th 加粗 (浏览器 user agent 默认
+   font-weight: bold) 导致周/月标题显示奇怪。圣威原则: 不用裸标签, 用类。
+   整改: 仅作用于 #end-date-picker-host 容器, 用通配 * 一次性重置
+   所有 user agent 默认样式 (th 加粗 / table 边框 / input 背景 / 链接色等),
+   然后只针对 vendor 提供的类 (picker-switch / day / cw / today / active
+   / disabled / old / new / prev / next / hour / minute / second) 写式样。
+   绝不在本项目内添加裸 th{}/table{}/td{}/tr{}/button{} 规则 */
+#end-date-picker-host {
+  /* dialog 整体布局: 居中, 最大高度护住手机 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0 0 0;
+}
+#end-date-picker-host * {
+  /* 重置所有 user agent 默认样式 (th 加粗 / table border-collapse / link 色
+     / button 圆角 / input 背景) */
+  font-weight: normal !important;
+  font-style: normal !important;
+  text-align: center;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: normal;
+}
+#end-date-picker-host table {
+  border-collapse: collapse !important;
+  border-spacing: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+#end-date-picker-host .picker-switch {
+  font-size: 16px;
+  font-weight: 600 !important;
+  color: var(--text);
+  padding: 6px 0;
+  cursor: pointer;
+}
+#end-date-picker-host .prev,
+#end-date-picker-host .next {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: var(--muted);
+}
+#end-date-picker-host .prev:hover,
+#end-date-picker-host .next:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+#end-date-picker-host .dow {
+  color: var(--muted);
+  font-size: 12px;
+  height: 28px;
+  line-height: 28px;
+  font-weight: 500 !important;
+}
+#end-date-picker-host .cw {
+  color: var(--muted);
+  font-size: 11px;
+  height: 22px;
+  line-height: 22px;
+}
+#end-date-picker-host .day {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+#end-date-picker-host .day:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+#end-date-picker-host .day.old,
+#end-date-picker-host .day.new {
+  color: #cbd5e0;
+}
+#end-date-picker-host .day.old:hover,
+#end-date-picker-host .day.new:hover {
+  color: var(--accent);
+}
+#end-date-picker-host .day.today {
+  position: relative;
+  color: var(--accent);
+  font-weight: 600 !important;
+}
+#end-date-picker-host .day.today::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+#end-date-picker-host .day.active,
+#end-date-picker-host .day.active:hover {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600 !important;
+}
+#end-date-picker-host .day.disabled,
+#end-date-picker-host .day.disabled:hover {
+  color: #cbd5e0;
+  cursor: not-allowed;
+  background: transparent;
+}
