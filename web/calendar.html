@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>日历待办</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="calendar/style.css?v=37" />
+  <link rel="stylesheet" href="calendar/style.css?v=38" />
   <link rel="stylesheet" href="shared/css/modal.css?v=2">
   <!-- 2026-08-13: 引入 bootstrap-datetimepicker (Eonasdan 原版) 接管 end_date picker -->
   <link rel="stylesheet" href="shared/css/bootstrap-datetimepicker.min.css?v=1">
@@ -55,7 +55,7 @@
       <label>标题<input name="title" required maxlength="200" autocomplete="off" /></label>
       <label>备注<textarea name="notes" rows="3" maxlength="2000"></textarea></label>
       <div class="row">
-        <label>开始日期<input type="date" name="start_date" required /></label>
+        <label>开始日期<input type="text" name="start_date" id="start_date" placeholder="YYYY-MM-DD" autocomplete="off" readonly required /><button type="button" id="start-date-trigger" class="ghost small">选</button></label>
         <label>结束日期<input type="text" name="end_date" id="end_date" placeholder="YYYY-MM-DD" autocomplete="off" readonly /></label>
         <label class="time-field" data-time>开始时间<input type="time" name="start_time" step="300" /></label>
         <label class="time-field" data-time>结束时间<input type="time" name="end_time" step="300" /></label>
@@ -157,13 +157,50 @@
     </menu>
   </dialog>
 
+  <!-- 2026-08-13 17th round: start_date / target_date / detail date 三处都改用
+       独立 dialog picker (跟 end_date 同样的 Eonasdan inline panel 模式),
+       解决:
+         1) task-dialog 里 start_date 跟 end_date 都用原生 date input,
+            视觉割裂;
+         2) action-dialog 的 target_date、task-detail-dialog 的 date,
+            在 <dialog> 内部用 Eonasdan dropdown 会被 stacking context
+            / backdrop 干扰, 之前 end_date 已经踩过这个坑;
+         3) 3 处都用同一套代码 (initDatePickerDialog), 复用
+            #end-date-picker-host 通配 reset. -->
+  <dialog id="start-date-picker-dialog">
+    <h3 class="dialog-title">选择开始日期</h3>
+    <div id="start-date-picker-host"></div>
+    <menu class="dialog-actions">
+      <button type="button" id="start-date-cancel" class="ghost">取消</button>
+      <button type="button" id="start-date-ok" class="primary">确定</button>
+    </menu>
+  </dialog>
+
+  <dialog id="target-date-picker-dialog">
+    <h3 class="dialog-title">选择目标日期</h3>
+    <div id="target-date-picker-host"></div>
+    <menu class="dialog-actions">
+      <button type="button" id="target-date-cancel" class="ghost">取消</button>
+      <button type="button" id="target-date-ok" class="primary">确定</button>
+    </menu>
+  </dialog>
+
+  <dialog id="detail-date-picker-dialog">
+    <h3 class="dialog-title">选择日期</h3>
+    <div id="detail-date-picker-host"></div>
+    <menu class="dialog-actions">
+      <button type="button" id="detail-date-cancel" class="ghost">取消</button>
+      <button type="button" id="detail-date-ok" class="primary">确定</button>
+    </menu>
+  </dialog>
+
   <!-- 任务操作弹窗 -->
   <dialog id="action-dialog">
     <form method="dialog" id="action-form">
       <h3 id="action-title">任务</h3>
       <p id="action-meta" class="meta"></p>
       <div class="row">
-        <label>目标日期<input type="date" name="target_date" required /></label>
+        <label>目标日期<input type="text" name="target_date" id="target_date" placeholder="YYYY-MM-DD" autocomplete="off" readonly required /><button type="button" id="target-date-trigger" class="ghost small">选</button></label>
       </div>
       <label class="checkbox" title="复制时加入原任务所在批次；独立任务会和复制件组成新批次">
         <input type="checkbox" name="join_group" /> 复制时加入组
@@ -230,7 +267,7 @@
       <label>标题<input name="title" required maxlength="200" autocomplete="off" /></label>
       <label>备注<textarea name="notes" rows="3" maxlength="2000"></textarea></label>
       <div class="row">
-        <label>日期<input type="date" name="date" required /></label>
+        <label>日期<input type="text" name="date" id="detail_date" placeholder="YYYY-MM-DD" autocomplete="off" readonly required /><button type="button" id="detail-date-trigger" class="ghost small">选</button></label>
         <label>开始时间<input type="time" name="start_time" step="300" /></label>
         <label>结束时间<input type="time" name="end_time" step="300" /></label>
       </div>
@@ -334,6 +371,6 @@
   <script src="shared/js/moment/zh-cn.min.js?v=1"></script>
   <script src="shared/js/bootstrap-datetimepicker.min.js?v=1"></script>
   <script src="shared/js/html2canvas.min.js?v=1"></script>
-  <script src="calendar/app.js?v=46"></script>
+  <script src="calendar/app.js?v=47"></script>
 </body>
 </html>
