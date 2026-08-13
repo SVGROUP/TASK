@@ -905,11 +905,11 @@ body.readonly-mode #settings-dialog .color-name-input {
   font-size: 13px;
 }
 
-/* 2026-08-13: end_date datetimepicker widget 真浮层
-   - widgetParent: 'body' 让 widget 节点挂到 body, 不嵌在 <dialog> 内
-   - 不能动 position: Eonasdan 用 absolute 算 input 下方位置; 改 fixed 会让它跑去 0,0
-   - z-index 拉到 2147483647 (max int32) 盖在 dialog/backdrop 之上
-   - 不动 max-width: Eonasdan 默认宽度 250px 已够, 动它会跟其他 widget 规则冲突 */
-.bootstrap-datetimepicker-widget {
-  z-index: 2147483647 !important;
-}
+/* 2026-08-13: end_date datetimepicker 改用 inline 模式 + 原生 <dialog> 包裹
+   - 不用 Eonasdan dropdown panel, 不用 widgetParent, 不用 position: fixed
+   - inline 模式让 widget 直接渲染在 #end-date-picker-host 里
+   - 原生 <dialog>.showModal() 浏览器保证盖在所有 stacking context 之上
+   - 不需要 z-index hack, 原生 dialog 自带 backdrop + 最高层 + focus trap
+   - 真正原因: <dialog> 创建新 stacking context, Eonasdan 算 dropdown 位置
+     会偏高偏左, 上一轮 36dc960/c4727cc 试了 widgetParent/fixed/z-index
+     都有问题, 这轮换思路不走 dropdown */

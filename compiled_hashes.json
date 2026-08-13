@@ -43,11 +43,11 @@
     "aarch64::web/index.html": "16afc4b784a222ed746a92fa310f11a9",
     "aarch64::web/gantt.html": "8f063f829fa1978a0e9e6744c7d001d9",
     "aarch64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
-    "aarch64::web/calendar.html": "9fa3b3a04dcfc1c52c74193d3f8ab1ce",
+    "aarch64::web/calendar.html": "b8375157a32460287e8f84c2442860be",
     "aarch64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "aarch64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
-    "aarch64::web/calendar/app.js": "a44f22cc7e4e0cbd4956e6e2c792de4e",
-    "aarch64::web/calendar/style.css": "ecc903103b6dc437201e3e3ca4c85a31",
+    "aarch64::web/calendar/app.js": "2f775e60578771c5f735c84138334e80",
+    "aarch64::web/calendar/style.css": "65069e4e54f9c3349d58b113a07ba36b",
     "aarch64::web/shared/base.css": "8015a276b4122fdcc897ef92b8084c75",
     "aarch64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
     "aarch64::commit_file/commit.sh": "f3ece85990e45c3765bf1b7294e8b1d0",
@@ -72,11 +72,11 @@
     "x86_64::web/index.html": "16afc4b784a222ed746a92fa310f11a9",
     "x86_64::web/gantt.html": "8f063f829fa1978a0e9e6744c7d001d9",
     "x86_64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
-    "x86_64::web/calendar.html": "9fa3b3a04dcfc1c52c74193d3f8ab1ce",
+    "x86_64::web/calendar.html": "b8375157a32460287e8f84c2442860be",
     "x86_64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "x86_64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
-    "x86_64::web/calendar/app.js": "a44f22cc7e4e0cbd4956e6e2c792de4e",
-    "x86_64::web/calendar/style.css": "ecc903103b6dc437201e3e3ca4c85a31",
+    "x86_64::web/calendar/app.js": "2f775e60578771c5f735c84138334e80",
+    "x86_64::web/calendar/style.css": "65069e4e54f9c3349d58b113a07ba36b",
     "x86_64::web/shared/base.css": "8015a276b4122fdcc897ef92b8084c75",
     "x86_64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
     "x86_64::commit_file/commit.sh": "f3ece85990e45c3765bf1b7294e8b1d0",
@@ -124,5 +124,5 @@
     "aarch64::web/shared/js/bootstrap-datetimepicker.min.js": "8a36160a466cad1a9e414321f4784baf",
     "aarch64::web/shared/js/jquery.min.js": "2c872dbe60f4ba70fb85356113d8b35e"
   },
-  "last_git_commit": "c4727cca92d89de06ac0e021124fa8ee7d31fe47"
+  "last_git_commit": "b5eae8bebd16279ed2684267c676ce86cca855d6"
 }

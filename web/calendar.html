@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>日历待办</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="calendar/style.css?v=30" />
+  <link rel="stylesheet" href="calendar/style.css?v=31" />
   <link rel="stylesheet" href="shared/css/modal.css?v=2">
   <!-- 2026-08-13: 引入 bootstrap-datetimepicker (Eonasdan 原版) 接管 end_date picker -->
   <link rel="stylesheet" href="shared/css/bootstrap-datetimepicker.min.css?v=1">
@@ -56,7 +56,7 @@
       <label>备注<textarea name="notes" rows="3" maxlength="2000"></textarea></label>
       <div class="row">
         <label>开始日期<input type="date" name="start_date" required /></label>
-        <label>结束日期<input type="text" name="end_date" id="end_date" placeholder="YYYY-MM-DD" autocomplete="off" /></label>
+        <label>结束日期<input type="text" name="end_date" id="end_date" placeholder="YYYY-MM-DD" autocomplete="off" readonly /></label>
         <label class="time-field" data-time>开始时间<input type="time" name="start_time" step="300" /></label>
         <label class="time-field" data-time>结束时间<input type="time" name="end_time" step="300" /></label>
       </div>
@@ -136,6 +136,25 @@
         <button value="save" class="primary">保存</button>
       </menu>
     </form>
+  </dialog>
+
+  <!-- 2026-08-13: end_date 选择器独立模态框
+       为什么不用 Eonasdan 原生 dropdown panel:
+         1. <dialog> 内部 stacking context 让 Eonasdan 算出来的 top/left 偏掉
+         2. panel 在原 <dialog> 上下文中会被 backdrop 遮
+         3. 会把背景的日历页顶走
+       改法: 用原生 <dialog> 裹一个 Eonasdan inline-mode 面板
+         - dialog.showModal() 浏览器保证盖所有 backdrop
+         - inline mode 不算 dropdown 位置, widget 直接渲染在容器内
+         - 3 个按钮: 确定/清除/取消, 跟 task-dialog 解耦 -->
+  <dialog id="end-date-picker-dialog">
+    <h3>选择结束日期</h3>
+    <div id="end-date-picker-host"></div>
+    <menu>
+      <button type="button" id="end-date-clear">清除</button>
+      <button type="button" id="end-date-cancel">取消</button>
+      <button type="button" id="end-date-ok">确定</button>
+    </menu>
   </dialog>
 
   <!-- 任务操作弹窗 -->
@@ -313,6 +332,6 @@
   <script src="shared/js/moment.min.js?v=1"></script>
   <script src="shared/js/bootstrap-datetimepicker.min.js?v=1"></script>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-  <script src="calendar/app.js?v=42"></script>
+  <script src="calendar/app.js?v=43"></script>
 </body>
 </html>
