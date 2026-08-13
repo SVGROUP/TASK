@@ -43,7 +43,7 @@
     "aarch64::web/index.html": "16afc4b784a222ed746a92fa310f11a9",
     "aarch64::web/gantt.html": "8f063f829fa1978a0e9e6744c7d001d9",
     "aarch64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
-    "aarch64::web/calendar.html": "d32f4fd550bf7adae62b00e1396ff837",
+    "aarch64::web/calendar.html": "2a9730c459f9b3dce7152a02735cfb82",
     "aarch64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "aarch64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
     "aarch64::web/calendar/app.js": "2f775e60578771c5f735c84138334e80",
@@ -53,7 +53,7 @@
     "aarch64::commit_file/commit.sh": "f3ece85990e45c3765bf1b7294e8b1d0",
     "aarch64::commit_file/update.sh": "81881bd138f6eebf2182a998302449e9",
     "aarch64::frontend-build/package.json": "a1366072e231f47cfefdefba3866dbb4",
-    "aarch64::frontend-build/build.js": "6a1867b513558da2bd9b63e5e1b59156",
+    "aarch64::frontend-build/build.js": "b4892982f4807586273cc936542a6285",
     "x86_64::./taskmanage/logging.py": "06e7d3cfffb491b454abc95dc3da4a81",
     "x86_64::./taskmanage/gantt/auth.py": "84981fca9e2aaf31890ce0442304bcba",
     "x86_64::./taskmanage/upgrade.py": "2c3dd028feca78cd44617b1f4a14ca8f",
@@ -72,7 +72,7 @@
     "x86_64::web/index.html": "16afc4b784a222ed746a92fa310f11a9",
     "x86_64::web/gantt.html": "8f063f829fa1978a0e9e6744c7d001d9",
     "x86_64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
-    "x86_64::web/calendar.html": "d32f4fd550bf7adae62b00e1396ff837",
+    "x86_64::web/calendar.html": "2a9730c459f9b3dce7152a02735cfb82",
     "x86_64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "x86_64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
     "x86_64::web/calendar/app.js": "2f775e60578771c5f735c84138334e80",
@@ -82,7 +82,7 @@
     "x86_64::commit_file/commit.sh": "f3ece85990e45c3765bf1b7294e8b1d0",
     "x86_64::commit_file/update.sh": "81881bd138f6eebf2182a998302449e9",
     "x86_64::frontend-build/package.json": "a1366072e231f47cfefdefba3866dbb4",
-    "x86_64::frontend-build/build.js": "6a1867b513558da2bd9b63e5e1b59156",
+    "x86_64::frontend-build/build.js": "b4892982f4807586273cc936542a6285",
     "aarch64::./taskmanage/logging.py": "06e7d3cfffb491b454abc95dc3da4a81",
     "aarch64::./taskmanage/gantt/auth.py": "84981fca9e2aaf31890ce0442304bcba",
     "aarch64::./taskmanage/upgrade.py": "2c3dd028feca78cd44617b1f4a14ca8f",
@@ -122,7 +122,9 @@
     "aarch64::web/shared/css/bootstrap-datetimepicker.min.css": "fc28fdcaebe06f95b628b7afff4afa9e",
     "aarch64::web/shared/js/moment.min.js": "be51675f16a773d868e992735ecbf078",
     "aarch64::web/shared/js/bootstrap-datetimepicker.min.js": "8a36160a466cad1a9e414321f4784baf",
-    "aarch64::web/shared/js/jquery.min.js": "2c872dbe60f4ba70fb85356113d8b35e"
+    "aarch64::web/shared/js/jquery.min.js": "2c872dbe60f4ba70fb85356113d8b35e",
+    "x86_64::web/shared/js/html2canvas.min.js": "d7530aa0b7587e627484c49fdf8f13f2",
+    "aarch64::web/shared/js/html2canvas.min.js": "d7530aa0b7587e627484c49fdf8f13f2"
   },
-  "last_git_commit": "5701183ed49c794f60176d7d81640de4a02fd6ab"
+  "last_git_commit": "4ac9abf0d49c75644d5ced5e25e1123c92ba245a"
 }
