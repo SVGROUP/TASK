@@ -1032,25 +1032,19 @@ body.readonly-mode #settings-dialog .color-name-input {
 }
 
 
-/* 2026-08-13 22:07: end_date picker dialog 3 项整改
-   1) h3 用户代理样式表 (block / font-size: 1.17em / font-weight: bold /
-      margin-block: 1em) 导致"选择结束日期"显示奇怪 -> 用 .dialog-title 类
-      重置 + 接管样式
-   2) 3 按钮居中 (menu.dlg-actions) + "确定"复用 modal.css 的 .modal-btn-confirm
-      紫渐变色, "清除"/"取消" 用 .modal-btn-cancel 白底灰边
-   3) 全部用类, 绝不用裸 h3{}/menu{}/button{} 等标签级规则 */
+/* 2026-08-13 22:07: end_date picker dialog
+   - h3 归零 (user agent 默认) -> .dialog-title
+   - menu 居中 -> .dialog-actions
+   - 3 按钮复用项目已有类: .primary (确定) / .ghost (清除+取消) */
 #end-date-picker-dialog {
   width: min(360px, 92vw);
-  max-width: 92vw;
   padding: 20px 22px;
   border: 0;
   border-radius: 14px;
   background: #fff;
   box-shadow: 0 20px 60px rgba(20, 30, 60, .25);
 }
-#end-date-picker-dialog::backdrop {
-  background: rgba(20, 30, 60, .35);
-}
+#end-date-picker-dialog::backdrop { background: rgba(20, 30, 60, .35); }
 #end-date-picker-dialog .dialog-title {
   margin: 0 0 12px 0;
   padding: 0;
@@ -1062,7 +1056,6 @@ body.readonly-mode #settings-dialog .color-name-input {
 }
 #end-date-picker-dialog .dialog-actions {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -1070,37 +1063,4 @@ body.readonly-mode #settings-dialog .color-name-input {
   padding: 12px 0 0 0;
   border-top: 1px solid var(--border);
   list-style: none;
-}
-#end-date-picker-dialog .dialog-btn {
-  min-width: 72px;
-  padding: 8px 18px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border-radius: 8px;
-  border: 1px solid #cbd5e0;
-  background: #fff;
-  color: #4a5568;
-  cursor: pointer;
-  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
-}
-#end-date-picker-dialog .dialog-btn:hover {
-  background: #f1f5f9;
-  color: #1a202c;
-}
-#end-date-picker-dialog .dialog-btn:active:not(:disabled) {
-  transform: translateY(1px);
-}
-#end-date-picker-dialog .dialog-btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.35);
-}
-/* "确定" 按钮: 复用 modal.css 的紫渐变, 跟 .modal-btn-confirm 保持一致 */
-#end-date-picker-dialog .dialog-btn-primary {
-  background: linear-gradient(135deg, var(--modal-primary-start) 0%, var(--modal-primary-end) 100%);
-  color: #fff;
-  border-color: transparent;
-}
-#end-date-picker-dialog .dialog-btn-primary:hover {
-  box-shadow: 0 4px 12px var(--modal-primary-shadow);
-  color: #fff;
 }
