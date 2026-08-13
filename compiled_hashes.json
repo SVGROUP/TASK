@@ -46,7 +46,7 @@
     "aarch64::web/calendar.html": "2906d4e6ef45474a8dcea5f09f9191d0",
     "aarch64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "aarch64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
-    "aarch64::web/calendar/app.js": "334cd9d01d786b58a2a34f78b56240a6",
+    "aarch64::web/calendar/app.js": "572727db31c62b29052f32fee842d409",
     "aarch64::web/calendar/style.css": "7ab07dd54bb7ade5e3306770ad54c8ed",
     "aarch64::web/shared/base.css": "8015a276b4122fdcc897ef92b8084c75",
     "aarch64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
@@ -59,7 +59,7 @@
     "x86_64::./taskmanage/upgrade.py": "2c3dd028feca78cd44617b1f4a14ca8f",
     "x86_64::./taskmanage/config.py": "7d20a5291576469dfd55eed35ec2e2c1",
     "x86_64::./taskmanage/notifier.py": "98cc1c5224576d5739aca86f4ecd8ebe",
-    "x86_64::./taskmanage/calendar/routes.py": "991431f13fc0ab9ab8d803412f180fa1",
+    "x86_64::./taskmanage/calendar/routes.py": "973987c349a55797dd72810ea79b3895",
     "x86_64::./taskmanage/calendar/auth.py": "2875f4edbceb412c3b0f6c3fce63374e",
     "x86_64::./taskmanage/app.py": "071ee64482a368c1ed32bcd815e34a9f",
     "x86_64::./taskmanage/scheduler.py": "a1224e130e8cf20556ebba9d8a75b851",
@@ -75,7 +75,7 @@
     "x86_64::web/calendar.html": "2906d4e6ef45474a8dcea5f09f9191d0",
     "x86_64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "x86_64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
-    "x86_64::web/calendar/app.js": "334cd9d01d786b58a2a34f78b56240a6",
+    "x86_64::web/calendar/app.js": "572727db31c62b29052f32fee842d409",
     "x86_64::web/calendar/style.css": "7ab07dd54bb7ade5e3306770ad54c8ed",
     "x86_64::web/shared/base.css": "8015a276b4122fdcc897ef92b8084c75",
     "x86_64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
@@ -88,7 +88,7 @@
     "aarch64::./taskmanage/upgrade.py": "2c3dd028feca78cd44617b1f4a14ca8f",
     "aarch64::./taskmanage/config.py": "7d20a5291576469dfd55eed35ec2e2c1",
     "aarch64::./taskmanage/notifier.py": "98cc1c5224576d5739aca86f4ecd8ebe",
-    "aarch64::./taskmanage/calendar/routes.py": "991431f13fc0ab9ab8d803412f180fa1",
+    "aarch64::./taskmanage/calendar/routes.py": "973987c349a55797dd72810ea79b3895",
     "aarch64::./taskmanage/calendar/auth.py": "2875f4edbceb412c3b0f6c3fce63374e",
     "aarch64::./taskmanage/app.py": "071ee64482a368c1ed32bcd815e34a9f",
     "aarch64::./taskmanage/scheduler.py": "a1224e130e8cf20556ebba9d8a75b851",
@@ -114,7 +114,8 @@
     "x86_64::web/shared/css/modal.css": "a081a7f8d4794b7c255fa3a1c755d775",
     "x86_64::web/shared/js/modal.js": "dd0690bd42aa8d337404aa98a71cb9f1",
     "aarch64::web/shared/css/modal.css": "a081a7f8d4794b7c255fa3a1c755d775",
-    "aarch64::web/shared/js/modal.js": "dd0690bd42aa8d337404aa98a71cb9f1"
+    "aarch64::web/shared/js/modal.js": "dd0690bd42aa8d337404aa98a71cb9f1",
+    "aarch64::release/taskmanage/calendar/routes.cpython-313-x86_64-linux-gnu.so": "d910726b41163e68dafaff973cb9f0ab"
   },
-  "last_git_commit": "534302c854860247c75481b0d1e2cf4afd3e8778"
+  "last_git_commit": "2ed3ac87bad563630b597e4cf7a0fad2beef3dd8"
 }
