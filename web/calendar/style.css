@@ -942,6 +942,12 @@ body.readonly-mode #settings-dialog .color-name-input {
   padding: 0;
   box-sizing: border-box;
   line-height: normal;
+  /* vendor: table th{height:20px;line-height:20px;width:20px} 是给 prev/next
+     箭头 20x20 按钮用的, 但 picker-switch 月份标题 th (colspan=5) 也吃这规则,
+     锁死 20px 高度 + 我们加的 padding:6px 0 (12px) + font-size 16px = 32px
+     装不下被裁, "十月 2026" 看不到, 看上去像白字, 实际上是字被切了.
+     通配 reset 一次性把 height 释放, 不为个例开新类. */
+  height: auto;
 }
 #end-date-picker-host table {
   border-collapse: collapse !important;
