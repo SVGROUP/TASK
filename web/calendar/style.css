@@ -904,3 +904,14 @@ body.readonly-mode #settings-dialog .color-name-input {
   color: #475569;
   font-size: 13px;
 }
+
+/* 2026-08-13: end_date datetimepicker widget 强制浮层
+   - widgetParent: 'body' 已让 widget 节点挂到 body, 不嵌在 <dialog> 里
+   - 这里再压一层: 强制 position:fixed, 不被任何祖先的 transform/filter 创建的 containing block 影响
+   - z-index 拉到 2147483647 (max int32) 保证盖在所有 dialog/backdrop 之上
+   - max-width 解开, 不被 dialog 内部容器宽度限制 */
+.bootstrap-datetimepicker-widget {
+  position: fixed !important;
+  z-index: 2147483647 !important;
+  max-width: none !important;
+}
