@@ -7,8 +7,8 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="calendar/style.css?v=28" />
   <link rel="stylesheet" href="shared/css/modal.css?v=2">
-  <!-- 2026-08-13: 引入 vanilla-calendar-pro 替换原生 date picker，让 end_date 打开时能强制初始化到 start_date -->
-  <link rel="stylesheet" href="shared/css/vanilla-calendar-pro.min.css?v=1">
+  <!-- 2026-08-13: 引入 bootstrap-datetimepicker (Eonasdan 原版) 接管 end_date picker -->
+  <link rel="stylesheet" href="shared/css/bootstrap-datetimepicker.min.css?v=1">
 </head>
 <body>
   <header class="topbar">
@@ -308,9 +308,11 @@
 
   <script src="shared/cn_holidays.js?v=3"></script>
   <script src="shared/js/modal.js?v=3"></script>
-  <!-- 2026-08-13: vanilla-calendar-pro 主库 -->
-  <script src="shared/js/vanilla-calendar-pro.min.js?v=1"></script>
+  <!-- 2026-08-13: bootstrap-datetimepicker (Eonasdan 原版) 本地 vendor: jQuery + moment + picker -->
+  <script src="shared/js/jquery.min.js?v=1"></script>
+  <script src="shared/js/moment.min.js?v=1"></script>
+  <script src="shared/js/bootstrap-datetimepicker.min.js?v=1"></script>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-  <script src="calendar/app.js?v=40"></script>
+  <script src="calendar/app.js?v=41"></script>
 </body>
 </html>
