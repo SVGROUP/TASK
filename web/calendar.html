@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>日历待办</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="calendar/style.css?v=32" />
+  <link rel="stylesheet" href="calendar/style.css?v=33" />
   <link rel="stylesheet" href="shared/css/modal.css?v=2">
   <!-- 2026-08-13: 引入 bootstrap-datetimepicker (Eonasdan 原版) 接管 end_date picker -->
   <link rel="stylesheet" href="shared/css/bootstrap-datetimepicker.min.css?v=1">
@@ -148,12 +148,12 @@
          - inline mode 不算 dropdown 位置, widget 直接渲染在容器内
          - 3 个按钮: 确定/清除/取消, 跟 task-dialog 解耦 -->
   <dialog id="end-date-picker-dialog">
-    <h3>选择结束日期</h3>
+    <h3 class="dialog-title">选择结束日期</h3>
     <div id="end-date-picker-host"></div>
-    <menu>
-      <button type="button" id="end-date-clear">清除</button>
-      <button type="button" id="end-date-cancel">取消</button>
-      <button type="button" id="end-date-ok">确定</button>
+    <menu class="dialog-actions">
+      <button type="button" id="end-date-clear" class="dialog-btn">清除</button>
+      <button type="button" id="end-date-cancel" class="dialog-btn">取消</button>
+      <button type="button" id="end-date-ok" class="dialog-btn dialog-btn-primary">确定</button>
     </menu>
   </dialog>
 
@@ -330,8 +330,10 @@
   <!-- 2026-08-13: bootstrap-datetimepicker (Eonasdan 原版) 本地 vendor: jQuery + moment + picker -->
   <script src="shared/js/jquery.min.js?v=1"></script>
   <script src="shared/js/moment.min.js?v=1"></script>
+  <!-- 2026-08-13: moment locale 库 (与 moment.min.js 配套) 走 vendor 例外 -->
+  <script src="shared/js/moment/zh-cn.min.js?v=1"></script>
   <script src="shared/js/bootstrap-datetimepicker.min.js?v=1"></script>
   <script src="shared/js/html2canvas.min.js?v=1"></script>
-  <script src="calendar/app.js?v=44"></script>
+  <script src="calendar/app.js?v=45"></script>
 </body>
 </html>
