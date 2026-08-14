@@ -1054,44 +1054,50 @@ body.readonly-mode #settings-dialog .color-name-input {
   background: var(--accent-soft);
   color: var(--accent);
 }
-#end-date-picker-host,
+/* 2026-08-14 17:21 (36th round): 5 套 host 段 .day.old 跟 .day.new selector 错位修复
+   - 根因: end-host/target-host/detail-host/batch-host 4 套 host 自身误被染 color: #cbd5e0 (浅灰)
+   - 35th round 修了 5 套 dialog 共享 CSS 段 (::backdrop/.dialog-title/.dialog-actions) 的 selector 错位,
+     但漏了 5 套 host 段 (line 1057-1128) 同样的 selector 错位
+   - 修法 B: 跟 35th round 风格统一, 5 套 host 平行写子选择器
+   - 改完: 5 套 host 自身 color 不再被染, 走 var(--text) 深色, dialog 白底 + 深色文字, 看得见 */
+#end-date-picker-host .day.old,
 #start-date-picker-host .day.old,
 #target-date-picker-host .day.old,
 #detail-date-picker-host .day.old,
 #batch-date-picker-host .day.old,
-#end-date-picker-host,
+#end-date-picker-host .day.new,
 #start-date-picker-host .day.new,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host .day.new,
+#detail-date-picker-host .day.new,
+#batch-date-picker-host .day.new {
   color: #cbd5e0;
 }
-#end-date-picker-host,
+#end-date-picker-host .day.old:hover,
 #start-date-picker-host .day.old:hover,
 #target-date-picker-host .day.old:hover,
 #detail-date-picker-host .day.old:hover,
 #batch-date-picker-host .day.old:hover,
-#end-date-picker-host,
+#end-date-picker-host .day.new:hover,
 #start-date-picker-host .day.new:hover,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host .day.new:hover,
+#detail-date-picker-host .day.new:hover,
+#batch-date-picker-host .day.new:hover {
   color: var(--accent);
 }
-#end-date-picker-host,
+#end-date-picker-host .day.today,
 #start-date-picker-host .day.today,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host .day.today,
+#detail-date-picker-host .day.today,
+#batch-date-picker-host .day.today {
   position: relative;
   color: var(--accent);
   font-weight: 600 !important;
 }
-#end-date-picker-host,
+#end-date-picker-host .day.today::after,
 #start-date-picker-host .day.today::after,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host .day.today::after,
+#detail-date-picker-host .day.today::after,
+#batch-date-picker-host .day.today::after {
   content: '';
   position: absolute;
   bottom: 4px;
@@ -1102,30 +1108,30 @@ body.readonly-mode #settings-dialog .color-name-input {
   border-radius: 50%;
   background: var(--accent);
 }
-#end-date-picker-host,
+#end-date-picker-host .day.active,
 #start-date-picker-host .day.active,
 #target-date-picker-host .day.active,
 #detail-date-picker-host .day.active,
 #batch-date-picker-host .day.active,
-#end-date-picker-host,
+#end-date-picker-host .day.active:hover,
 #start-date-picker-host .day.active:hover,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host .day.active:hover,
+#detail-date-picker-host .day.active:hover,
+#batch-date-picker-host .day.active:hover {
   background: var(--accent);
   color: #fff;
   font-weight: 600 !important;
 }
-#end-date-picker-host,
+#end-date-picker-host .day.disabled,
 #start-date-picker-host .day.disabled,
 #target-date-picker-host .day.disabled,
 #detail-date-picker-host .day.disabled,
 #batch-date-picker-host .day.disabled,
-#end-date-picker-host,
+#end-date-picker-host .day.disabled:hover,
 #start-date-picker-host .day.disabled:hover,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host .day.disabled:hover,
+#detail-date-picker-host .day.disabled:hover,
+#batch-date-picker-host .day.disabled:hover {
   color: #cbd5e0;
   cursor: not-allowed;
   background: transparent;
