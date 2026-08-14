@@ -43,11 +43,11 @@
     "aarch64::web/index.html": "16afc4b784a222ed746a92fa310f11a9",
     "aarch64::web/gantt.html": "8f063f829fa1978a0e9e6744c7d001d9",
     "aarch64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
-    "aarch64::web/calendar.html": "b2809a6f8ed3c5164e239bb49ad3a071",
+    "aarch64::web/calendar.html": "24d254f11052d53263b8df86db6f6eb7",
     "aarch64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "aarch64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
     "aarch64::web/calendar/app.js": "52761ea6f72304b08012da1b9b7fcbca",
-    "aarch64::web/calendar/style.css": "20b38458818989d1f309871c2388674a",
+    "aarch64::web/calendar/style.css": "b9d232f62cbbe0fd910ee2ed6db6dd66",
     "aarch64::web/shared/base.css": "8015a276b4122fdcc897ef92b8084c75",
     "aarch64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
     "aarch64::commit_file/commit.sh": "f3ece85990e45c3765bf1b7294e8b1d0",
@@ -72,11 +72,11 @@
     "x86_64::web/index.html": "16afc4b784a222ed746a92fa310f11a9",
     "x86_64::web/gantt.html": "8f063f829fa1978a0e9e6744c7d001d9",
     "x86_64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
-    "x86_64::web/calendar.html": "b2809a6f8ed3c5164e239bb49ad3a071",
+    "x86_64::web/calendar.html": "24d254f11052d53263b8df86db6f6eb7",
     "x86_64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "x86_64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
     "x86_64::web/calendar/app.js": "52761ea6f72304b08012da1b9b7fcbca",
-    "x86_64::web/calendar/style.css": "20b38458818989d1f309871c2388674a",
+    "x86_64::web/calendar/style.css": "b9d232f62cbbe0fd910ee2ed6db6dd66",
     "x86_64::web/shared/base.css": "8015a276b4122fdcc897ef92b8084c75",
     "x86_64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
     "x86_64::commit_file/commit.sh": "f3ece85990e45c3765bf1b7294e8b1d0",
@@ -128,5 +128,5 @@
     "x86_64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "aarch64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5"
   },
-  "last_git_commit": "7a02395b7e8634e1becd7971a73be0093472747b"
+  "last_git_commit": "66b8563a4a680938a5eebc2563bbe4d583732719"
 }

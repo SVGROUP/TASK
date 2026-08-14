@@ -1371,15 +1371,23 @@ body.readonly-mode #settings-dialog .color-name-input {
   text-align: center;
 }
 
-/* 2026-08-14 22:42 (43rd round): Eonasdan timepicker 4 个上下选择按钮
-   - 42nd round 猜 Eonasdan 用 <th class="up"/"down"> 渲染三角, 完全猜错, vendor 实际用
-     <a data-action="incrementHours" class="btn"><span class="glyphicon glyphicon-chevron-up"></span></a>
-     4 个 [data-action]: incrementHours / decrementHours / incrementMinutes / decrementMinutes
-   - 42nd round 写的 .up / .down 选择器根本命中不到 (class 名是 .btn, 不是 .up / .down)
-   - 改: 删 42nd round .up / .down 段, 换 4 段 [data-action] 选择器
-   - vendor 默认 [data-action]{padding:6px 0} (有 6px 上下 padding, 但没颜色, glyphicon 字体色跟 dialog 背景同色 → 看不到)
-   - 修法: 4 段选择器 (2 host × 4 data-action = 8 行) 加 color: var(--text) + cursor: pointer, 4 段 :hover 变色 (跟 .timepicker-hour:hover 平行)
-   - 选 2 host 4 data-action: 42nd round "2 套 host × 2 段" 不够, 应是 2 host × 4 data-action = 8 行 */
+/* 2026-08-14 22:48 (44th round): Eonasdan timepicker 4 个上下选择按钮 (补 43rd round 漏的 font-family)
+   - 圣威 22:45 问: <a data-action=incrementHours><span class=glyphicon glyphicon-chevron-up> 是通过图形还是符号显示?
+   - 根因: Eonasdan 三角用 Glyphicons Halflings 字体 (Bootstrap 3 字体) 字符渲染 (font-family: 'Glyphicons Halflings' + ::before content: \"\\e113\")
+   - 坏消息: vendor CSS 全文 0 个 font-family / 0 个 @font-face / 0 个 .glyphicon 基础样式 / 0 个 .glyphicon-chevron-up::before
+            Eonasdan 假设用方自己引 Bootstrap 3 (bootstrap.css 含 Glyphicons 字体)
+   - 项目现状: web/shared/css/ 只有 2 个文件 (bootstrap-datetimepicker.min.css + modal.css), 完全没引 Bootstrap 3
+            web/shared/fonts/ 目录根本不存在, 没下 Glyphicons 字体文件 (woff2/woff/ttf/eot)
+   - 42nd+43rd round 错方向: 我以为 vendor 自己渲染好 span.glyphicon, 一直在改 [data-action] / .up / .down
+     实际上核心问题是没有字体, CSS 怎么改都出不来三角
+   - 修法 (方案 A: 纯 CSS 三角, 跟项目'轻量不引外部字体'风格一致, 41st round 项目前端已用纯 CSS 三角做 .prev/.next 翻月按钮):
+     1) 隐藏 vendor 的 span.glyphicon (2 host 段, 跟 41st round 隐藏 li.picker-switch 模式平行)
+     2) [data-action] 段加 position: relative (给 ::before 定位用)
+     3) [data-action=incrementHours/decrementHours] 4 段 (4 × 2 host = 8 行) ::before 画上三角 (border-bottom: 5px solid currentColor)
+     4) [data-action=incrementMinutes/decrementMinutes] 4 段 (4 × 2 host = 8 行) ::before 画下三角 (border-top: 5px solid currentColor)
+     currentColor 跟 43rd round 加的 color: var(--text) 联动, hover 时跟 var(--accent) 联动 */
+#start-time-picker-host span.glyphicon,
+#end-time-picker-host span.glyphicon { display: none; }
 #start-time-picker-host [data-action="incrementHours"],
 #end-time-picker-host [data-action="incrementHours"],
 #start-time-picker-host [data-action="decrementHours"],
@@ -1388,13 +1396,46 @@ body.readonly-mode #settings-dialog .color-name-input {
 #end-time-picker-host [data-action="incrementMinutes"],
 #start-time-picker-host [data-action="decrementMinutes"],
 #end-time-picker-host [data-action="decrementMinutes"] {
+  position: relative;
   display: inline-block;
-  padding: 6px 10px;
-  font-size: 14px;
+  width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  font-size: 0;
   color: var(--text);
   cursor: pointer;
   border-radius: 4px;
   text-decoration: none;
+  line-height: 22px;
+  vertical-align: middle;
+}
+/* 上三角 (incrementHours / decrementHours 同行, 都画上三角, vendor 模板里这 2 个按钮分别在小时行上下) */
+#start-time-picker-host [data-action="incrementHours"]::before,
+#end-time-picker-host [data-action="incrementHours"]::before,
+#start-time-picker-host [data-action="decrementHours"]::before,
+#end-time-picker-host [data-action="decrementHours"]::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid currentColor;
+  margin: 0 auto;
+}
+/* 下三角 (incrementMinutes / decrementMinutes 同行) */
+#start-time-picker-host [data-action="incrementMinutes"]::before,
+#end-time-picker-host [data-action="incrementMinutes"]::before,
+#start-time-picker-host [data-action="decrementMinutes"]::before,
+#end-time-picker-host [data-action="decrementMinutes"]::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid currentColor;
+  margin: 0 auto;
 }
 #start-time-picker-host [data-action="incrementHours"]:hover,
 #end-time-picker-host [data-action="incrementHours"]:hover,
