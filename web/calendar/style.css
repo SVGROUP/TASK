@@ -1280,6 +1280,10 @@ body.readonly-mode #settings-dialog .color-name-input {
   align-items: center;
   gap: 12px;
   padding: 4px 0 0 0;
+  /* 2026-08-15 00:08 (48th round): 圣威 00:06 报"div#start-time-picker-host 不居中"
+     - 根因: 47th round 写了 host { display: flex; align-items: center; } 但 host 自己没写 margin: 0 auto, host 是 dialog 子元素, 默认 display: block 撑满父 240px, 即使 max-width: 200px, host 还是会从左边开始
+     - 修法: 加 margin: 0 auto (在 dialog 240px 容器里水平居中, 跟 4 td 总宽 90px 居中) */
+  margin: 0 auto;
   /* 2026-08-14 23:38 (46th round): 圣威 23:35 报"整个 start-time-picker-host 横向占用太多, 留白多"
      - 根因: 41st round 没设 host width, 41st round 通配 reset 也没设, host 被 dialog 的 360px 撑成全宽
      - 修法: width: auto 跟随内容 + max-width: 200px (跟 dialog 240px 配套, 不溢出) */
@@ -1484,6 +1488,11 @@ body.readonly-mode #settings-dialog .color-name-input {
   border-radius: 4px;
   text-decoration: none;
   line-height: 20px;
+  /* 2026-08-15 00:08 (48th round): 圣威 00:06 报"上下箭头在 a 标签中不居中"
+     - 根因: 41st round 通配 reset 写了 text-align: center, 但 [data-action] 段没显式写, 47th round 也没补, a 标签是 inline-block 元素, ::before 三角依赖 a 标签的 text-align 居中
+     - 修法: 加 text-align: center (在 a 标签 20px 宽内, 三角 ::before 用 margin: 0 auto 居中)
+     - 配套: 48th round 在 ::before 段也加 left: 50% + transform: translateX(-50%) 兜底 (margin: 0 auto 在某些浏览器对 position 不起作用) */
+  text-align: center;
   vertical-align: middle;
 }
 /* 2026-08-14 23:18 (45th round): Eonasdan timepicker 4 个上下选择按钮 (修 44th round 错把 increment/decrement 跟 up/down 划等号)
@@ -1514,6 +1523,13 @@ body.readonly-mode #settings-dialog .color-name-input {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-bottom: 5px solid currentColor;
+  /* 2026-08-15 00:08 (48th round): 圣威 00:06 报"上下箭头在 a 标签中不居中"
+     - 根因: 47th round 写了 margin: 0 auto, 但 vendor a 标签默认 position: static, ::before 三角没有 text-align 居中 (a 标签里只对 inline 元素 text-align 生效, block ::before 不居中)
+     - 修法: 三角 position: absolute (跟 44th round 给 [data-action] 段加 position: relative 联动), left: 50% + transform: translateX(-50%) (跟 vendor dropdown 三角居中方式一致) */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   margin: 0 auto;
 }
 /* 下三角 (decrementHours / decrementMinutes, vendor 配 d.icons.down = chevron-down) */
@@ -1528,6 +1544,12 @@ body.readonly-mode #settings-dialog .color-name-input {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid currentColor;
+  /* 2026-08-15 00:08 (48th round): 圣威 00:06 报"上下箭头在 a 标签中不居中"
+     - 跟 1 段一样的修法, 三角 position: absolute + left: 50% + top: 50% + transform: translate(-50%, -50%) (在 a 标签 20×20 里水平垂直居中) */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   margin: 0 auto;
 }
 #start-time-picker-host [data-action="incrementHours"]:hover,
