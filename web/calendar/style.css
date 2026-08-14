@@ -1148,16 +1148,16 @@ body.readonly-mode #settings-dialog .color-name-input {
   background: #fff;
   box-shadow: 0 20px 60px rgba(20, 30, 60, .25);
 }
-#end-date-picker-dialog,
+#end-date-picker-dialog::backdrop,
 #start-date-picker-dialog::backdrop,
-#target-date-picker-dialog,
+#target-date-picker-dialog::backdrop,
 #detail-date-picker-dialog::backdrop,
 #batch-date-picker-dialog::backdrop { background: rgba(20, 30, 60, .35); }
-#end-date-picker-dialog,
+#end-date-picker-dialog .dialog-title,
 #start-date-picker-dialog .dialog-title,
-#target-date-picker-dialog,
-#detail-date-picker-dialog ,
-#batch-date-picker-dialog {
+#target-date-picker-dialog .dialog-title,
+#detail-date-picker-dialog .dialog-title,
+#batch-date-picker-dialog .dialog-title {
   margin: 0 0 12px 0;
   padding: 0;
   font-size: 1.05rem;
@@ -1166,11 +1166,11 @@ body.readonly-mode #settings-dialog .color-name-input {
   text-align: center;
   line-height: 1.4;
 }
-#end-date-picker-dialog,
+#end-date-picker-dialog .dialog-actions,
 #start-date-picker-dialog .dialog-actions,
-#target-date-picker-dialog,
-#detail-date-picker-dialog ,
-#batch-date-picker-dialog {
+#target-date-picker-dialog .dialog-actions,
+#detail-date-picker-dialog .dialog-actions,
+#batch-date-picker-dialog .dialog-actions {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -47,7 +47,7 @@
     "aarch64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "aarch64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
     "aarch64::web/calendar/app.js": "90bb793f0d501ff5c40f06ce2b17b266",
-    "aarch64::web/calendar/style.css": "d342f4ac066a59b6b0048b59875095e9",
+    "aarch64::web/calendar/style.css": "32034e720d22f5be249f448201b85b68",
     "aarch64::web/shared/base.css": "8015a276b4122fdcc897ef92b8084c75",
     "aarch64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
     "aarch64::commit_file/commit.sh": "f3ece85990e45c3765bf1b7294e8b1d0",
@@ -76,7 +76,7 @@
     "x86_64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "x86_64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
     "x86_64::web/calendar/app.js": "90bb793f0d501ff5c40f06ce2b17b266",
-    "x86_64::web/calendar/style.css": "d342f4ac066a59b6b0048b59875095e9",
+    "x86_64::web/calendar/style.css": "32034e720d22f5be249f448201b85b68",
     "x86_64::web/shared/base.css": "8015a276b4122fdcc897ef92b8084c75",
     "x86_64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
     "x86_64::commit_file/commit.sh": "f3ece85990e45c3765bf1b7294e8b1d0",
@@ -128,5 +128,5 @@
     "x86_64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "aarch64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5"
   },
-  "last_git_commit": "55ce435cc0ff0ba204f0d66317de158a081e24d5"
+  "last_git_commit": "e53dca526fbc9de82a53d6106e6bf94a080de7db"
 }
