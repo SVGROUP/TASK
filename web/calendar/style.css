@@ -1409,11 +1409,27 @@ body.readonly-mode #settings-dialog .color-name-input {
   line-height: 22px;
   vertical-align: middle;
 }
-/* 上三角 (incrementHours / decrementHours 同行, 都画上三角, vendor 模板里这 2 个按钮分别在小时行上下) */
+/* 2026-08-14 23:18 (45th round): Eonasdan timepicker 4 个上下选择按钮 (修 44th round 错把 increment/decrement 跟 up/down 划等号)
+   - 圣威 23:17 报: 小时两个箭头都是向上的, 分钟两个箭头都是向下的 (跟 44th round 写的方向一致)
+   - 根因: 44th round 看到 vendor JS 里 eo 数据字典 { up:38, 38:'up', down:40, 40:'down' } 是 '键盘事件 keymap', 以为 4 个 data-action 都用同一个方向
+   - 实际 (看 vendor JS 4 个数据字典 fn):
+     - incrementHours: ea.add(1,'h') → +1 小时 → 数字变大 → 上箭头 ✓ 44th round 蒙对
+     - decrementHours: ea.subtract(1,'h') → -1 小时 → 数字变小 → 下箭头 ✗ 44th round 错画成上三角
+     - incrementMinutes: ea.add(d.stepping,'m') → +N 分钟 → 数字变大 → 上箭头 ✗ 44th round 错画成下三角
+     - decrementMinutes: ea.subtract(d.stepping,'m') → -N 分钟 → 数字变小 → 下箭头 ✓ 44th round 蒙对
+   - vendor 自己配 d.icons.up 给 incrementHours/incrementMinutes, d.icons.down 给 decrementHours/decrementMinutes, 跟 45th round 正确方向一致
+   - 修法: 调换 2 段 [data-action]::before 方向选择器
+     - 上三角: incrementHours / incrementMinutes 段 (4 选 2 host × 2 = 4 行, 之前 44th round 是 incrementHours / decrementHours)
+     - 下三角: decrementHours / decrementMinutes 段 (4 选 2 host × 2 = 4 行, 之前 44th round 是 incrementMinutes / decrementMinutes)
+   - 不动:
+     - span.glyphicon { display: none } (圣威 23:17 原话'还能看到 span.glyphicon 这种元素'是 dev tools 看到 DOM 节点, 页面上 display: none 是有效的)
+     - [data-action] 段 width/height/color/cursor/hover (44th round 已对)
+     - dialog 自身段 / .dialog-title / .dialog-actions / .timepicker-hour / .timepicker-minute (42nd + 43rd round 已对) */
+/* 上三角 (incrementHours / incrementMinutes, vendor 配 d.icons.up = chevron-up) */
 #start-time-picker-host [data-action="incrementHours"]::before,
 #end-time-picker-host [data-action="incrementHours"]::before,
-#start-time-picker-host [data-action="decrementHours"]::before,
-#end-time-picker-host [data-action="decrementHours"]::before {
+#start-time-picker-host [data-action="incrementMinutes"]::before,
+#end-time-picker-host [data-action="incrementMinutes"]::before {
   content: "";
   display: block;
   width: 0;
@@ -1423,9 +1439,9 @@ body.readonly-mode #settings-dialog .color-name-input {
   border-bottom: 5px solid currentColor;
   margin: 0 auto;
 }
-/* 下三角 (incrementMinutes / decrementMinutes 同行) */
-#start-time-picker-host [data-action="incrementMinutes"]::before,
-#end-time-picker-host [data-action="incrementMinutes"]::before,
+/* 下三角 (decrementHours / decrementMinutes, vendor 配 d.icons.down = chevron-down) */
+#start-time-picker-host [data-action="decrementHours"]::before,
+#end-time-picker-host [data-action="decrementHours"]::before,
 #start-time-picker-host [data-action="decrementMinutes"]::before,
 #end-time-picker-host [data-action="decrementMinutes"]::before {
   content: "";
