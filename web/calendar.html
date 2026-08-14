@@ -156,6 +156,11 @@
       <button type="button" id="end-date-ok" class="primary">确定</button>
     </menu>
   </dialog>
+  <!-- 2026-08-14: start_date 选择器独立模态框 (跟 end_date 平行, 2 份独立代码)
+       跟 end_date 共用同一份 vendor (Eonasdan bootstrap-datetimepicker),
+       用独立的 #start-date-picker-host 容器, CSS 块全复制 1 份, 互不干扰.
+       start_date 不受 minDate 限制 (end_date 受 start_date minDate 限制);
+       start_date 改完要 trigger 'change' 让 end_date 跟着走 -->
   <dialog id="start-date-picker-dialog">
     <h3 class="dialog-title">选择开始日期</h3>
     <div id="start-date-picker-host"></div>
