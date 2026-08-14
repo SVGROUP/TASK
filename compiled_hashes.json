@@ -43,11 +43,11 @@
     "aarch64::web/index.html": "16afc4b784a222ed746a92fa310f11a9",
     "aarch64::web/gantt.html": "8f063f829fa1978a0e9e6744c7d001d9",
     "aarch64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
-    "aarch64::web/calendar.html": "dae7fa8720ed138f1fddd82b38de68f4",
+    "aarch64::web/calendar.html": "1719f9ce098dacb19780a27324cdffa5",
     "aarch64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "aarch64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
-    "aarch64::web/calendar/app.js": "ec743da304e93c989352e9daed278fc9",
-    "aarch64::web/calendar/style.css": "c0d34afa2b9088f110e1db5e13c91045",
+    "aarch64::web/calendar/app.js": "52761ea6f72304b08012da1b9b7fcbca",
+    "aarch64::web/calendar/style.css": "f15dbb5c1155b0358324a33da8f266ac",
     "aarch64::web/shared/base.css": "8015a276b4122fdcc897ef92b8084c75",
     "aarch64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
     "aarch64::commit_file/commit.sh": "f3ece85990e45c3765bf1b7294e8b1d0",
@@ -72,11 +72,11 @@
     "x86_64::web/index.html": "16afc4b784a222ed746a92fa310f11a9",
     "x86_64::web/gantt.html": "8f063f829fa1978a0e9e6744c7d001d9",
     "x86_64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
-    "x86_64::web/calendar.html": "dae7fa8720ed138f1fddd82b38de68f4",
+    "x86_64::web/calendar.html": "1719f9ce098dacb19780a27324cdffa5",
     "x86_64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "x86_64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
-    "x86_64::web/calendar/app.js": "ec743da304e93c989352e9daed278fc9",
-    "x86_64::web/calendar/style.css": "c0d34afa2b9088f110e1db5e13c91045",
+    "x86_64::web/calendar/app.js": "52761ea6f72304b08012da1b9b7fcbca",
+    "x86_64::web/calendar/style.css": "f15dbb5c1155b0358324a33da8f266ac",
     "x86_64::web/shared/base.css": "8015a276b4122fdcc897ef92b8084c75",
     "x86_64::web/shared/cn_holidays.js": "55d26a8a344c53810ea75f8ca2cd92d2",
     "x86_64::commit_file/commit.sh": "f3ece85990e45c3765bf1b7294e8b1d0",
@@ -128,5 +128,5 @@
     "x86_64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "aarch64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5"
   },
-  "last_git_commit": "81cbb45c8b8e18588c11151279b48d13bd40a711"
+  "last_git_commit": "c4fa83a81e5d0956ac531ccd06ab11aaca217004"
 }

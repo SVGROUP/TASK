@@ -1242,5 +1242,111 @@ body.readonly-mode #settings-dialog .color-name-input {
 #detail-date-picker-host li.picker-switch,
 #batch-date-picker-host li.picker-switch { display: none; }
 
+/* ===== 41st round (2026-08-14 20:30): start_time + end_time 改用 bootstrap-datetimepicker timepicker 接管 =====
+   - 跟 5 套 date picker 模式完全平行, 7 套 host 段 (end/start/target/detail/batch-date-picker-host + start/end-time-picker-host)
+   - 6 套 host 跟 2 套 time 全部 5 套平行写子选择器 (跟 36th/37th/38th round 风格统一)
+   - Eonasdan timepicker 内部类: .timepicker/.collapse/.accordion-toggle/.hours/.minutes/.separator
+   - 跟 5 套 datepicker 不一样: 不会有 .day/.dow/.cw/.old/.new/.today/.active/.disabled
+   - 41st round 只改 task-form (新建任务窗口), task-detail-form 不动 (圣威 20:27 拍板"不要一次都改") */
 
-/* 2026-08-14 16:18: end+start 段合并为 1 段逗号选择器 (Step 1) */
+/* dialog 整体布局 (跟 5 套 date picker 模式完全平行) */
+#start-time-picker-host,
+#end-time-picker-host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0 0 0;
+}
+
+/* 通配 reset (跟 5 套 date picker 模式平行) */
+#start-time-picker-host,
+#start-time-picker-host *,
+#end-time-picker-host,
+#end-time-picker-host * {
+  font-weight: normal !important;
+  font-style: normal !important;
+  text-align: center;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: normal;
+}
+
+/* Eonasdan .timepicker table (timepicker 内部表) */
+#start-time-picker-host .timepicker,
+#end-time-picker-host .timepicker,
+#start-time-picker-host .timepicker table,
+#end-time-picker-host .timepicker table {
+  width: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Eonasdan .accordion-toggle (timepicker 手风琴 toggle, e.g. "选择时间" 按钮) */
+#start-time-picker-host .accordion-toggle,
+#end-time-picker-host .accordion-toggle {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+#start-time-picker-host .accordion-toggle:hover,
+#end-time-picker-host .accordion-toggle:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Eonasdan .collapse 容器 (手风琴展开区域) */
+#start-time-picker-host .collapse,
+#end-time-picker-host .collapse {
+  display: block;
+  padding: 8px 0;
+  width: 100%;
+}
+
+/* timepicker 的小时/分钟/分隔符 (e.g. 09:30 中间的 ":") */
+#start-time-picker-host .hours,
+#end-time-picker-host .hours,
+#start-time-picker-host .minutes,
+#end-time-picker-host .minutes,
+#start-time-picker-host .separator,
+#end-time-picker-host .separator {
+  display: inline-block;
+  min-width: 32px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+  border-radius: 6px;
+  text-align: center;
+}
+#start-time-picker-host .hours:hover,
+#end-time-picker-host .hours:hover,
+#start-time-picker-host .minutes:hover,
+#end-time-picker-host .minutes:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* toolbar li.picker-switch (跟 5 套 date picker 模式平行, 跟 37th round 一样隐藏 today/clear/close 工具栏) */
+#start-time-picker-host .list-unstyled,
+#end-time-picker-host .list-unstyled {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+#start-time-picker-host li,
+#end-time-picker-host li { list-style: none; }
+#start-time-picker-host li.picker-switch,
+#end-time-picker-host li.picker-switch { display: none; }
+
+/* ===== 2026-08-14 16:18: end+start 段合并为 1 段逗号选择器 (Step 1) */

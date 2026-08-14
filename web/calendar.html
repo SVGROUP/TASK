@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>日历待办</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="calendar/style.css?v=42" />
+  <link rel="stylesheet" href="calendar/style.css?v=43" />
   <link rel="stylesheet" href="shared/css/modal.css?v=2">
   <!-- 2026-08-13: 引入 bootstrap-datetimepicker (Eonasdan 原版) 接管 end_date picker -->
   <link rel="stylesheet" href="shared/css/bootstrap-datetimepicker.min.css?v=1">
@@ -57,8 +57,8 @@
       <div class="row">
         <label>开始日期<input type="text" name="start_date" id="start_date" placeholder="YYYY-MM-DD" autocomplete="off" readonly required /></label>
         <label>结束日期<input type="text" name="end_date" id="end_date" placeholder="YYYY-MM-DD" autocomplete="off" readonly /></label>
-        <label class="time-field" data-time>开始时间<input type="time" name="start_time" step="300" /></label>
-        <label class="time-field" data-time>结束时间<input type="time" name="end_time" step="300" /></label>
+        <label class="time-field" data-time>开始时间<input type="text" name="start_time" id="start_time" placeholder="HH:MM" autocomplete="off" readonly data-picker-trigger="start-time" /></label>
+        <label class="time-field" data-time>结束时间<input type="text" name="end_time" id="end_time" placeholder="HH:MM" autocomplete="off" readonly data-picker-trigger="end-time" /></label>
       </div>
       <p class="hint">结束日期留空：不循环=仅当天，周循环=1年，年循环=30年。</p>
       
@@ -211,6 +211,33 @@
       <button type="button" id="batch-date-clear" class="danger">清除</button>
       <button type="button" id="batch-date-cancel" class="ghost">取消</button>
       <button type="button" id="batch-date-ok" class="primary">确定</button>
+    </menu>
+  </dialog>
+
+  <!-- 2026-08-14 20:30 (41st round): start_time 选择器独立模态框 (跟 5 套 date picker 平行, 6 套独立代码)
+       跟 start_date 共用同一份 vendor (Eonasdan bootstrap-datetimepicker), 6 套共享 CSS 段
+       用独立的 #start-time-picker-host 容器, CSS 块全复制 1 份, 互不干扰
+       start_time 只选时间 (HH:MM), 不带日期 (跟原生 type="time" 一致, 不动跨天逻辑)
+       41st round 只改 task-form (新建任务窗口), task-detail-form 不动 (圣威 20:27 拍板"不要一次都改") -->
+  <dialog id="start-time-picker-dialog">
+    <h3 class="dialog-title">选择开始时间</h3>
+    <div id="start-time-picker-host"></div>
+    <menu class="dialog-actions">
+      <button type="button" id="start-time-clear" class="danger">清除</button>
+      <button type="button" id="start-time-cancel" class="ghost">取消</button>
+      <button type="button" id="start-time-ok" class="primary">确定</button>
+    </menu>
+  </dialog>
+  <!-- 2026-08-14 20:30 (41st round): end_time 选择器独立模态框 (跟 5 套 date picker + start_time 平行, 7 套独立代码)
+       跟 start_time 共用同一份 vendor, 用独立的 #end-time-picker-host 容器
+       end_time 只选时间 (HH:MM), 不带日期; 跨天逻辑不变 (line 792-793 _overnight head/tail 不动) -->
+  <dialog id="end-time-picker-dialog">
+    <h3 class="dialog-title">选择结束时间</h3>
+    <div id="end-time-picker-host"></div>
+    <menu class="dialog-actions">
+      <button type="button" id="end-time-clear" class="danger">清除</button>
+      <button type="button" id="end-time-cancel" class="ghost">取消</button>
+      <button type="button" id="end-time-ok" class="primary">确定</button>
     </menu>
   </dialog>
 
@@ -391,6 +418,6 @@
   <script src="shared/js/moment/zh-cn.min.js?v=1"></script>
   <script src="shared/js/bootstrap-datetimepicker.min.js?v=1"></script>
   <script src="shared/js/html2canvas.min.js?v=1"></script>
-  <script src="calendar/app.js?v=50"></script>
+  <script src="calendar/app.js?v=51"></script>
 </body>
 </html>
