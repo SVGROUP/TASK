@@ -429,6 +429,12 @@ body.edit-mode .multi-select-cb {
   content: ''; position: absolute; left: -4px; top: -5px;
   width: 8px; height: 8px; border-radius: 50%; background: #ef4444;
 }
+/* 2026-08-14 16:46: 强制 dialog 无 [open] 时 display: none
+   原因: 圣威隐私模式 + Chrome 扩展 (Bitwarden 等) 注入 CSS 覆盖浏览器原生 dialog 默认 display: none,
+   5 套 picker dialog (end/start/target/detail/batch) 在加载完就出现左上角, 按钮无反应 (被 z-index 遮)
+   修法: 强制 !important 覆盖任何第三方 CSS
+   范围: 影响所有 <dialog> (task/act/detail/settings/scope/login/account/batch-edit + 5 套 picker) */
+dialog:not([open]) { display: none !important; }
 dialog {
   border: none; border-radius: 12px; padding: 0;
   width: min(440px, 92vw);
