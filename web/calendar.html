@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>日历待办</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="calendar/style.css?v=37" />
+  <link rel="stylesheet" href="calendar/style.css?v=38" />
   <link rel="stylesheet" href="shared/css/modal.css?v=2">
   <!-- 2026-08-13: 引入 bootstrap-datetimepicker (Eonasdan 原版) 接管 end_date picker -->
   <link rel="stylesheet" href="shared/css/bootstrap-datetimepicker.min.css?v=1">
@@ -55,7 +55,7 @@
       <label>标题<input name="title" required maxlength="200" autocomplete="off" /></label>
       <label>备注<textarea name="notes" rows="3" maxlength="2000"></textarea></label>
       <div class="row">
-        <label>开始日期<input type="date" name="start_date" required /></label>
+        <label>开始日期<input type="text" name="start_date" id="start_date" placeholder="YYYY-MM-DD" autocomplete="off" readonly required /></label>
         <label>结束日期<input type="text" name="end_date" id="end_date" placeholder="YYYY-MM-DD" autocomplete="off" readonly /></label>
         <label class="time-field" data-time>开始时间<input type="time" name="start_time" step="300" /></label>
         <label class="time-field" data-time>结束时间<input type="time" name="end_time" step="300" /></label>
@@ -154,6 +154,15 @@
       <button type="button" id="end-date-clear" class="danger">清除</button>
       <button type="button" id="end-date-cancel" class="ghost">取消</button>
       <button type="button" id="end-date-ok" class="primary">确定</button>
+    </menu>
+  </dialog>
+  <dialog id="start-date-picker-dialog">
+    <h3 class="dialog-title">选择开始日期</h3>
+    <div id="start-date-picker-host"></div>
+    <menu class="dialog-actions">
+      <button type="button" id="start-date-clear" class="ghost">清除</button>
+      <button type="button" id="start-date-cancel" class="ghost">取消</button>
+      <button type="button" id="start-date-ok" class="primary">确定</button>
     </menu>
   </dialog>
 
@@ -334,6 +343,6 @@
   <script src="shared/js/moment/zh-cn.min.js?v=1"></script>
   <script src="shared/js/bootstrap-datetimepicker.min.js?v=1"></script>
   <script src="shared/js/html2canvas.min.js?v=1"></script>
-  <script src="calendar/app.js?v=46"></script>
+  <script src="calendar/app.js?v=47"></script>
 </body>
 </html>

@@ -907,7 +907,7 @@ body.readonly-mode #settings-dialog .color-name-input {
 
 /* 2026-08-13: end_date datetimepicker 改用 inline 模式 + 原生 <dialog> 包裹
    - 不用 Eonasdan dropdown panel, 不用 widgetParent, 不用 position: fixed
-   - inline 模式让 widget 直接渲染在 #end-date-picker-host 里
+   - inline 模式让 widget 直接渲染在 #start-date-picker-host 里
    - 原生 <dialog>.showModal() 浏览器保证盖在所有 stacking context 之上
    - 不需要 z-index hack, 原生 dialog 自带 backdrop + 最高层 + focus trap
    - 真正原因: <dialog> 创建新 stacking context, Eonasdan 算 dropdown 位置
@@ -916,12 +916,12 @@ body.readonly-mode #settings-dialog .color-name-input {
 
 /* 2026-08-13 21:54: Eonasdan inline 面板里的 th 加粗 (浏览器 user agent 默认
    font-weight: bold) 导致周/月标题显示奇怪。圣威原则: 不用裸标签, 用类。
-   整改: 仅作用于 #end-date-picker-host 容器, 用通配 * 一次性重置
+   整改: 仅作用于 #start-date-picker-host 容器, 用通配 * 一次性重置
    所有 user agent 默认样式 (th 加粗 / table 边框 / input 背景 / 链接色等),
    然后只针对 vendor 提供的类 (picker-switch / day / cw / today / active
    / disabled / old / new / prev / next / hour / minute / second) 写式样。
    绝不在本项目内添加裸 th{}/table{}/td{}/tr{}/button{} 规则 */
-#end-date-picker-host {
+#start-date-picker-host {
   /* dialog 整体布局: 居中, 最大高度护住手机 */
   display: flex;
   flex-direction: column;
@@ -929,7 +929,7 @@ body.readonly-mode #settings-dialog .color-name-input {
   gap: 12px;
   padding: 4px 0 0 0;
 }
-#end-date-picker-host * {
+#start-date-picker-host * {
   /* 重置所有 user agent 默认样式 (th 加粗 / table border-collapse / link 色
      / button 圆角 / input 背景) */
   font-weight: normal !important;
@@ -949,46 +949,46 @@ body.readonly-mode #settings-dialog .color-name-input {
      通配 reset 一次性把 height 释放, 不为个例开新类. */
   height: auto;
 }
-#end-date-picker-host table {
+#start-date-picker-host table {
   border-collapse: collapse !important;
   border-spacing: 0;
   width: 100%;
   table-layout: fixed;
 }
-#end-date-picker-host .picker-switch {
+#start-date-picker-host .picker-switch {
   font-size: 16px;
   font-weight: 600 !important;
   color: var(--text);
   padding: 6px 0;
   cursor: pointer;
 }
-#end-date-picker-host .prev,
-#end-date-picker-host .next {
+#start-date-picker-host .prev,
+#start-date-picker-host .next {
   width: 32px;
   height: 32px;
   cursor: pointer;
   border-radius: 6px;
   color: var(--muted);
 }
-#end-date-picker-host .prev:hover,
-#end-date-picker-host .next:hover {
+#start-date-picker-host .prev:hover,
+#start-date-picker-host .next:hover {
   background: var(--accent-soft);
   color: var(--accent);
 }
-#end-date-picker-host .dow {
+#start-date-picker-host .dow {
   color: var(--muted);
   font-size: 12px;
   height: 28px;
   line-height: 28px;
   font-weight: 500 !important;
 }
-#end-date-picker-host .cw {
+#start-date-picker-host .cw {
   color: var(--muted);
   font-size: 11px;
   height: 22px;
   line-height: 22px;
 }
-#end-date-picker-host .day {
+#start-date-picker-host .day {
   width: 36px;
   height: 36px;
   line-height: 36px;
@@ -996,24 +996,24 @@ body.readonly-mode #settings-dialog .color-name-input {
   cursor: pointer;
   font-size: 13px;
 }
-#end-date-picker-host .day:hover {
+#start-date-picker-host .day:hover {
   background: var(--accent-soft);
   color: var(--accent);
 }
-#end-date-picker-host .day.old,
-#end-date-picker-host .day.new {
+#start-date-picker-host .day.old,
+#start-date-picker-host .day.new {
   color: #cbd5e0;
 }
-#end-date-picker-host .day.old:hover,
-#end-date-picker-host .day.new:hover {
+#start-date-picker-host .day.old:hover,
+#start-date-picker-host .day.new:hover {
   color: var(--accent);
 }
-#end-date-picker-host .day.today {
+#start-date-picker-host .day.today {
   position: relative;
   color: var(--accent);
   font-weight: 600 !important;
 }
-#end-date-picker-host .day.today::after {
+#start-date-picker-host .day.today::after {
   content: '';
   position: absolute;
   bottom: 4px;
@@ -1024,14 +1024,14 @@ body.readonly-mode #settings-dialog .color-name-input {
   border-radius: 50%;
   background: var(--accent);
 }
-#end-date-picker-host .day.active,
-#end-date-picker-host .day.active:hover {
+#start-date-picker-host .day.active,
+#start-date-picker-host .day.active:hover {
   background: var(--accent);
   color: #fff;
   font-weight: 600 !important;
 }
-#end-date-picker-host .day.disabled,
-#end-date-picker-host .day.disabled:hover {
+#start-date-picker-host .day.disabled,
+#start-date-picker-host .day.disabled:hover {
   color: #cbd5e0;
   cursor: not-allowed;
   background: transparent;
@@ -1070,7 +1070,7 @@ body.readonly-mode #settings-dialog .color-name-input {
   border-top: 1px solid var(--border);
   list-style: none;
 }
-/* Eonasdan picker 内部会在 #end-date-picker-host 生成:
+/* Eonasdan picker 内部会在 #start-date-picker-host 生成:
      ul.list-unstyled
        li.picker-switch  (工具栏, 装 today/clear/close 按钮)
        li.collapse.in    (日期面板, 装 day/month/year/decade view)
@@ -1080,10 +1080,10 @@ body.readonly-mode #settings-dialog .color-name-input {
      - today 按钮: 任务结束日期默认不能是今天, 按钮意义不大
      - clear 按钮: 我们 dialog 里已经独立做了"清除"按钮, 重复
    所以方案 A: 工具栏 li 整体隐藏。 */
-#end-date-picker-host .list-unstyled {
+#start-date-picker-host .list-unstyled {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
-#end-date-picker-host li { list-style: none; }
-#end-date-picker-host li.picker-switch { display: none; }
+#start-date-picker-host li { list-style: none; }
+#start-date-picker-host li.picker-switch { display: none; }
