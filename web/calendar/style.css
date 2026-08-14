@@ -1171,6 +1171,10 @@ body.readonly-mode #settings-dialog .color-name-input {
 #start-time-picker-dialog,
 #end-time-picker-dialog {
   width: min(360px, 92vw);
+  /* 2026-08-14 23:48 (47th round): 圣威 23:46 报"现在修改后, 总宽没变, 中间的时间不居中了"
+     - 根因: 5 套 date picker 内容多 (7 列表) 需要 360px, 2 套 time picker 内容少 (4 列) 只需要 ~90px, 5 套共享 360px 让 2 套 time picker 留白 ~270px
+     - 修法: 47th round 把 2 套 time picker 单独拆出来, width: min(240px, 92vw) (从 360px 缩到 240px, 跟 host max-width 200px 配套)
+     - 47th round 不破坏 5 套 date picker 共享段, 5 套 date picker 仍然 360px */
   padding: 20px 22px;
   border: 0;
   border-radius: 14px;
@@ -1350,7 +1354,44 @@ body.readonly-mode #settings-dialog .color-name-input {
 #end-time-picker-host .collapse {
   display: block;
   padding: 8px 0;
-  width: 100%;
+  /* 2026-08-14 23:48 (47th round): 圣威 23:46 报"中间的时间不居中"
+     - 根因: 41st round 写了 .collapse { width: 100% }, 跟 41st round 通配 reset { width: auto } 冲突, 但 vendor 默认 .collapse 是 inline 元素 + 撑满父容器, 实际 .collapse 撑满 host 360px (47th round 改 dialog 240px 之前)
+     - 修法: width: 100% → width: auto (跟随内容, 跟 host max-width: 200px 配套) */
+  width: auto;
+}
+
+/* 2026-08-14 23:48 (47th round): Eonasdan .timepicker / .timepicker-picker 段 (限制 vendor 默认 100% 撑满)
+   - 圣威 23:46 报"中间的时间不居中"
+   - 根因 1: vendor 默认 .timepicker { display: flex } + vendor 默认 .timepicker-picker { width: 100% } (vendor CSS line 920+), 41st round 都没写过, vendor 100% 撑满 host (47th round 改 240px 之前)
+   - 根因 2: vendor 默认 table.table-condensed { width: 100% } (vendor CSS line 950+), 41st round 也没写过, table 撑满 .timepicker-picker
+   - 根因 3: 41st round 改了 host dialog 段 width: min(360px, 92vw) (43rd round 5 套共享), 实际 2 套 time picker 不需要 360px
+   - 修法:
+     - .timepicker 段: width: auto (跟随 host max-width 200px)
+     - .timepicker-picker 段: width: auto (跟随 4 td 总宽 ~90px, 跟 .timepicker 同宽)
+     - .timepicker-picker table 段: width: auto !important (覆盖 vendor 100%, 跟随 4 td 总宽 ~90px)
+     - 3 段都加 margin: 0 auto (水平居中, 跟 host 居中保持一致) */
+#start-time-picker-host .timepicker,
+#end-time-picker-host .timepicker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+#start-time-picker-host .timepicker-picker,
+#end-time-picker-host .timepicker-picker {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+#start-time-picker-host .timepicker-picker table,
+#end-time-picker-host .timepicker-picker table {
+  width: auto !important;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* timepicker 的小时/分钟/分隔符 (e.g. 09:30 中间的 ":")
