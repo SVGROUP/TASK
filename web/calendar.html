@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>日历待办</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="calendar/style.css?v=38" />
+  <link rel="stylesheet" href="calendar/style.css?v=39" />
   <link rel="stylesheet" href="shared/css/modal.css?v=2">
   <!-- 2026-08-13: 引入 bootstrap-datetimepicker (Eonasdan 原版) 接管 end_date picker -->
   <link rel="stylesheet" href="shared/css/bootstrap-datetimepicker.min.css?v=1">
@@ -170,6 +170,44 @@
       <button type="button" id="start-date-ok" class="primary">确定</button>
     </menu>
   </dialog>
+  <!-- 2026-08-14 16:08: target_date 选择器独立模态框 (Step 2, 跟 start_date 平行, 共用 CSS 段, 3 套独立代码)
+       target_date 必填 (复制/移动目标), clear 按钮=ghost, 跟 start_date 一致
+       联动: actForm.elements.target_date.value 跟 taskForm 互不影响 -->
+  <dialog id="target-date-picker-dialog">
+    <h3 class="dialog-title">选择目标日期</h3>
+    <div id="target-date-picker-host"></div>
+    <menu class="dialog-actions">
+      <button type="button" id="target-date-clear" class="ghost">清除</button>
+      <button type="button" id="target-date-cancel" class="ghost">取消</button>
+      <button type="button" id="target-date-ok" class="primary">确定</button>
+    </menu>
+  </dialog>
+  <!-- 2026-08-14 16:18: detail_date 选择器独立模态框 (Step 3, 跟 start_date/target_date 平行, 共用 CSS 段, 4 套独立代码)
+       detail_date 必填 (任务详情编辑), clear 按钮=ghost, 跟 start_date 一致
+       联动: detailForm.elements.date.value, 跟 scope-dialog (this/future/all) 联动不变
+       readonly 时 (未登录) input 会被 disabled, 不触发 picker -->
+  <dialog id="detail-date-picker-dialog">
+    <h3 class="dialog-title">选择日期</h3>
+    <div id="detail-date-picker-host"></div>
+    <menu class="dialog-actions">
+      <button type="button" id="detail-date-clear" class="ghost">清除</button>
+      <button type="button" id="detail-date-cancel" class="ghost">取消</button>
+      <button type="button" id="detail-date-ok" class="primary">确定</button>
+    </menu>
+  </dialog>
+  <!-- 2026-08-14 16:18: batch_date 选择器独立模态框 (Step 4, 跟 start/target/detail 平行, 共用 CSS 段, 5 套独立代码)
+       batch_date 不必填 (批量编辑"不修改"语义), 跟其他 3 套不同: clear 按钮=danger (允许清空)
+       联动: openBatchEditDialog 动态 dialog 里 #batch-date, 跟其他 4 个 select (done/priority/tag/color) 平行
+       跟 batch-update 提交: date 值进 updates.date, 跟其他 4 个字段对齐 -->
+  <dialog id="batch-date-picker-dialog">
+    <h3 class="dialog-title">选择日期</h3>
+    <div id="batch-date-picker-host"></div>
+    <menu class="dialog-actions">
+      <button type="button" id="batch-date-clear" class="danger">清除</button>
+      <button type="button" id="batch-date-cancel" class="ghost">取消</button>
+      <button type="button" id="batch-date-ok" class="primary">确定</button>
+    </menu>
+  </dialog>
 
   <!-- 任务操作弹窗 -->
   <dialog id="action-dialog">
@@ -177,7 +215,7 @@
       <h3 id="action-title">任务</h3>
       <p id="action-meta" class="meta"></p>
       <div class="row">
-        <label>目标日期<input type="date" name="target_date" required /></label>
+        <label>目标日期<input type="text" name="target_date" id="target_date" readonly required placeholder="点击选择日期" data-picker-trigger="target" /></label>
       </div>
       <label class="checkbox" title="复制时加入原任务所在批次；独立任务会和复制件组成新批次">
         <input type="checkbox" name="join_group" /> 复制时加入组
@@ -244,7 +282,7 @@
       <label>标题<input name="title" required maxlength="200" autocomplete="off" /></label>
       <label>备注<textarea name="notes" rows="3" maxlength="2000"></textarea></label>
       <div class="row">
-        <label>日期<input type="date" name="date" required /></label>
+        <label>日期<input type="text" name="date" id="date" readonly required placeholder="点击选择日期" data-picker-trigger="detail" /></label>
         <label>开始时间<input type="time" name="start_time" step="300" /></label>
         <label>结束时间<input type="time" name="end_time" step="300" /></label>
       </div>
@@ -348,6 +386,6 @@
   <script src="shared/js/moment/zh-cn.min.js?v=1"></script>
   <script src="shared/js/bootstrap-datetimepicker.min.js?v=1"></script>
   <script src="shared/js/html2canvas.min.js?v=1"></script>
-  <script src="calendar/app.js?v=47"></script>
+  <script src="calendar/app.js?v=48"></script>
 </body>
 </html>
