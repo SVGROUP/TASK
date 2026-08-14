@@ -1180,7 +1180,12 @@ body.readonly-mode #settings-dialog .color-name-input {
 #start-date-picker-dialog .dialog-title,
 #target-date-picker-dialog .dialog-title,
 #detail-date-picker-dialog .dialog-title,
-#batch-date-picker-dialog .dialog-title {
+#batch-date-picker-dialog .dialog-title,
+/* 2026-08-14 20:36 (42nd round): 补 41st round 漏掉的 2 套 time picker dialog
+   跟 5 套 date picker 共享同一段 .dialog-title 居中样式
+   圣威 20:34 报: H3 标签没像日期选择那样居中 (原: 41st round 共享段选择器只列 5 套, 2 套 time 没列, 等于没套用) */
+#start-time-picker-dialog .dialog-title,
+#end-time-picker-dialog .dialog-title {
   margin: 0 0 12px 0;
   padding: 0;
   font-size: 1.05rem;
@@ -1193,7 +1198,12 @@ body.readonly-mode #settings-dialog .color-name-input {
 #start-date-picker-dialog .dialog-actions,
 #target-date-picker-dialog .dialog-actions,
 #detail-date-picker-dialog .dialog-actions,
-#batch-date-picker-dialog .dialog-actions {
+#batch-date-picker-dialog .dialog-actions,
+/* 2026-08-14 20:36 (42nd round): 补 41st round 漏掉的 2 套 time picker dialog
+   跟 5 套 date picker 共享同一段 .dialog-actions 居中样式 (display:flex center)
+   圣威 20:34 报: 3 个按钮也没居中 (原: 41st round 共享段选择器只列 5 套, 2 套 time 没列, 等于按钮靠左) */
+#start-time-picker-dialog .dialog-actions,
+#end-time-picker-dialog .dialog-actions {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1333,6 +1343,31 @@ body.readonly-mode #settings-dialog .color-name-input {
 #end-time-picker-host .hours:hover,
 #start-time-picker-host .minutes:hover,
 #end-time-picker-host .minutes:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* 2026-08-14 20:36 (42nd round): Eonasdan timepicker 上下选择箭头 (.up / .down)
+   - vendor 用 <th> 渲染 .up / .down 单元格, 内部用 glyphicon glyphicon-chevron-up / -down 三角图标
+   - 41st round 漏写这 2 段, 三角跟 dialog 背景默认同色, 圣威 20:34 报"看不到时和分的上下选择按钮"
+   - 跟 .hours / .minutes 平行, 2 套 host × 2 段 (base + hover) = 4 行选择器 */
+#start-time-picker-host .up,
+#end-time-picker-host .up,
+#start-time-picker-host .down,
+#end-time-picker-host .down {
+  display: table-cell;
+  vertical-align: middle;
+  height: 24px;
+  padding: 0 8px;
+  font-size: 12px;
+  color: var(--text);
+  cursor: pointer;
+  border-radius: 4px;
+}
+#start-time-picker-host .up:hover,
+#end-time-picker-host .up:hover,
+#start-time-picker-host .down:hover,
+#end-time-picker-host .down:hover {
   background: var(--accent-soft);
   color: var(--accent);
 }
