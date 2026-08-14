@@ -1280,15 +1280,13 @@ body.readonly-mode #settings-dialog .color-name-input {
   align-items: center;
   gap: 12px;
   padding: 4px 0 0 0;
-  /* 2026-08-15 00:08 (48th round): 圣威 00:06 报"div#start-time-picker-host 不居中"
-     - 根因: 47th round 写了 host { display: flex; align-items: center; } 但 host 自己没写 margin: 0 auto, host 是 dialog 子元素, 默认 display: block 撑满父 240px, 即使 max-width: 200px, host 还是会从左边开始
-     - 修法: 加 margin: 0 auto (在 dialog 240px 容器里水平居中, 跟 4 td 总宽 90px 居中) */
-  margin: 0 auto;
-  /* 2026-08-14 23:38 (46th round): 圣威 23:35 报"整个 start-time-picker-host 横向占用太多, 留白多"
-     - 根因: 41st round 没设 host width, 41st round 通配 reset 也没设, host 被 dialog 的 360px 撑成全宽
-     - 修法: width: auto 跟随内容 + max-width: 200px (跟 dialog 240px 配套, 不溢出) */
-  width: auto;
-  max-width: 200px;
+  /* 2026-08-15 00:22 (48th round): 圣威 00:21 关键提示"父元素 max-width 调 2000 还是 200, h3 和 menu 都左右居中, 为什么 host 不行? 能参考别的 2 个元素的居中方式么?"
+     - 圣威关键发现: h3.dialog-title 跟 menu.dialog-actions 都没设 max-width, 默认 width: auto = 父宽 (240px dialog), 靠 align-items: center / justify-content: center 让内容居中
+     - 5 套 date picker host 也没设 max-width (line 1024+ 43rd round 写), 撑满父 360px, 内部子元素靠 align-items: center 居中
+     - 2 套 time picker host 47th round 写了 width: auto + max-width: 200px (错), 48th round 加了 margin: 0 auto (也错, flex 容器 auto margin 不稳定)
+     - 修法: 删 width: auto + max-width: 200px + margin: 0 auto, 让 host 撑满 dialog 240px (跟 5 套 date picker host 模式完全一样)
+     - 内部 4 td 加起来 ~90px 在 align-items: center flex 居中, 整体就在 240px dialog 中间 ✅
+     - 跟 5 套 date picker host 段 (line 1024+ 43rd round 写) 模式完全对齐 */
 }
 
 /* 通配 reset (跟 5 套 date picker 模式平行) */
