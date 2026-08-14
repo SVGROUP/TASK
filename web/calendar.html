@@ -165,7 +165,10 @@
     <h3 class="dialog-title">选择开始日期</h3>
     <div id="start-date-picker-host"></div>
     <menu class="dialog-actions">
-      <button type="button" id="start-date-clear" class="ghost">清除</button>
+      <!-- 2026-08-14 17:43 (39th round): 圣威报 start-date-clear 应该是 danger, 跟 end-date-clear 一致
+           (跟其他 btn-danger 模式一致: 任务主页删除/标签删除/色块删除/飞书密钥清除 都用 danger)
+           5 套 dialog 清除按钮统一 danger: end/start/target/detail/batch 全用 danger -->
+      <button type="button" id="start-date-clear" class="danger">清除</button>
       <button type="button" id="start-date-cancel" class="ghost">取消</button>
       <button type="button" id="start-date-ok" class="primary">确定</button>
     </menu>
@@ -177,7 +180,8 @@
     <h3 class="dialog-title">选择目标日期</h3>
     <div id="target-date-picker-host"></div>
     <menu class="dialog-actions">
-      <button type="button" id="target-date-clear" class="ghost">清除</button>
+      <!-- 2026-08-14 17:43 (39th round): target-date-clear 跟其他 4 套统一 danger -->
+      <button type="button" id="target-date-clear" class="danger">清除</button>
       <button type="button" id="target-date-cancel" class="ghost">取消</button>
       <button type="button" id="target-date-ok" class="primary">确定</button>
     </menu>
@@ -190,7 +194,8 @@
     <h3 class="dialog-title">选择日期</h3>
     <div id="detail-date-picker-host"></div>
     <menu class="dialog-actions">
-      <button type="button" id="detail-date-clear" class="ghost">清除</button>
+      <!-- 2026-08-14 17:43 (39th round): detail-date-clear 跟其他 4 套统一 danger -->
+      <button type="button" id="detail-date-clear" class="danger">清除</button>
       <button type="button" id="detail-date-cancel" class="ghost">取消</button>
       <button type="button" id="detail-date-ok" class="primary">确定</button>
     </menu>
@@ -386,6 +391,6 @@
   <script src="shared/js/moment/zh-cn.min.js?v=1"></script>
   <script src="shared/js/bootstrap-datetimepicker.min.js?v=1"></script>
   <script src="shared/js/html2canvas.min.js?v=1"></script>
-  <script src="calendar/app.js?v=48"></script>
+  <script src="calendar/app.js?v=49"></script>
 </body>
 </html>
