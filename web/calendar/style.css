@@ -927,6 +927,23 @@ body.readonly-mode #settings-dialog .color-name-input {
    然后只针对 vendor 提供的类 (picker-switch / day / cw / today / active
    / disabled / old / new / prev / next / hour / minute / second) 写式样。
    绝不在本项目内添加裸 th{}/table{}/td{}/tr{}/button{} 规则 */
+/* 2026-08-14 17:38 (38th round): 5 套 host 段 line 920-1056 10 段 selector 错位修复
+   - 圣威 17:36 报: 5 套 host 段 (line 920-1230) 所有并行选择器, 行内 selector 形状不一致
+     例: #end-date-picker-host, #start-date-picker-host table, #target-date-picker-host, #detail-date-picker-host, #batch-date-picker-host { ... }
+         start 是 table 子选择器, 其他 4 套是 host 自身
+   - 36th + 37th round 改了 8 段 (line 1057-1217, .day.X/.list-unstyled/li/li.picker-switch), 跟 38th round 这 10 段是独立两组
+   - 修法 B (跟 36th/37th round 风格统一): 5 套 host 平行写子选择器, 不要 host 自身
+   - 改完: 5 套 host 自身不再被染
+     - 通配 reset 段: 5 套 host 自身不被 font-weight / color / background / border / margin / padding / box-sizing 误染
+     - table 段: 5 套 host 自身不被 border-collapse / border-spacing / table-layout 误染
+     - .picker-switch 段: 5 套 host 自身不被 font-size / font-weight / color / padding 误染
+     - .prev/.next 段: 5 套 host 自身不被 width / height / border-radius / color 误染
+     - .dow 段: 5 套 host 自身不被 color / font-size / height 误染
+     - .cw 段: 5 套 host 自身不被 color / font-size / height 误染
+     - .day 段: 5 套 host 自身不被 width / height / line-height / border-radius / cursor / font-size 误染
+     - .day:hover 段: 5 套 host 自身不被 background / color 误染
+   - 但有个特殊: 942 段是 5 套 host 自身 + start-host * 一次性重置, start 命中 host+所有后代, 其他 4 套只命中 host
+     修法: 改成 5 套 host 自身 + 5 套 host *, 即 5 套 host 自身 + 5 套 * 后代通配 (跟 start 一致, 1 套变 5 套) */
 #end-date-picker-host,
 #start-date-picker-host,
 #target-date-picker-host,
@@ -941,9 +958,9 @@ body.readonly-mode #settings-dialog .color-name-input {
 }
 #end-date-picker-host,
 #start-date-picker-host *,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host *,
+#detail-date-picker-host *,
+#batch-date-picker-host * {
   /* 重置所有 user agent 默认样式 (th 加粗 / table border-collapse / link 色
      / button 圆角 / input 背景) */
   font-weight: normal !important;
@@ -963,82 +980,82 @@ body.readonly-mode #settings-dialog .color-name-input {
      通配 reset 一次性把 height 释放, 不为个例开新类. */
   height: auto;
 }
-#end-date-picker-host,
+#end-date-picker-host table,
 #start-date-picker-host table,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host table,
+#detail-date-picker-host table,
+#batch-date-picker-host table {
   border-collapse: collapse !important;
   border-spacing: 0;
   width: 100%;
   table-layout: fixed;
 }
-#end-date-picker-host,
+#end-date-picker-host .picker-switch,
 #start-date-picker-host .picker-switch,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host .picker-switch,
+#detail-date-picker-host .picker-switch,
+#batch-date-picker-host .picker-switch {
   font-size: 16px;
   font-weight: 600 !important;
   color: var(--text);
   padding: 6px 0;
   cursor: pointer;
 }
-#end-date-picker-host,
+#end-date-picker-host .prev,
 #start-date-picker-host .prev,
 #target-date-picker-host .prev,
 #detail-date-picker-host .prev,
 #batch-date-picker-host .prev,
-#end-date-picker-host,
+#end-date-picker-host .next,
 #start-date-picker-host .next,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host .next,
+#detail-date-picker-host .next,
+#batch-date-picker-host .next {
   width: 32px;
   height: 32px;
   cursor: pointer;
   border-radius: 6px;
   color: var(--muted);
 }
-#end-date-picker-host,
+#end-date-picker-host .prev:hover,
 #start-date-picker-host .prev:hover,
 #target-date-picker-host .prev:hover,
 #detail-date-picker-host .prev:hover,
 #batch-date-picker-host .prev:hover,
-#end-date-picker-host,
+#end-date-picker-host .next:hover,
 #start-date-picker-host .next:hover,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host .next:hover,
+#detail-date-picker-host .next:hover,
+#batch-date-picker-host .next:hover {
   background: var(--accent-soft);
   color: var(--accent);
 }
-#end-date-picker-host,
+#end-date-picker-host .dow,
 #start-date-picker-host .dow,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host .dow,
+#detail-date-picker-host .dow,
+#batch-date-picker-host .dow {
   color: var(--muted);
   font-size: 12px;
   height: 28px;
   line-height: 28px;
   font-weight: 500 !important;
 }
-#end-date-picker-host,
+#end-date-picker-host .cw,
 #start-date-picker-host .cw,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host .cw,
+#detail-date-picker-host .cw,
+#batch-date-picker-host .cw {
   color: var(--muted);
   font-size: 11px;
   height: 22px;
   line-height: 22px;
 }
-#end-date-picker-host,
+#end-date-picker-host .day,
 #start-date-picker-host .day,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host .day,
+#detail-date-picker-host .day,
+#batch-date-picker-host .day {
   width: 36px;
   height: 36px;
   line-height: 36px;
@@ -1046,11 +1063,11 @@ body.readonly-mode #settings-dialog .color-name-input {
   cursor: pointer;
   font-size: 13px;
 }
-#end-date-picker-host,
+#end-date-picker-host .day:hover,
 #start-date-picker-host .day:hover,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host .day:hover,
+#detail-date-picker-host .day:hover,
+#batch-date-picker-host .day:hover {
   background: var(--accent-soft);
   color: var(--accent);
 }
