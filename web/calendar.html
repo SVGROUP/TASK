@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>日历待办</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="calendar/style.css?v=52" />
+  <link rel="stylesheet" href="calendar/style.css?v=53" />
   <link rel="stylesheet" href="shared/css/modal.css?v=2">
   <!-- 2026-08-13: 引入 bootstrap-datetimepicker (Eonasdan 原版) 接管 end_date picker -->
   <link rel="stylesheet" href="shared/css/bootstrap-datetimepicker.min.css?v=1">
@@ -315,8 +315,12 @@
       <label>备注<textarea name="notes" rows="3" maxlength="2000"></textarea></label>
       <div class="row">
         <label>日期<input type="text" name="date" id="date" readonly required placeholder="点击选择日期" data-picker-trigger="detail" /></label>
-        <label>开始时间<input type="time" name="start_time" step="300" /></label>
-        <label>结束时间<input type="time" name="end_time" step="300" /></label>
+        <!-- 2026-08-15 00:36 (50th round): 圣威 00:35 报"看一下所有的时间选择器, 都用这套替换掉"
+             之前: <input type="time" name="start_time" step="300"> + <input type="time" name="end_time" step="300"> (HTML5 原生)
+             之后: <input type="text" readonly data-picker-trigger="detail-start-time / detail-end-time"> (跟 task-form 2 套 time picker 字段 type=text readonly 平行, 跟 41st round 圣威拍板"不要一次都改"反转, 圣威 00:35 拍板"都用这套替换掉")
+             跟 task-form start_time (line 60) / end_time (line 61) 字段格式完全一致, 共享 CSS + 共享 vendor datetimepicker -->
+        <label class="time-field" data-time>开始时间<input type="text" name="start_time" id="detail_start_time" placeholder="HH:MM" autocomplete="off" readonly data-picker-trigger="detail-start-time" /></label>
+        <label class="time-field" data-time>结束时间<input type="text" name="end_time" id="detail_end_time" placeholder="HH:MM" autocomplete="off" readonly data-picker-trigger="detail-end-time" /></label>
       </div>
       <div class="row">
         <label>标签
@@ -361,6 +365,29 @@
         <button value="save" class="primary">保存</button>
       </menu>
     </form>
+  </dialog>
+
+  <!-- 2026-08-15 00:36 (50th round): task-detail-form 2 套 time picker dialog (跟 task-form 2 套 line 217-238 平行)
+       圣威 00:35 拍板"看一下所有的时间选择器, 都用这套替换掉", 替换掉 task-detail-form 2 个 type="time" 字段
+       跟 task-form start_time (line 60) / end_time (line 61) 字段共享同一份 vendor + 同一份 CSS 段 (用 #detail-start-time-picker-host / #detail-end-time-picker-host 命名空间, 跟 5 套 date picker #detail-date-picker-host 命名空间一致)
+       跨天逻辑 (跟 41st round line 792-793 _overnight head/tail) 保留不动, 跟 task-form 2 套 time picker 平行一致 -->
+  <dialog id="detail-start-time-picker-dialog">
+    <h3 class="dialog-title">选择开始时间</h3>
+    <div id="detail-start-time-picker-host"></div>
+    <menu class="dialog-actions">
+      <button type="button" id="detail-start-time-clear" class="danger">清除</button>
+      <button type="button" id="detail-start-time-cancel" class="ghost">取消</button>
+      <button type="button" id="detail-start-time-ok" class="primary">确定</button>
+    </menu>
+  </dialog>
+  <dialog id="detail-end-time-picker-dialog">
+    <h3 class="dialog-title">选择结束时间</h3>
+    <div id="detail-end-time-picker-host"></div>
+    <menu class="dialog-actions">
+      <button type="button" id="detail-end-time-clear" class="danger">清除</button>
+      <button type="button" id="detail-end-time-cancel" class="ghost">取消</button>
+      <button type="button" id="detail-end-time-ok" class="primary">确定</button>
+    </menu>
   </dialog>
 
   <!-- 登录弹窗 -->
@@ -418,6 +445,6 @@
   <script src="shared/js/moment/zh-cn.min.js?v=1"></script>
   <script src="shared/js/bootstrap-datetimepicker.min.js?v=1"></script>
   <script src="shared/js/html2canvas.min.js?v=1"></script>
-  <script src="calendar/app.js?v=52"></script>
+  <script src="calendar/app.js?v=53"></script>
 </body>
 </html>

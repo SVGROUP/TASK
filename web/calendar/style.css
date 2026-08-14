@@ -1428,22 +1428,31 @@ body.readonly-mode #settings-dialog .color-name-input {
   background: var(--accent-soft);
   color: var(--accent);
 }
-/* 分隔符 ":" 跟 .timepicker-hour 平行 (e.g. 09:30 中间那个 ":") */
+/* 分隔符 ":" 跟 .timepicker-hour 平行 (e.g. 09:30 中间那个 ":")
+   - 2026-08-14 22:42 (43rd round): 圣威 22:39 报"还是看不到时和分的上下选择按钮", 根因是
+     Eonasdan vendor 实际用 .timepicker-hour / .timepicker-minute (不是 41st round 写的 .hours / .minutes, 是 v3 时代遗留类, vendor 已用 .timepicker-hour 取代)
+     41st round 写 .hours / .minutes 根本命中不到元素, vendor 默认 .timepicker-hour { width:54px; font-weight:bold; font-size:1.2em; margin:0 } 但 41st round 41 通配 reset 把 vendor 默认也覆盖成 font-size:14px, 数字被压成 1.2em -> 14px
+   - 改: 删 41st round .hours / .minutes 段, 换 .timepicker-hour / .timepicker-minute 段, 跟 vendor 默认对齐 (font-size:1.2em font-weight:bold)
+   - 2026-08-15 00:36 (50th round): 圣威 00:35 报"td class=separator 这个冒号没有在 td 内上下左右居中, 看一下所有的时间选择器, 都用这套替换掉"
+     - 根因: 49th round [data-action] 段从 20×20 改成 32×32, 但 .separator 段还是 46th round 写的 min-width: 12px / max-width: 14px / padding: 0 2px, 49th round 漏加 display: flex 兜底
+             实际冒号在 12-14px td 内靠左显示, 不居中
+     - 修法: 删 min-width: 12px / max-width: 14px / padding: 0 2px, 改 width: 32px / height: 32px / display: flex / align-items: center / justify-content: center (跟 .timepicker-hour/.minute 段 32×32 容器对齐, 6 个 td 全部 32×32 对齐) */
 #start-time-picker-host .separator,
-#end-time-picker-host .separator {
-  display: inline-block;
-  /* 2026-08-14 23:38 (46th round): 圣威 23:35 报"每个 td 占用的都太大了"
-     - 根因: 43rd round 写了 .separator min-width: 16px, 但 vendor 默认 [data-action] { padding: 6px 0 } 跟 td 没有宽度限制, separator 跟 4 列 td 一起撑大
-     - 修法: 缩 min-width: 16px → 12px, 加 max-width: 14px 跟 padding: 0 2px (跟 .timepicker-hour 32-36px 配套) */
-  min-width: 12px;
-  max-width: 14px;
-  padding: 0 2px;
+#end-time-picker-host .separator,
+#detail-start-time-picker-host .separator,
+#detail-end-time-picker-host .separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
   height: 32px;
   line-height: 32px;
   font-size: 1.2em;
   font-weight: bold;
   color: var(--text);
   text-align: center;
+  cursor: default;
+  border-radius: 6px;
 }
 
 /* 2026-08-14 22:48 (44th round): Eonasdan timepicker 4 个上下选择按钮 (补 43rd round 漏的 font-family)
