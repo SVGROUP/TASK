@@ -1486,6 +1486,14 @@ body.readonly-mode #settings-dialog .color-name-input {
   border-radius: 4px;
   text-decoration: none;
   line-height: 20px;
+  /* 2026-08-15 00:30 (49th round): 圣威 00:28 报"小时和分钟的数字鼠标悬浮时的可点范围比上下箭头悬浮时看到的大, 能否调整上下箭头的可点范围和数字一样"
+     - 根因: 数字可点范围 (line 1395+ 46th round 改) min-width: 32px / max-width: 36px / height: 32px, 三角 a 标签可点范围 (line 1418+ 46th round 改) width: 20px / height: 20px, 数字 32-36×32 比三角 20×20 大 60%-80%, 视觉上三角"小气"
+     - 修法: 三角 width 20px → 32px, height 20px → 32px (跟数字 min-width 32px + height 32px 完全对齐, 4 个三角可点范围跟数字一样)
+     - 三角实际 5px 边长 border, 居中在 32×32 容器里 (48th round 加的 position: absolute + transform: translate(-50%, -50%) 联动)
+     - 配套: line-height 20px → 32px (跟 height 对齐) */
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
   /* 2026-08-15 00:08 (48th round): 圣威 00:06 报"上下箭头在 a 标签中不居中"
      - 根因: 41st round 通配 reset 写了 text-align: center, 但 [data-action] 段没显式写, 47th round 也没补, a 标签是 inline-block 元素, ::before 三角依赖 a 标签的 text-align 居中
      - 修法: 加 text-align: center (在 a 标签 20px 宽内, 三角 ::before 用 margin: 0 auto 居中)
@@ -1521,6 +1529,12 @@ body.readonly-mode #settings-dialog .color-name-input {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-bottom: 5px solid currentColor;
+  /* 2026-08-15 00:30 (49th round): 圣威 00:28 报"三角在 a 标签中不居中"
+     - 根因: 49th round 改 [data-action] 段 width/height: 20px → 32px, 三角 5px 边长在 32×32 容器里偏小, 看着太空
+     - 修法: 三角边长 5px → 6px (跟 32×32 容器比例协调, 不会显得太空, 也不会从 5px 跳到 8px 那么突兀) */
+  border-left-width: 6px;
+  border-right-width: 6px;
+  border-bottom-width: 6px;
   /* 2026-08-15 00:08 (48th round): 圣威 00:06 报"上下箭头在 a 标签中不居中"
      - 根因: 47th round 写了 margin: 0 auto, 但 vendor a 标签默认 position: static, ::before 三角没有 text-align 居中 (a 标签里只对 inline 元素 text-align 生效, block ::before 不居中)
      - 修法: 三角 position: absolute (跟 44th round 给 [data-action] 段加 position: relative 联动), left: 50% + transform: translateX(-50%) (跟 vendor dropdown 三角居中方式一致) */
@@ -1542,6 +1556,10 @@ body.readonly-mode #settings-dialog .color-name-input {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid currentColor;
+  /* 2026-08-15 00:30 (49th round): 跟 1 段一样的修法, 三角边长 5px → 6px */
+  border-left-width: 6px;
+  border-right-width: 6px;
+  border-top-width: 6px;
   /* 2026-08-15 00:08 (48th round): 圣威 00:06 报"上下箭头在 a 标签中不居中"
      - 跟 1 段一样的修法, 三角 position: absolute + left: 50% + top: 50% + transform: translate(-50%, -50%) (在 a 标签 20×20 里水平垂直居中) */
   position: absolute;
