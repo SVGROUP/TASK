@@ -1196,25 +1196,34 @@ body.readonly-mode #settings-dialog .color-name-input {
      - today 按钮: 任务结束日期默认不能是今天, 按钮意义不大
      - clear 按钮: 我们 dialog 里已经独立做了"清除"按钮, 重复
    所以方案 A: 工具栏 li 整体隐藏。 */
-#end-date-picker-host,
+/* 2026-08-14 17:30 (37th round): 5 套 host 段 .list-unstyled/li/li.picker-switch 3 段 selector 错位修复
+   - 根因: 36th round 修了 5 段 .day.X selector 错位, 但漏了这 3 段 (line 1199-1217) 同样 pattern 的 selector 错位
+   - 圣威 17:28 console 报告: end-host 自身被 display:none / list-style:none 命中
+     #end-date-picker-host, #start-date-picker-host li.picker-switch, #target-date-picker-host, #detail-date-picker-host, #batch-date-picker-host { display: none; }
+     #end-date-picker-host, #start-date-picker-host li, #target-date-picker-host, #detail-date-picker-host, #batch-date-picker-host { list-style: none; }
+   - 修法 B (跟 36th round 改完 5 段风格统一): 5 套 host 平行写子选择器
+   - 改完: 5 套 host 自身不再被染 display:none / list-style:none / padding-left:0 / margin:0
+     - end-host 自身不再被 display:none → wrapper 正常显示
+     - 5 套 host 自身不再被 list-style:none / padding-left:0 / margin:0 → 容器布局正常 */
+#end-date-picker-host .list-unstyled,
 #start-date-picker-host .list-unstyled,
-#target-date-picker-host,
-#detail-date-picker-host ,
-#batch-date-picker-host {
+#target-date-picker-host .list-unstyled,
+#detail-date-picker-host .list-unstyled,
+#batch-date-picker-host .list-unstyled {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
-#end-date-picker-host,
+#end-date-picker-host li,
 #start-date-picker-host li,
-#target-date-picker-host,
-#detail-date-picker-host,
-#batch-date-picker-host { list-style: none; }
-#end-date-picker-host,
+#target-date-picker-host li,
+#detail-date-picker-host li,
+#batch-date-picker-host li { list-style: none; }
+#end-date-picker-host li.picker-switch,
 #start-date-picker-host li.picker-switch,
-#target-date-picker-host,
-#detail-date-picker-host,
-#batch-date-picker-host { display: none; }
+#target-date-picker-host li.picker-switch,
+#detail-date-picker-host li.picker-switch,
+#batch-date-picker-host li.picker-switch { display: none; }
 
 
 /* 2026-08-14 16:18: end+start 段合并为 1 段逗号选择器 (Step 1) */
