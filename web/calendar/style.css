@@ -1276,6 +1276,11 @@ body.readonly-mode #settings-dialog .color-name-input {
   align-items: center;
   gap: 12px;
   padding: 4px 0 0 0;
+  /* 2026-08-14 23:38 (46th round): 圣威 23:35 报"整个 start-time-picker-host 横向占用太多, 留白多"
+     - 根因: 41st round 没设 host width, 41st round 通配 reset 也没设, host 被 dialog 的 360px 撑成全宽
+     - 修法: width: auto 跟随内容 + max-width: 200px (跟 dialog 240px 配套, 不溢出) */
+  width: auto;
+  max-width: 200px;
 }
 
 /* 通配 reset (跟 5 套 date picker 模式平行) */
@@ -1295,14 +1300,31 @@ body.readonly-mode #settings-dialog .color-name-input {
   line-height: normal;
 }
 
-/* Eonasdan .timepicker table (timepicker 内部表) */
-#start-time-picker-host .timepicker,
-#end-time-picker-host .timepicker,
-#start-time-picker-host .timepicker table,
-#end-time-picker-host .timepicker table {
-  width: auto;
-  border-collapse: collapse;
-  border-spacing: 0;
+/* Eonasdan timepicker 内部 td (小时行 / 分钟行 / separator 行的 4 列 td)
+   - 2026-08-14 23:38 (46th round): 圣威 23:35 报"每个 td 占用的都太大了, 可以缩小"
+   - 根因 1: vendor 默认 td span { line-height:2.5; height:2.5em; width:100% } (vendor CSS line 960+), 跟 41st round 通配 reset 不冲突, td 实际被撑成 ~50px 高
+   - 根因 2: vendor 默认 .timepicker-hour / .minute { width:54px } (vendor CSS line 940+), 43rd round 只设了 min-width:32px, vendor 54px 还在生效
+   - 根因 3: vendor 默认 [data-action] { padding:6px 0 } (vendor CSS line 970+), 44th+45th round 加了 width:22px height:22px, 但 padding 6px 上下还在, td 实际 ~34px 高
+   - 根因 4: vendor 默认 td { text-align:center } (vendor CSS line 945+), 41st round 通配 reset 没动, 但跟修法 1 冲突不大
+   - 修法:
+     - td 段: 加 line-height: 32px; height: 32px; padding: 0 (覆盖 vendor 50px 高 + padding)
+     - td span 段: line-height: 32px; height: 32px (覆盖 vendor 2.5em)
+     - .timepicker-hour / .minute 段: 43rd round 加 width: auto (覆盖 vendor 54px)
+     - .separator 段: 46th round 加 padding: 0 2px (跟三角配套)
+     - [data-action] 段: 46th round 加 padding: 0 (覆盖 vendor 6px 上下) */
+#start-time-picker-host .timepicker td,
+#end-time-picker-host .timepicker td,
+#start-time-picker-host .timepicker tr,
+#end-time-picker-host .timepicker tr {
+  height: 32px;
+  line-height: 32px;
+  padding: 0;
+  text-align: center;
+}
+#start-time-picker-host .timepicker td span,
+#end-time-picker-host .timepicker td span {
+  height: 32px;
+  line-height: 32px;
 }
 
 /* Eonasdan .accordion-toggle (timepicker 手风琴 toggle, e.g. "选择时间" 按钮) */
@@ -1342,6 +1364,11 @@ body.readonly-mode #settings-dialog .color-name-input {
 #end-time-picker-host .timepicker-minute {
   display: inline-block;
   min-width: 32px;
+  /* 2026-08-14 23:38 (46th round): 圣威 23:35 报"每个 td 占用的都太大了"
+     - 根因: vendor 默认 .timepicker-hour / .minute { width: 54px } (vendor CSS line 940+), 43rd round 只设了 min-width, vendor 54px 还在生效
+     - 修法: width: auto 覆盖 vendor 54px, max-width: 36px 跟 min-width 32px 配套 (实际宽度 32-36px 自适应) */
+  width: auto;
+  max-width: 36px;
   height: 32px;
   line-height: 32px;
   font-size: 1.2em;
@@ -1362,7 +1389,12 @@ body.readonly-mode #settings-dialog .color-name-input {
 #start-time-picker-host .separator,
 #end-time-picker-host .separator {
   display: inline-block;
-  min-width: 16px;
+  /* 2026-08-14 23:38 (46th round): 圣威 23:35 报"每个 td 占用的都太大了"
+     - 根因: 43rd round 写了 .separator min-width: 16px, 但 vendor 默认 [data-action] { padding: 6px 0 } 跟 td 没有宽度限制, separator 跟 4 列 td 一起撑大
+     - 修法: 缩 min-width: 16px → 12px, 加 max-width: 14px 跟 padding: 0 2px (跟 .timepicker-hour 32-36px 配套) */
+  min-width: 12px;
+  max-width: 14px;
+  padding: 0 2px;
   height: 32px;
   line-height: 32px;
   font-size: 1.2em;
@@ -1398,15 +1430,19 @@ body.readonly-mode #settings-dialog .color-name-input {
 #end-time-picker-host [data-action="decrementMinutes"] {
   position: relative;
   display: inline-block;
-  width: 22px;
-  height: 22px;
-  padding: 0 6px;
+  /* 2026-08-14 23:38 (46th round): 圣威 23:35 报"每个 td 占用的都太大了"
+     - 根因: 44th+45th round 写了 width: 22px / height: 22px / padding: 0 6px, vendor 默认 [data-action] { padding: 6px 0 } 还在, 实际 td 高度被撑到 ~34px
+     - 修法: width: 22px → 20px (稍小), height: 22px → 20px, padding: 0 6px → 0 (三角是 border 画的, 不要水平 padding)
+     - 配套: line-height 22px → 20px 跟高度对齐 */
+  width: 20px;
+  height: 20px;
+  padding: 0;
   font-size: 0;
   color: var(--text);
   cursor: pointer;
   border-radius: 4px;
   text-decoration: none;
-  line-height: 22px;
+  line-height: 20px;
   vertical-align: middle;
 }
 /* 2026-08-14 23:18 (45th round): Eonasdan timepicker 4 个上下选择按钮 (修 44th round 错把 increment/decrement 跟 up/down 划等号)
