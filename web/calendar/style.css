@@ -1163,7 +1163,13 @@ body.readonly-mode #settings-dialog .color-name-input {
 #start-date-picker-dialog,
 #target-date-picker-dialog,
 #detail-date-picker-dialog ,
-#batch-date-picker-dialog {
+#batch-date-picker-dialog,
+/* 2026-08-14 22:42 (43rd round): 补 41st round 漏掉的 2 套 time picker dialog
+   跟 5 套 date picker 共享同一段 dialog 自身 (width / padding / background / box-shadow)
+   圣威 22:39 报: #start-time-picker-dialog 周围没有像 #start-date-picker-dialog 一样的 20/22 padding
+   (跟 42nd round 补 .dialog-title / .dialog-actions 是同一类漏改) */
+#start-time-picker-dialog,
+#end-time-picker-dialog {
   width: min(360px, 92vw);
   padding: 20px 22px;
   border: 0;
@@ -1175,7 +1181,10 @@ body.readonly-mode #settings-dialog .color-name-input {
 #start-date-picker-dialog::backdrop,
 #target-date-picker-dialog::backdrop,
 #detail-date-picker-dialog::backdrop,
-#batch-date-picker-dialog::backdrop { background: rgba(20, 30, 60, .35); }
+#batch-date-picker-dialog::backdrop,
+/* 2026-08-14 22:42 (43rd round): 补 2 套 time picker dialog::backdrop 跟 5 套平行 */
+#start-time-picker-dialog::backdrop,
+#end-time-picker-dialog::backdrop { background: rgba(20, 30, 60, .35); }
 #end-date-picker-dialog .dialog-title,
 #start-date-picker-dialog .dialog-title,
 #target-date-picker-dialog .dialog-title,
@@ -1322,52 +1331,79 @@ body.readonly-mode #settings-dialog .color-name-input {
   width: 100%;
 }
 
-/* timepicker 的小时/分钟/分隔符 (e.g. 09:30 中间的 ":") */
-#start-time-picker-host .hours,
-#end-time-picker-host .hours,
-#start-time-picker-host .minutes,
-#end-time-picker-host .minutes,
-#start-time-picker-host .separator,
-#end-time-picker-host .separator {
+/* timepicker 的小时/分钟/分隔符 (e.g. 09:30 中间的 ":")
+   - 2026-08-14 22:42 (43rd round): 圣威 22:39 报"还是看不到时和分的上下选择按钮", 根因是
+     Eonasdan vendor 实际用 .timepicker-hour / .timepicker-minute (不是 41st round 写的 .hours / .minutes, 是 v3 时代遗留类, vendor 已用 .timepicker-hour 取代)
+     41st round 写 .hours / .minutes 根本命中不到元素, vendor 默认 .timepicker-hour { width:54px; font-weight:bold; font-size:1.2em; margin:0; } 但 41st round 41 通配 reset 把 vendor 默认也覆盖成 font-size:14px, 数字被压成 1.2em -> 14px
+   - 改: 删 41st round .hours / .minutes 段, 换 .timepicker-hour / .timepicker-minute 段, 跟 vendor 默认对齐 (font-size:1.2em font-weight:bold) */
+#start-time-picker-host .timepicker-hour,
+#end-time-picker-host .timepicker-hour,
+#start-time-picker-host .timepicker-minute,
+#end-time-picker-host .timepicker-minute {
   display: inline-block;
   min-width: 32px;
   height: 32px;
   line-height: 32px;
-  font-size: 14px;
+  font-size: 1.2em;
+  font-weight: bold;
   color: var(--text);
   cursor: pointer;
   border-radius: 6px;
   text-align: center;
 }
-#start-time-picker-host .hours:hover,
-#end-time-picker-host .hours:hover,
-#start-time-picker-host .minutes:hover,
-#end-time-picker-host .minutes:hover {
+#start-time-picker-host .timepicker-hour:hover,
+#end-time-picker-host .timepicker-hour:hover,
+#start-time-picker-host .timepicker-minute:hover,
+#end-time-picker-host .timepicker-minute:hover {
   background: var(--accent-soft);
   color: var(--accent);
 }
+/* 分隔符 ":" 跟 .timepicker-hour 平行 (e.g. 09:30 中间那个 ":") */
+#start-time-picker-host .separator,
+#end-time-picker-host .separator {
+  display: inline-block;
+  min-width: 16px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--text);
+  text-align: center;
+}
 
-/* 2026-08-14 20:36 (42nd round): Eonasdan timepicker 上下选择箭头 (.up / .down)
-   - vendor 用 <th> 渲染 .up / .down 单元格, 内部用 glyphicon glyphicon-chevron-up / -down 三角图标
-   - 41st round 漏写这 2 段, 三角跟 dialog 背景默认同色, 圣威 20:34 报"看不到时和分的上下选择按钮"
-   - 跟 .hours / .minutes 平行, 2 套 host × 2 段 (base + hover) = 4 行选择器 */
-#start-time-picker-host .up,
-#end-time-picker-host .up,
-#start-time-picker-host .down,
-#end-time-picker-host .down {
-  display: table-cell;
-  vertical-align: middle;
-  height: 24px;
-  padding: 0 8px;
-  font-size: 12px;
+/* 2026-08-14 22:42 (43rd round): Eonasdan timepicker 4 个上下选择按钮
+   - 42nd round 猜 Eonasdan 用 <th class="up"/"down"> 渲染三角, 完全猜错, vendor 实际用
+     <a data-action="incrementHours" class="btn"><span class="glyphicon glyphicon-chevron-up"></span></a>
+     4 个 [data-action]: incrementHours / decrementHours / incrementMinutes / decrementMinutes
+   - 42nd round 写的 .up / .down 选择器根本命中不到 (class 名是 .btn, 不是 .up / .down)
+   - 改: 删 42nd round .up / .down 段, 换 4 段 [data-action] 选择器
+   - vendor 默认 [data-action]{padding:6px 0} (有 6px 上下 padding, 但没颜色, glyphicon 字体色跟 dialog 背景同色 → 看不到)
+   - 修法: 4 段选择器 (2 host × 4 data-action = 8 行) 加 color: var(--text) + cursor: pointer, 4 段 :hover 变色 (跟 .timepicker-hour:hover 平行)
+   - 选 2 host 4 data-action: 42nd round "2 套 host × 2 段" 不够, 应是 2 host × 4 data-action = 8 行 */
+#start-time-picker-host [data-action="incrementHours"],
+#end-time-picker-host [data-action="incrementHours"],
+#start-time-picker-host [data-action="decrementHours"],
+#end-time-picker-host [data-action="decrementHours"],
+#start-time-picker-host [data-action="incrementMinutes"],
+#end-time-picker-host [data-action="incrementMinutes"],
+#start-time-picker-host [data-action="decrementMinutes"],
+#end-time-picker-host [data-action="decrementMinutes"] {
+  display: inline-block;
+  padding: 6px 10px;
+  font-size: 14px;
   color: var(--text);
   cursor: pointer;
   border-radius: 4px;
+  text-decoration: none;
 }
-#start-time-picker-host .up:hover,
-#end-time-picker-host .up:hover,
-#start-time-picker-host .down:hover,
-#end-time-picker-host .down:hover {
+#start-time-picker-host [data-action="incrementHours"]:hover,
+#end-time-picker-host [data-action="incrementHours"]:hover,
+#start-time-picker-host [data-action="decrementHours"]:hover,
+#end-time-picker-host [data-action="decrementHours"]:hover,
+#start-time-picker-host [data-action="incrementMinutes"]:hover,
+#end-time-picker-host [data-action="incrementMinutes"]:hover,
+#start-time-picker-host [data-action="decrementMinutes"]:hover,
+#end-time-picker-host [data-action="decrementMinutes"]:hover {
   background: var(--accent-soft);
   color: var(--accent);
 }
