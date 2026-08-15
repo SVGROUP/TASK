@@ -53,7 +53,7 @@
     "aarch64::commit_file/commit.sh": "f3ece85990e45c3765bf1b7294e8b1d0",
     "aarch64::commit_file/update.sh": "81881bd138f6eebf2182a998302449e9",
     "aarch64::frontend-build/package.json": "f6d1fe69cf4e3e5a74c40a6ebf208732",
-    "aarch64::frontend-build/build.js": "eeaaf3f2f71c84ab9a2d944ba13aa7e3",
+    "aarch64::frontend-build/build.js": "ee5f2113840106dc509f837eb3aa325b",
     "x86_64::./taskmanage/logging.py": "06e7d3cfffb491b454abc95dc3da4a81",
     "x86_64::./taskmanage/gantt/auth.py": "84981fca9e2aaf31890ce0442304bcba",
     "x86_64::./taskmanage/upgrade.py": "2c3dd028feca78cd44617b1f4a14ca8f",
@@ -82,7 +82,7 @@
     "x86_64::commit_file/commit.sh": "f3ece85990e45c3765bf1b7294e8b1d0",
     "x86_64::commit_file/update.sh": "81881bd138f6eebf2182a998302449e9",
     "x86_64::frontend-build/package.json": "f6d1fe69cf4e3e5a74c40a6ebf208732",
-    "x86_64::frontend-build/build.js": "eeaaf3f2f71c84ab9a2d944ba13aa7e3",
+    "x86_64::frontend-build/build.js": "ee5f2113840106dc509f837eb3aa325b",
     "aarch64::./taskmanage/logging.py": "06e7d3cfffb491b454abc95dc3da4a81",
     "aarch64::./taskmanage/gantt/auth.py": "84981fca9e2aaf31890ce0442304bcba",
     "aarch64::./taskmanage/upgrade.py": "2c3dd028feca78cd44617b1f4a14ca8f",
@@ -128,5 +128,5 @@
     "x86_64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "aarch64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5"
   },
-  "last_git_commit": "56cc17fb8db2a3cb4bfc8315783f6cc11cb74f84"
+  "last_git_commit": "337a0c78b418b34eb4010a1c76428dd95de40518"
 }
