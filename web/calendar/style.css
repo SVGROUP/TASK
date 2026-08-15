@@ -1274,7 +1274,9 @@ body.readonly-mode #settings-dialog .color-name-input {
 
 /* dialog 整体布局 (跟 5 套 date picker 模式完全平行) */
 #start-time-picker-host,
-#end-time-picker-host {
+#end-time-picker-host,
+#detail-start-time-picker-host,
+#detail-end-time-picker-host {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1293,7 +1295,11 @@ body.readonly-mode #settings-dialog .color-name-input {
 #start-time-picker-host,
 #start-time-picker-host *,
 #end-time-picker-host,
-#end-time-picker-host * {
+#end-time-picker-host *,
+#detail-start-time-picker-host,
+#detail-start-time-picker-host *,
+#detail-end-time-picker-host,
+#detail-end-time-picker-host * {
   font-weight: normal !important;
   font-style: normal !important;
   text-align: center;
@@ -1321,21 +1327,29 @@ body.readonly-mode #settings-dialog .color-name-input {
 #start-time-picker-host .timepicker td,
 #end-time-picker-host .timepicker td,
 #start-time-picker-host .timepicker tr,
-#end-time-picker-host .timepicker tr {
+#end-time-picker-host .timepicker tr,
+#detail-start-time-picker-host .timepicker td,
+#detail-end-time-picker-host .timepicker td,
+#detail-start-time-picker-host .timepicker tr,
+#detail-end-time-picker-host .timepicker tr {
   height: 32px;
   line-height: 32px;
   padding: 0;
   text-align: center;
 }
 #start-time-picker-host .timepicker td span,
-#end-time-picker-host .timepicker td span {
+#end-time-picker-host .timepicker td span,
+#detail-start-time-picker-host .timepicker td span,
+#detail-end-time-picker-host .timepicker td span {
   height: 32px;
   line-height: 32px;
 }
 
 /* Eonasdan .accordion-toggle (timepicker 手风琴 toggle, e.g. "选择时间" 按钮) */
 #start-time-picker-host .accordion-toggle,
-#end-time-picker-host .accordion-toggle {
+#end-time-picker-host .accordion-toggle,
+#detail-start-time-picker-host .accordion-toggle,
+#detail-end-time-picker-host .accordion-toggle {
   padding: 8px 12px;
   font-size: 14px;
   font-weight: 500;
@@ -1346,14 +1360,18 @@ body.readonly-mode #settings-dialog .color-name-input {
   background: var(--surface);
 }
 #start-time-picker-host .accordion-toggle:hover,
-#end-time-picker-host .accordion-toggle:hover {
+#end-time-picker-host .accordion-toggle:hover,
+#detail-start-time-picker-host .accordion-toggle:hover,
+#detail-end-time-picker-host .accordion-toggle:hover {
   background: var(--accent-soft);
   color: var(--accent);
 }
 
 /* Eonasdan .collapse 容器 (手风琴展开区域) */
 #start-time-picker-host .collapse,
-#end-time-picker-host .collapse {
+#end-time-picker-host .collapse,
+#detail-start-time-picker-host .collapse,
+#detail-end-time-picker-host .collapse {
   display: block;
   padding: 8px 0;
   /* 2026-08-14 23:48 (47th round): 圣威 23:46 报"中间的时间不居中"
@@ -1373,7 +1391,9 @@ body.readonly-mode #settings-dialog .color-name-input {
      - .timepicker-picker table 段: width: auto !important (覆盖 vendor 100%, 跟随 4 td 总宽 ~90px)
      - 3 段都加 margin: 0 auto (水平居中, 跟 host 居中保持一致) */
 #start-time-picker-host .timepicker,
-#end-time-picker-host .timepicker {
+#end-time-picker-host .timepicker,
+#detail-start-time-picker-host .timepicker,
+#detail-end-time-picker-host .timepicker {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1382,14 +1402,18 @@ body.readonly-mode #settings-dialog .color-name-input {
   margin: 0 auto;
 }
 #start-time-picker-host .timepicker-picker,
-#end-time-picker-host .timepicker-picker {
+#end-time-picker-host .timepicker-picker,
+#detail-start-time-picker-host .timepicker-picker,
+#detail-end-time-picker-host .timepicker-picker {
   display: block;
   width: auto;
   max-width: 100%;
   margin: 0 auto;
 }
 #start-time-picker-host .timepicker-picker table,
-#end-time-picker-host .timepicker-picker table {
+#end-time-picker-host .timepicker-picker table,
+#detail-start-time-picker-host .timepicker-picker table,
+#detail-end-time-picker-host .timepicker-picker table {
   width: auto !important;
   margin: 0 auto;
   border-collapse: collapse;
@@ -1404,7 +1428,11 @@ body.readonly-mode #settings-dialog .color-name-input {
 #start-time-picker-host .timepicker-hour,
 #end-time-picker-host .timepicker-hour,
 #start-time-picker-host .timepicker-minute,
-#end-time-picker-host .timepicker-minute {
+#end-time-picker-host .timepicker-minute,
+#detail-start-time-picker-host .timepicker-hour,
+#detail-end-time-picker-host .timepicker-hour,
+#detail-start-time-picker-host .timepicker-minute,
+#detail-end-time-picker-host .timepicker-minute {
   display: inline-block;
   min-width: 32px;
   /* 2026-08-14 23:38 (46th round): 圣威 23:35 报"每个 td 占用的都太大了"
@@ -1424,7 +1452,11 @@ body.readonly-mode #settings-dialog .color-name-input {
 #start-time-picker-host .timepicker-hour:hover,
 #end-time-picker-host .timepicker-hour:hover,
 #start-time-picker-host .timepicker-minute:hover,
-#end-time-picker-host .timepicker-minute:hover {
+#end-time-picker-host .timepicker-minute:hover,
+#detail-start-time-picker-host .timepicker-hour:hover,
+#detail-end-time-picker-host .timepicker-hour:hover,
+#detail-start-time-picker-host .timepicker-minute:hover,
+#detail-end-time-picker-host .timepicker-minute:hover {
   background: var(--accent-soft);
   color: var(--accent);
 }
@@ -1471,7 +1503,9 @@ body.readonly-mode #settings-dialog .color-name-input {
      4) [data-action=incrementMinutes/decrementMinutes] 4 段 (4 × 2 host = 8 行) ::before 画下三角 (border-top: 5px solid currentColor)
      currentColor 跟 43rd round 加的 color: var(--text) 联动, hover 时跟 var(--accent) 联动 */
 #start-time-picker-host span.glyphicon,
-#end-time-picker-host span.glyphicon { display: none; }
+#end-time-picker-host span.glyphicon,
+#detail-start-time-picker-host span.glyphicon,
+#detail-end-time-picker-host span.glyphicon { display: none; }
 #start-time-picker-host [data-action="incrementHours"],
 #end-time-picker-host [data-action="incrementHours"],
 #start-time-picker-host [data-action="decrementHours"],
@@ -1479,7 +1513,15 @@ body.readonly-mode #settings-dialog .color-name-input {
 #start-time-picker-host [data-action="incrementMinutes"],
 #end-time-picker-host [data-action="incrementMinutes"],
 #start-time-picker-host [data-action="decrementMinutes"],
-#end-time-picker-host [data-action="decrementMinutes"] {
+#end-time-picker-host [data-action="decrementMinutes"],
+#detail-start-time-picker-host [data-action="incrementHours"],
+#detail-end-time-picker-host [data-action="incrementHours"],
+#detail-start-time-picker-host [data-action="decrementHours"],
+#detail-end-time-picker-host [data-action="decrementHours"],
+#detail-start-time-picker-host [data-action="incrementMinutes"],
+#detail-end-time-picker-host [data-action="incrementMinutes"],
+#detail-start-time-picker-host [data-action="decrementMinutes"],
+#detail-end-time-picker-host [data-action="decrementMinutes"] {
   position: relative;
   display: inline-block;
   /* 2026-08-14 23:38 (46th round): 圣威 23:35 报"每个 td 占用的都太大了"
@@ -1530,7 +1572,11 @@ body.readonly-mode #settings-dialog .color-name-input {
 #start-time-picker-host [data-action="incrementHours"]::before,
 #end-time-picker-host [data-action="incrementHours"]::before,
 #start-time-picker-host [data-action="incrementMinutes"]::before,
-#end-time-picker-host [data-action="incrementMinutes"]::before {
+#end-time-picker-host [data-action="incrementMinutes"]::before,
+#detail-start-time-picker-host [data-action="incrementHours"]::before,
+#detail-end-time-picker-host [data-action="incrementHours"]::before,
+#detail-start-time-picker-host [data-action="incrementMinutes"]::before,
+#detail-end-time-picker-host [data-action="incrementMinutes"]::before {
   content: "";
   display: block;
   width: 0;
@@ -1557,7 +1603,11 @@ body.readonly-mode #settings-dialog .color-name-input {
 #start-time-picker-host [data-action="decrementHours"]::before,
 #end-time-picker-host [data-action="decrementHours"]::before,
 #start-time-picker-host [data-action="decrementMinutes"]::before,
-#end-time-picker-host [data-action="decrementMinutes"]::before {
+#end-time-picker-host [data-action="decrementMinutes"]::before,
+#detail-start-time-picker-host [data-action="decrementHours"]::before,
+#detail-end-time-picker-host [data-action="decrementHours"]::before,
+#detail-start-time-picker-host [data-action="decrementMinutes"]::before,
+#detail-end-time-picker-host [data-action="decrementMinutes"]::before {
   content: "";
   display: block;
   width: 0;
@@ -1584,21 +1634,35 @@ body.readonly-mode #settings-dialog .color-name-input {
 #start-time-picker-host [data-action="incrementMinutes"]:hover,
 #end-time-picker-host [data-action="incrementMinutes"]:hover,
 #start-time-picker-host [data-action="decrementMinutes"]:hover,
-#end-time-picker-host [data-action="decrementMinutes"]:hover {
+#end-time-picker-host [data-action="decrementMinutes"]:hover,
+#detail-start-time-picker-host [data-action="incrementHours"]:hover,
+#detail-end-time-picker-host [data-action="incrementHours"]:hover,
+#detail-start-time-picker-host [data-action="decrementHours"]:hover,
+#detail-end-time-picker-host [data-action="decrementHours"]:hover,
+#detail-start-time-picker-host [data-action="incrementMinutes"]:hover,
+#detail-end-time-picker-host [data-action="incrementMinutes"]:hover,
+#detail-start-time-picker-host [data-action="decrementMinutes"]:hover,
+#detail-end-time-picker-host [data-action="decrementMinutes"]:hover {
   background: var(--accent-soft);
   color: var(--accent);
 }
 
 /* toolbar li.picker-switch (跟 5 套 date picker 模式平行, 跟 37th round 一样隐藏 today/clear/close 工具栏) */
 #start-time-picker-host .list-unstyled,
-#end-time-picker-host .list-unstyled {
+#end-time-picker-host .list-unstyled,
+#detail-start-time-picker-host .list-unstyled,
+#detail-end-time-picker-host .list-unstyled {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
 #start-time-picker-host li,
-#end-time-picker-host li { list-style: none; }
+#end-time-picker-host li,
+#detail-start-time-picker-host li,
+#detail-end-time-picker-host li { list-style: none; }
 #start-time-picker-host li.picker-switch,
-#end-time-picker-host li.picker-switch { display: none; }
+#end-time-picker-host li.picker-switch,
+#detail-start-time-picker-host li.picker-switch,
+#detail-end-time-picker-host li.picker-switch { display: none; }
 
 /* ===== 2026-08-14 16:18: end+start 段合并为 1 段逗号选择器 (Step 1) */
