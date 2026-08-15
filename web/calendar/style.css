@@ -1162,14 +1162,19 @@ body.readonly-mode #settings-dialog .color-name-input {
 #end-date-picker-dialog,
 #start-date-picker-dialog,
 #target-date-picker-dialog,
-#detail-date-picker-dialog ,
+#detail-date-picker-dialog,
 #batch-date-picker-dialog,
 /* 2026-08-14 22:42 (43rd round): 补 41st round 漏掉的 2 套 time picker dialog
    跟 5 套 date picker 共享同一段 dialog 自身 (width / padding / background / box-shadow)
    圣威 22:39 报: #start-time-picker-dialog 周围没有像 #start-date-picker-dialog 一样的 20/22 padding
-   (跟 42nd round 补 .dialog-title / .dialog-actions 是同一类漏改) */
+   (跟 42nd round 补 .dialog-title / .dialog-actions 是同一类漏改)
+   2026-08-15 10:54 (52nd round): 圣威 10:54 报"detail-start-time-picker-dialog .dialog-title 缺少样式"
+   跟 50th round 故意分 2 步走同源, 50th round 加了 dialog 元素 + 51st round 扩了 12 段 host 命名空间, 52nd round 把 dialog 自身 / ::backdrop / .dialog-title / .dialog-actions 4 段共享选择器也扩 9 套 (5 套 date picker + 4 套 time picker)
+   注意: dialog 自身 width 仍然 5 套共享 360px (line 1162+ 47th round 注释), 4 套 time picker 共享 240px (line 1240+ 47th round 写, 52nd round 不动 width) */
 #start-time-picker-dialog,
-#end-time-picker-dialog {
+#end-time-picker-dialog,
+#detail-start-time-picker-dialog,
+#detail-end-time-picker-dialog {
   width: min(360px, 92vw);
   /* 2026-08-14 23:48 (47th round): 圣威 23:46 报"现在修改后, 总宽没变, 中间的时间不居中了"
      - 根因: 5 套 date picker 内容多 (7 列表) 需要 360px, 2 套 time picker 内容少 (4 列) 只需要 ~90px, 5 套共享 360px 让 2 套 time picker 留白 ~270px
@@ -1186,9 +1191,13 @@ body.readonly-mode #settings-dialog .color-name-input {
 #target-date-picker-dialog::backdrop,
 #detail-date-picker-dialog::backdrop,
 #batch-date-picker-dialog::backdrop,
-/* 2026-08-14 22:42 (43rd round): 补 2 套 time picker dialog::backdrop 跟 5 套平行 */
+/* 2026-08-14 22:42 (43rd round): 补 2 套 time picker dialog::backdrop 跟 5 套平行
+   2026-08-15 10:54 (52nd round): 圣威 10:54 报"detail-start-time-picker-dialog .dialog-title 缺少样式"
+   补 2 套 detail time picker dialog::backdrop 跟 7 套平行 */
 #start-time-picker-dialog::backdrop,
-#end-time-picker-dialog::backdrop { background: rgba(20, 30, 60, .35); }
+#end-time-picker-dialog::backdrop,
+#detail-start-time-picker-dialog::backdrop,
+#detail-end-time-picker-dialog::backdrop { background: rgba(20, 30, 60, .35); }
 #end-date-picker-dialog .dialog-title,
 #start-date-picker-dialog .dialog-title,
 #target-date-picker-dialog .dialog-title,
@@ -1196,9 +1205,13 @@ body.readonly-mode #settings-dialog .color-name-input {
 #batch-date-picker-dialog .dialog-title,
 /* 2026-08-14 20:36 (42nd round): 补 41st round 漏掉的 2 套 time picker dialog
    跟 5 套 date picker 共享同一段 .dialog-title 居中样式
-   圣威 20:34 报: H3 标签没像日期选择那样居中 (原: 41st round 共享段选择器只列 5 套, 2 套 time 没列, 等于没套用) */
+   圣威 20:34 报: H3 标签没像日期选择那样居中 (原: 41st round 共享段选择器只列 5 套, 2 套 time 没列, 等于没套用)
+   2026-08-15 10:54 (52nd round): 圣威 10:54 报"detail-start-time-picker-dialog .dialog-title 缺少样式"
+   补 2 套 detail time picker .dialog-title 跟 7 套平行 (text-align: center + font-weight: 600) */
 #start-time-picker-dialog .dialog-title,
-#end-time-picker-dialog .dialog-title {
+#end-time-picker-dialog .dialog-title,
+#detail-start-time-picker-dialog .dialog-title,
+#detail-end-time-picker-dialog .dialog-title {
   margin: 0 0 12px 0;
   padding: 0;
   font-size: 1.05rem;
@@ -1214,9 +1227,13 @@ body.readonly-mode #settings-dialog .color-name-input {
 #batch-date-picker-dialog .dialog-actions,
 /* 2026-08-14 20:36 (42nd round): 补 41st round 漏掉的 2 套 time picker dialog
    跟 5 套 date picker 共享同一段 .dialog-actions 居中样式 (display:flex center)
-   圣威 20:34 报: 3 个按钮也没居中 (原: 41st round 共享段选择器只列 5 套, 2 套 time 没列, 等于按钮靠左) */
+   圣威 20:34 报: 3 个按钮也没居中 (原: 41st round 共享段选择器只列 5 套, 2 套 time 没列, 等于按钮靠左)
+   2026-08-15 10:54 (52nd round): 圣威 10:54 报"detail-start-time-picker-dialog .dialog-title 缺少样式"
+   补 2 套 detail time picker .dialog-actions 跟 7 套平行 (display: flex center) */
 #start-time-picker-dialog .dialog-actions,
-#end-time-picker-dialog .dialog-actions {
+#end-time-picker-dialog .dialog-actions,
+#detail-start-time-picker-dialog .dialog-actions,
+#detail-end-time-picker-dialog .dialog-actions {
   display: flex;
   justify-content: center;
   align-items: center;
