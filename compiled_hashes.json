@@ -43,7 +43,7 @@
     "aarch64::web/index.html": "16afc4b784a222ed746a92fa310f11a9",
     "aarch64::web/gantt.html": "8f063f829fa1978a0e9e6744c7d001d9",
     "aarch64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
-    "aarch64::web/calendar.html": "6cac8b733c3ac928d1dd52ce2c91ab9d",
+    "aarch64::web/calendar.html": "c08e7768263168d396c6a732acca1020",
     "aarch64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "aarch64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
     "aarch64::web/calendar/app.js": "c265900f2bb4cf46f0c7655404364d97",
@@ -72,7 +72,7 @@
     "x86_64::web/index.html": "16afc4b784a222ed746a92fa310f11a9",
     "x86_64::web/gantt.html": "8f063f829fa1978a0e9e6744c7d001d9",
     "x86_64::web/favicon.ico": "106e4291a927c3765ef2338ac4ed0818",
-    "x86_64::web/calendar.html": "6cac8b733c3ac928d1dd52ce2c91ab9d",
+    "x86_64::web/calendar.html": "c08e7768263168d396c6a732acca1020",
     "x86_64::web/gantt/app.js": "788601388c875d40333e5c9c05f1194a",
     "x86_64::web/gantt/style.css": "2fadd7741ba139b43eb7c760dd292463",
     "x86_64::web/calendar/app.js": "c265900f2bb4cf46f0c7655404364d97",
@@ -126,8 +126,7 @@
     "x86_64::web/shared/js/html2canvas.min.js": "d7530aa0b7587e627484c49fdf8f13f2",
     "aarch64::web/shared/js/html2canvas.min.js": "d7530aa0b7587e627484c49fdf8f13f2",
     "x86_64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
-    "aarch64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
-    "aarch64::release/taskmanage/calendar/routes.cpython-313-x86_64-linux-gnu.so": "a409c4b6608be3f3e9e31ef5e0f94c40"
+    "aarch64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5"
   },
-  "last_git_commit": "d790b1341783b2ae1a260f579b19041b09573e5d"
+  "last_git_commit": "dcaa4c474ce2a96cc53459a492b6ab7a59357216"
 }
