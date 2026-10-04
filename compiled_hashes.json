@@ -128,15 +128,15 @@
     "x86_64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "aarch64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "x86_64::./taskmanage/quiz/auth.py": "dbd7a6c5fc97fbf49d3c88da7dfb72b4",
-    "x86_64::./taskmanage/quiz/routes.py": "8106aa80cd7c13ebf13b4feab097d9c2",
-    "x86_64::web/quiz.html": "4ec1084dcb41a295593b201f6fd78009",
-    "x86_64::web/quiz/app.js": "cf5cab00705e8345c0e2d7a897a9c5c6",
+    "x86_64::./taskmanage/quiz/routes.py": "e0f9a05bab6103a0049d9bc66a72a2fc",
+    "x86_64::web/quiz.html": "e1a025e2052ab868e887757af50e2e40",
+    "x86_64::web/quiz/app.js": "d7a6a36745b4a38015a6c779a7e16c4a",
     "x86_64::web/quiz/style.css": "95cf56bde0f81e7e0d4f3ea0e260b453",
     "aarch64::./taskmanage/quiz/auth.py": "dbd7a6c5fc97fbf49d3c88da7dfb72b4",
-    "aarch64::./taskmanage/quiz/routes.py": "8106aa80cd7c13ebf13b4feab097d9c2",
+    "aarch64::./taskmanage/quiz/routes.py": "e0f9a05bab6103a0049d9bc66a72a2fc",
     "aarch64::release/taskmanage/quiz/__init__.py": "3fd6105db8cc13ec4c79b923b5a9160e",
-    "aarch64::web/quiz.html": "4ec1084dcb41a295593b201f6fd78009",
-    "aarch64::web/quiz/app.js": "cf5cab00705e8345c0e2d7a897a9c5c6",
+    "aarch64::web/quiz.html": "e1a025e2052ab868e887757af50e2e40",
+    "aarch64::web/quiz/app.js": "d7a6a36745b4a38015a6c779a7e16c4a",
     "aarch64::web/quiz/style.css": "95cf56bde0f81e7e0d4f3ea0e260b453",
     "x86_64::./taskmanage/quiz/csv_import.py": "fc04186b0cc071fb195a2992592e2323",
     "x86_64::./taskmanage/quiz/generator.py": "7516ccfd6f2eee51dbbb029a8f0db595",
@@ -170,8 +170,7 @@
     "aarch64::web/result/style.css": "b5d668f3be0bc13ee6208007c58e623c",
     "aarch64::web/review/app.js": "c7516d8cc4465108eb2076a312667ec6",
     "aarch64::web/review/style.css": "c81f4b19b6f4eab86dce7dbaedd45ce3",
-    "aarch64::release/taskmanage/quiz/routes.cpython-313-x86_64-linux-gnu.so": "1e18e77dcc3c17dbbb98d2f6e4e78731",
-    "aarch64::release/taskmanage/quiz/ocr.cpython-313-x86_64-linux-gnu.so": "0ec293f52b10421e83fcabed0b81f3a6"
+    "aarch64::release/taskmanage/quiz/routes.cpython-313-x86_64-linux-gnu.so": "d83fefffd0994dedfa8ab339c76b8885"
   },
-  "last_git_commit": "ea1c21380d9176ac8d9f4cf5422b8042e2502019"
+  "last_git_commit": "83d0d9cbdf6bdb5e4f74f855c1f80ff444a6c348"
 }
