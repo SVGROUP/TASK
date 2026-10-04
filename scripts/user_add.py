@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
-"""管理员建账号 / 改密 / 设 sendkey 命令行工具（日历 + 甘特图统一）。
+"""管理员建账号 / 改密 / 设 sendkey 命令行工具（日历 + 甘特图 + 默写统一）。
 
 用 --module 选择目标模块：
     --module calendar  → 日历用户（calendar.db 的 users/sessions，带 sendkey）
     --module gantt     → 甘特图用户（gantt.db 的 gantt_users/gantt_sessions，无 sendkey）
+    --module quiz      → 默写用户（quiz.db 的 quiz_users/quiz_sessions，无 sendkey，带 role）
 不加 --module 默认 calendar。
 
 用法（在项目根目录执行）：
-    python -m scripts.user_add [--module calendar|gantt] add <username>
+    python -m scripts.user_add [--module calendar|gantt|quiz] add <username>
     python -m scripts.user_add [--module ...] passwd <username>
     python -m scripts.user_add [--module ...] list
+    # 仅 quiz 支持：
+    python -m scripts.user_add --module quiz set-role <username> <admin|parent|student>
     # 仅 calendar 支持：
     python -m scripts.user_add --module calendar sendkey <username> <key>
     python -m scripts.user_add --module calendar clear-sendkey <username>
@@ -24,6 +27,7 @@ ATUS 地址 / 总开关 / 渠道在 config.yaml 的 notify 段配置（不支持
 数据库路径与服务一致：
     calendar → 环境变量 CALENDAR_TODO_DB，否则 <data_dir>/calendar.db
     gantt    → 环境变量 GANTT_DB，否则 <data_dir>/gantt.db
+    quiz     → 环境变量 QUIZ_DB，否则 <data_dir>/quiz.db
 
 不开放前台注册，账号由管理员用本脚本创建。
 """
@@ -54,6 +58,7 @@ MODULES = {
         "sessions_table": "sessions",
         "has_sendkey": True,
         "has_public": True,
+        "has_role": False,
     },
     "gantt": {
         "db_file": "gantt.db",
@@ -62,8 +67,20 @@ MODULES = {
         "sessions_table": "gantt_sessions",
         "has_sendkey": False,
         "has_public": False,
+        "has_role": False,
+    },
+    "quiz": {
+        "db_file": "quiz.db",
+        "env_var": "QUIZ_DB",
+        "users_table": "quiz_users",
+        "sessions_table": "quiz_sessions",
+        "has_sendkey": False,
+        "has_public": False,
+        "has_role": True,
     },
 }
+
+QUIZ_ROLES = ("admin", "parent", "student")
 
 
 def _db_path(cfg) -> str:
@@ -86,6 +103,31 @@ def _ensure_app_settings(conn) -> None:
 
 def _ensure_tables(conn, cfg) -> None:
     ut, st = cfg["users_table"], cfg["sessions_table"]
+    if cfg["has_role"]:
+        # quiz 模块：quiz_users 带 role 列；quiz_sessions 无 expires_at 列
+        conn.execute(
+            f"""
+            CREATE TABLE IF NOT EXISTS {ut} (
+                id            INTEGER PRIMARY KEY AUTOINCREMENT,
+                username      TEXT    NOT NULL UNIQUE,
+                password_hash TEXT    NOT NULL,
+                role          TEXT    NOT NULL DEFAULT 'student',
+                created_at    TEXT    NOT NULL DEFAULT (datetime('now')),
+                updated_at    TEXT    NOT NULL DEFAULT (datetime('now'))
+            )
+            """
+        )
+        conn.execute(
+            f"""
+            CREATE TABLE IF NOT EXISTS {st} (
+                token      TEXT    PRIMARY KEY,
+                user_id    INTEGER NOT NULL,
+                created_at TEXT    NOT NULL DEFAULT (datetime('now'))
+            )
+            """
+        )
+        conn.commit()
+        return
     sendkey_col = (
         "sendkey       TEXT,\n            feishu_webhook TEXT,\n            "
         if cfg["has_sendkey"]
@@ -261,6 +303,30 @@ def cmd_clear_feishu(conn, cfg) -> None:
     print("已清除全局飞书通知密钥（hook_token + secret）")
 
 
+def cmd_set_role(conn, cfg, username: str, role: str) -> None:
+    """设置 quiz 用户角色（仅 quiz 模块）。"""
+    if not cfg["has_role"]:
+        print(f"模块不支持 set-role", file=sys.stderr)
+        sys.exit(1)
+    role = role.strip().lower()
+    if role not in QUIZ_ROLES:
+        print(f"未知角色 {role!r}，可选: {', '.join(QUIZ_ROLES)}", file=sys.stderr)
+        sys.exit(1)
+    ut = cfg["users_table"]
+    row = conn.execute(
+        f"SELECT id FROM {ut} WHERE username = ?", (username,)
+    ).fetchone()
+    if row is None:
+        print(f"用户不存在: {username}", file=sys.stderr)
+        sys.exit(1)
+    conn.execute(
+        f"UPDATE {ut} SET role = ?, updated_at = datetime('now') WHERE username = ?",
+        (role, username),
+    )
+    conn.commit()
+    print(f"已设置 {username} 角色为: {role}")
+
+
 def cmd_list(conn, cfg) -> None:
     ut = cfg["users_table"]
     if cfg["has_sendkey"]:
@@ -287,6 +353,17 @@ def cmd_list(conn, cfg) -> None:
         for r in rows:
             print(f"{r[0]:<5}{r[1]:<20}{('已配置' if r[2] else '未配置'):<10}{r[3]}")
     else:
+        if cfg["has_role"]:
+            rows = conn.execute(
+                f"SELECT id, username, role, created_at FROM {ut} WHERE 1=1{_id_filter(cfg)} ORDER BY id"
+            ).fetchall()
+            if not rows:
+                print("(无用户)")
+                return
+            print(f"{'id':<5}{'username':<20}{'role':<10}created_at")
+            for r in rows:
+                print(f"{r[0]:<5}{r[1]:<20}{r[2]:<10}{r[3]}")
+            return
         rows = conn.execute(
             f"SELECT id, username, created_at FROM {ut} WHERE 1=1{_id_filter(cfg)} ORDER BY id"
         ).fetchall()
@@ -319,6 +396,10 @@ def main() -> None:
         print(f"模块 {module} 不支持该命令", file=sys.stderr)
         sys.exit(1)
 
+    if action == "set-role" and not cfg["has_role"]:
+        print(f"模块 {module} 不支持 set-role（仅 quiz 模块）", file=sys.stderr)
+        sys.exit(1)
+
     with closing(sqlite3.connect(_db_path(cfg))) as conn:
         conn.row_factory = sqlite3.Row
         _ensure_tables(conn, cfg)
@@ -328,6 +409,8 @@ def main() -> None:
             cmd_passwd(conn, cfg, args[1])
         elif action == "sendkey" and len(args) == 3:
             cmd_sendkey(conn, cfg, args[1], args[2])
+        elif action == "set-role" and len(args) == 3:
+            cmd_set_role(conn, cfg, args[1], args[2])
         elif action == "clear-sendkey" and len(args) == 2:
             cmd_clear_sendkey(conn, cfg, args[1])
         elif action == "feishu-token" and len(args) == 2:
