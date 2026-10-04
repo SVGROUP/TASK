@@ -129,14 +129,14 @@
     "aarch64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "x86_64::./taskmanage/quiz/auth.py": "dbd7a6c5fc97fbf49d3c88da7dfb72b4",
     "x86_64::./taskmanage/quiz/routes.py": "4056649e3c7f067175651294dae4ab17",
-    "x86_64::web/quiz.html": "157adfff786fab049afa43e56f37e7c8",
-    "x86_64::web/quiz/app.js": "a94dd3b8f827fe4e995faf8b1d0bd6bc",
+    "x86_64::web/quiz.html": "279d1ebc4b67a8e6f27581bec550f298",
+    "x86_64::web/quiz/app.js": "c56fba9f29610e728d04796413ed26b9",
     "x86_64::web/quiz/style.css": "7a27ae325c558495a42cd81f7041c32d",
     "aarch64::./taskmanage/quiz/auth.py": "dbd7a6c5fc97fbf49d3c88da7dfb72b4",
     "aarch64::./taskmanage/quiz/routes.py": "4056649e3c7f067175651294dae4ab17",
     "aarch64::release/taskmanage/quiz/__init__.py": "3fd6105db8cc13ec4c79b923b5a9160e",
-    "aarch64::web/quiz.html": "157adfff786fab049afa43e56f37e7c8",
-    "aarch64::web/quiz/app.js": "a94dd3b8f827fe4e995faf8b1d0bd6bc",
+    "aarch64::web/quiz.html": "279d1ebc4b67a8e6f27581bec550f298",
+    "aarch64::web/quiz/app.js": "c56fba9f29610e728d04796413ed26b9",
     "aarch64::web/quiz/style.css": "7a27ae325c558495a42cd81f7041c32d",
     "x86_64::./taskmanage/quiz/csv_import.py": "fc04186b0cc071fb195a2992592e2323",
     "x86_64::./taskmanage/quiz/generator.py": "47bca4081a6d7e3e709aed23f53c3a25",
@@ -153,7 +153,6 @@
     "aarch64::./taskmanage/quiz/practice.py": "8a383e3ca1db9ffcd1cd25a5244c390b",
     "aarch64::./migrate_quiz_practice.py": "efd8cabcec3399614fa8d41cb767d333",
     "aarch64::./test_phase1.py": "dbee32ee86daebf90a242c2ba983be2b",
-    "aarch64::release/taskmanage/quiz/routes.cpython-313-x86_64-linux-gnu.so": "3e8066c8b2e9d3ae4401077c1ccc7189",
     "aarch64::web/practice.html": "8da44a52a06308dabf18accb3be6aee3",
     "aarch64::web/practice/app.js": "deff5f42e925a7e7fba4ea0fe05b597c",
     "aarch64::web/practice/style.css": "53706065555e888ebb100f7f1359f1f3",
@@ -172,5 +171,5 @@
     "aarch64::web/review/app.js": "c7516d8cc4465108eb2076a312667ec6",
     "aarch64::web/review/style.css": "c81f4b19b6f4eab86dce7dbaedd45ce3"
   },
-  "last_git_commit": "c2a2f77f04279d95353d02be3c17f8a7767cfaa3"
+  "last_git_commit": "cedb61353a80cb7f62e3fd2c69ba793cfe30bb42"
 }
