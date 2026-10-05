@@ -161,17 +161,15 @@
     "x86_64::web/review.html": "0356d7819bb84776777c130ee016ee6b",
     "x86_64::web/result/app.js": "0030aff93495d9c34efb9659c655f78a",
     "x86_64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
-    "x86_64::web/review/app.js": "3290e5de45a2aeb1091b15a8c0f56a8b",
+    "x86_64::web/review/app.js": "4faf134f826d895c1dc0a28a1fb6b42a",
     "x86_64::web/review/style.css": "ffac04f87cba1805eac29f72590a982a",
     "aarch64::./taskmanage/quiz/cleanup.py": "80169fbf9190db7eab6b15611b3ec7a4",
     "aarch64::web/result.html": "50ad1cde72128969ef7283a96653ca3f",
     "aarch64::web/review.html": "0356d7819bb84776777c130ee016ee6b",
     "aarch64::web/result/app.js": "0030aff93495d9c34efb9659c655f78a",
     "aarch64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
-    "aarch64::web/review/app.js": "3290e5de45a2aeb1091b15a8c0f56a8b",
-    "aarch64::web/review/style.css": "ffac04f87cba1805eac29f72590a982a",
-    "aarch64::release/taskmanage/quiz/routes.cpython-313-x86_64-linux-gnu.so": "44ed166bcf71f43c976e37681df1c44a",
-    "aarch64::release/taskmanage/quiz/practice.cpython-313-x86_64-linux-gnu.so": "e1dd61c2c7aa989961f04966785d0d28"
+    "aarch64::web/review/app.js": "4faf134f826d895c1dc0a28a1fb6b42a",
+    "aarch64::web/review/style.css": "ffac04f87cba1805eac29f72590a982a"
   },
-  "last_git_commit": "5ca359a5e7479c3957dc93ea9fab4125de56471b"
+  "last_git_commit": "7a05af143b01c2b6b389510d4a757e2e1b743476"
 }
