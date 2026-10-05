@@ -128,12 +128,12 @@
     "x86_64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "aarch64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "x86_64::./taskmanage/quiz/auth.py": "9a8e4a78559471719b212128505e040e",
-    "x86_64::./taskmanage/quiz/routes.py": "b81b4a6e8ed990cc4eea24b01d1656cb",
+    "x86_64::./taskmanage/quiz/routes.py": "2f54cbe601d4809acfc9b259e01487c8",
     "x86_64::web/quiz.html": "0a8aa112e379bef39c5554ce96bbb6d8",
     "x86_64::web/quiz/app.js": "671a1cc61ad8b752ebfdb3e3c4ae15cc",
     "x86_64::web/quiz/style.css": "b3252426434b1d8a62df7e046be542d9",
     "aarch64::./taskmanage/quiz/auth.py": "9a8e4a78559471719b212128505e040e",
-    "aarch64::./taskmanage/quiz/routes.py": "b81b4a6e8ed990cc4eea24b01d1656cb",
+    "aarch64::./taskmanage/quiz/routes.py": "2f54cbe601d4809acfc9b259e01487c8",
     "aarch64::release/taskmanage/quiz/__init__.py": "3fd6105db8cc13ec4c79b923b5a9160e",
     "aarch64::web/quiz.html": "0a8aa112e379bef39c5554ce96bbb6d8",
     "aarch64::web/quiz/app.js": "671a1cc61ad8b752ebfdb3e3c4ae15cc",
@@ -169,7 +169,8 @@
     "aarch64::web/result/app.js": "0030aff93495d9c34efb9659c655f78a",
     "aarch64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
     "aarch64::web/review/app.js": "293d7d988b3451a697d93bf8ac9e7c6a",
-    "aarch64::web/review/style.css": "6a8eb103d051acecbe729cf0ba0bd433"
+    "aarch64::web/review/style.css": "6a8eb103d051acecbe729cf0ba0bd433",
+    "aarch64::release/taskmanage/quiz/routes.cpython-313-x86_64-linux-gnu.so": "9e2110ed71074e7679f34a80c8664f84"
   },
-  "last_git_commit": "e1ea8b47cb2d62af3dcdb68412e809759b3da695"
+  "last_git_commit": "ce22248ce2ab22dbe9754ad37e9c27de73e18727"
 }
