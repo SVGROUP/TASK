@@ -147,15 +147,15 @@
     "x86_64::./migrate_quiz_practice.py": "efd8cabcec3399614fa8d41cb767d333",
     "x86_64::./test_phase1.py": "dbee32ee86daebf90a242c2ba983be2b",
     "x86_64::web/practice.html": "8da44a52a06308dabf18accb3be6aee3",
-    "x86_64::web/practice/app.js": "deff5f42e925a7e7fba4ea0fe05b597c",
-    "x86_64::web/practice/style.css": "a112891e41dbc921a3a7607f92dc935f",
+    "x86_64::web/practice/app.js": "8915d3c3d52131e3c31bff97bcc7119b",
+    "x86_64::web/practice/style.css": "f5716e98fe8b21ccddb3b965e92ef14c",
     "aarch64::./taskmanage/quiz/ocr.py": "8c81c0a8c0b6a4f37a531a7bcebd0af5",
     "aarch64::./taskmanage/quiz/practice.py": "5cf337ac15e4812688e8b5b7b3e43801",
     "aarch64::./migrate_quiz_practice.py": "efd8cabcec3399614fa8d41cb767d333",
     "aarch64::./test_phase1.py": "dbee32ee86daebf90a242c2ba983be2b",
     "aarch64::web/practice.html": "8da44a52a06308dabf18accb3be6aee3",
-    "aarch64::web/practice/app.js": "deff5f42e925a7e7fba4ea0fe05b597c",
-    "aarch64::web/practice/style.css": "a112891e41dbc921a3a7607f92dc935f",
+    "aarch64::web/practice/app.js": "8915d3c3d52131e3c31bff97bcc7119b",
+    "aarch64::web/practice/style.css": "f5716e98fe8b21ccddb3b965e92ef14c",
     "x86_64::./taskmanage/quiz/cleanup.py": "3a4df38b6105441ae13bb03a917008d0",
     "x86_64::web/result.html": "50ad1cde72128969ef7283a96653ca3f",
     "x86_64::web/review.html": "0356d7819bb84776777c130ee016ee6b",
@@ -169,8 +169,7 @@
     "aarch64::web/result/app.js": "0030aff93495d9c34efb9659c655f78a",
     "aarch64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
     "aarch64::web/review/app.js": "4faf134f826d895c1dc0a28a1fb6b42a",
-    "aarch64::web/review/style.css": "ffac04f87cba1805eac29f72590a982a",
-    "aarch64::release/taskmanage/quiz/cleanup.cpython-313-x86_64-linux-gnu.so": "95244174bf0988a432e2ea52ca6773c6"
+    "aarch64::web/review/style.css": "ffac04f87cba1805eac29f72590a982a"
   },
-  "last_git_commit": "cad22d05437edb125889ff789b2306b025c39292"
+  "last_git_commit": "2b027cd5906ba9e75041225db44d40a3a3fa5617"
 }
