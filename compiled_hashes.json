@@ -130,17 +130,17 @@
     "x86_64::./taskmanage/quiz/auth.py": "9a8e4a78559471719b212128505e040e",
     "x86_64::./taskmanage/quiz/routes.py": "ff8a49f6086d8bacbbee66a06d136baa",
     "x86_64::web/quiz.html": "0a8aa112e379bef39c5554ce96bbb6d8",
-    "x86_64::web/quiz/app.js": "461db68ac719cc67858d5f46620fca0e",
-    "x86_64::web/quiz/style.css": "aa390ef247a91ee61073aa7fa0fdb494",
+    "x86_64::web/quiz/app.js": "de3ebe24ba3c64e5bc1e328535e62c0e",
+    "x86_64::web/quiz/style.css": "9301f599e0007feecce82a3882a5a805",
     "aarch64::./taskmanage/quiz/auth.py": "9a8e4a78559471719b212128505e040e",
     "aarch64::./taskmanage/quiz/routes.py": "ff8a49f6086d8bacbbee66a06d136baa",
     "aarch64::release/taskmanage/quiz/__init__.py": "3fd6105db8cc13ec4c79b923b5a9160e",
     "aarch64::web/quiz.html": "0a8aa112e379bef39c5554ce96bbb6d8",
-    "aarch64::web/quiz/app.js": "461db68ac719cc67858d5f46620fca0e",
-    "aarch64::web/quiz/style.css": "aa390ef247a91ee61073aa7fa0fdb494",
-    "x86_64::./taskmanage/quiz/csv_import.py": "5d209d1e77ca676df16b45ff7540ff10",
+    "aarch64::web/quiz/app.js": "de3ebe24ba3c64e5bc1e328535e62c0e",
+    "aarch64::web/quiz/style.css": "9301f599e0007feecce82a3882a5a805",
+    "x86_64::./taskmanage/quiz/csv_import.py": "6b875487703669f7204218de84dbc40f",
     "x86_64::./taskmanage/quiz/generator.py": "983d1a44394d969c85ef9304a137aca3",
-    "aarch64::./taskmanage/quiz/csv_import.py": "5d209d1e77ca676df16b45ff7540ff10",
+    "aarch64::./taskmanage/quiz/csv_import.py": "6b875487703669f7204218de84dbc40f",
     "aarch64::./taskmanage/quiz/generator.py": "983d1a44394d969c85ef9304a137aca3",
     "x86_64::./taskmanage/quiz/ocr.py": "8c81c0a8c0b6a4f37a531a7bcebd0af5",
     "x86_64::./taskmanage/quiz/practice.py": "c42570a0776653286414f0a1c40ef463",
@@ -170,7 +170,7 @@
     "aarch64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
     "aarch64::web/review/app.js": "4faf134f826d895c1dc0a28a1fb6b42a",
     "aarch64::web/review/style.css": "ffac04f87cba1805eac29f72590a982a",
-    "aarch64::release/taskmanage/quiz/csv_import.cpython-313-x86_64-linux-gnu.so": "effdc32dc558938e008271ded22e193f"
+    "aarch64::release/taskmanage/quiz/csv_import.cpython-313-x86_64-linux-gnu.so": "b40628e129e443285ab0e160c5d87f2d"
   },
-  "last_git_commit": "977ea0d0656e6027d7feeb94d0c3f4378144cee9"
+  "last_git_commit": "f37ab731e56bc5472fbf52099ef2b2b967269667"
 }
