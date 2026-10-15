@@ -162,16 +162,14 @@
     "x86_64::web/result/app.js": "7dfc2968c2e8948a4c9019dae40dcf54",
     "x86_64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
     "x86_64::web/review/app.js": "9e17dcc2b7fb5c91a4f1a6a645d25d8f",
-    "x86_64::web/review/style.css": "47ffac41aa9068a91c6103f12585c8a1",
+    "x86_64::web/review/style.css": "570d06c02e94d0f647485b0b113256e7",
     "aarch64::./taskmanage/quiz/cleanup.py": "441a9e3bf603149d0d63713b6ae3d326",
     "aarch64::web/result.html": "50ad1cde72128969ef7283a96653ca3f",
     "aarch64::web/review.html": "8ae1f87ee311110a55a4afd127f31ffb",
     "aarch64::web/result/app.js": "7dfc2968c2e8948a4c9019dae40dcf54",
     "aarch64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
     "aarch64::web/review/app.js": "9e17dcc2b7fb5c91a4f1a6a645d25d8f",
-    "aarch64::web/review/style.css": "47ffac41aa9068a91c6103f12585c8a1",
-    "aarch64::release/taskmanage/quiz/practice.cpython-313-x86_64-linux-gnu.so": "5defee115e054d9394be86e61f96f012",
-    "aarch64::release/taskmanage/quiz/cleanup.cpython-313-x86_64-linux-gnu.so": "5e65729a55eab7ced15dbdeae861c653"
+    "aarch64::web/review/style.css": "570d06c02e94d0f647485b0b113256e7"
   },
-  "last_git_commit": "06a15d8461e6b29fa2da74146dca0b1d21afac50"
+  "last_git_commit": "1f48948fa1977620966dc4b37e98a1b3bc1d09a5"
 }
