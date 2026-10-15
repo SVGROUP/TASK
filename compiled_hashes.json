@@ -161,16 +161,15 @@
     "x86_64::web/review.html": "8ae1f87ee311110a55a4afd127f31ffb",
     "x86_64::web/result/app.js": "7dfc2968c2e8948a4c9019dae40dcf54",
     "x86_64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
-    "x86_64::web/review/app.js": "16383fc885a792136b8dd46e77280d41",
+    "x86_64::web/review/app.js": "9e17dcc2b7fb5c91a4f1a6a645d25d8f",
     "x86_64::web/review/style.css": "47ffac41aa9068a91c6103f12585c8a1",
     "aarch64::./taskmanage/quiz/cleanup.py": "3a4df38b6105441ae13bb03a917008d0",
     "aarch64::web/result.html": "50ad1cde72128969ef7283a96653ca3f",
     "aarch64::web/review.html": "8ae1f87ee311110a55a4afd127f31ffb",
     "aarch64::web/result/app.js": "7dfc2968c2e8948a4c9019dae40dcf54",
     "aarch64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
-    "aarch64::web/review/app.js": "16383fc885a792136b8dd46e77280d41",
-    "aarch64::web/review/style.css": "47ffac41aa9068a91c6103f12585c8a1",
-    "aarch64::release/taskmanage/quiz/csv_import.cpython-313-x86_64-linux-gnu.so": "293706f9ea36b8dabf3ff9f310f902a9"
+    "aarch64::web/review/app.js": "9e17dcc2b7fb5c91a4f1a6a645d25d8f",
+    "aarch64::web/review/style.css": "47ffac41aa9068a91c6103f12585c8a1"
   },
-  "last_git_commit": "d5a67b608652b7f31c9344988a21e94f1df1e7bb"
+  "last_git_commit": "f2eefebcba8e04920216f3d6a960c4fde4548963"
 }
