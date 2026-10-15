@@ -143,14 +143,14 @@
     "aarch64::./taskmanage/quiz/csv_import.py": "7552fbd33d5ff68b48b78a9bd0692d6d",
     "aarch64::./taskmanage/quiz/generator.py": "983d1a44394d969c85ef9304a137aca3",
     "x86_64::./taskmanage/quiz/ocr.py": "8c81c0a8c0b6a4f37a531a7bcebd0af5",
-    "x86_64::./taskmanage/quiz/practice.py": "ec48c83b12b7f5f3a1386c86390dff0f",
+    "x86_64::./taskmanage/quiz/practice.py": "91e4803ba0f4d0885e1a3673d973294d",
     "x86_64::./migrate_quiz_practice.py": "efd8cabcec3399614fa8d41cb767d333",
     "x86_64::./test_phase1.py": "dbee32ee86daebf90a242c2ba983be2b",
     "x86_64::web/practice.html": "a2bc0087e7732731e4cf3314aeb21523",
     "x86_64::web/practice/app.js": "e40990f9f9cdf6aa74640be023dacb3d",
     "x86_64::web/practice/style.css": "63a8db72d25a37cc8ab4ff72d5a1a3f5",
     "aarch64::./taskmanage/quiz/ocr.py": "8c81c0a8c0b6a4f37a531a7bcebd0af5",
-    "aarch64::./taskmanage/quiz/practice.py": "ec48c83b12b7f5f3a1386c86390dff0f",
+    "aarch64::./taskmanage/quiz/practice.py": "91e4803ba0f4d0885e1a3673d973294d",
     "aarch64::./migrate_quiz_practice.py": "efd8cabcec3399614fa8d41cb767d333",
     "aarch64::./test_phase1.py": "dbee32ee86daebf90a242c2ba983be2b",
     "aarch64::web/practice.html": "a2bc0087e7732731e4cf3314aeb21523",
@@ -170,7 +170,7 @@
     "aarch64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
     "aarch64::web/review/app.js": "9e17dcc2b7fb5c91a4f1a6a645d25d8f",
     "aarch64::web/review/style.css": "47ffac41aa9068a91c6103f12585c8a1",
-    "aarch64::release/taskmanage/quiz/practice.cpython-313-x86_64-linux-gnu.so": "e6106098d706a597f97b7270d13fd3b7"
+    "aarch64::release/taskmanage/quiz/practice.cpython-313-x86_64-linux-gnu.so": "aa3a99183f747b08be720f8d34473a3b"
   },
-  "last_git_commit": "d6774bebee3b00875068c0ece3d77ce9d103779f"
+  "last_git_commit": "0f4b2b7b410a8dcd6645543c31ff80fd084117e4"
 }
