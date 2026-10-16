@@ -128,12 +128,12 @@
     "x86_64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "aarch64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "x86_64::./taskmanage/quiz/auth.py": "9a8e4a78559471719b212128505e040e",
-    "x86_64::./taskmanage/quiz/routes.py": "97b491ff2ac5463a87e4dacb4b410b2a",
+    "x86_64::./taskmanage/quiz/routes.py": "5c43864ae4dd2534eaac7cf799944728",
     "x86_64::web/quiz.html": "c2c00151b99d8cdeb0f27351d10271f7",
     "x86_64::web/quiz/app.js": "7dab4f177c9ce9a1c0aada9b694b41b4",
     "x86_64::web/quiz/style.css": "e723358900b36ce1a0d712a3400b4726",
     "aarch64::./taskmanage/quiz/auth.py": "9a8e4a78559471719b212128505e040e",
-    "aarch64::./taskmanage/quiz/routes.py": "97b491ff2ac5463a87e4dacb4b410b2a",
+    "aarch64::./taskmanage/quiz/routes.py": "5c43864ae4dd2534eaac7cf799944728",
     "aarch64::release/taskmanage/quiz/__init__.py": "3fd6105db8cc13ec4c79b923b5a9160e",
     "aarch64::web/quiz.html": "c2c00151b99d8cdeb0f27351d10271f7",
     "aarch64::web/quiz/app.js": "7dab4f177c9ce9a1c0aada9b694b41b4",
@@ -170,8 +170,7 @@
     "aarch64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
     "aarch64::web/review/app.js": "cdaebea1899cfbe15ee28978f067aab3",
     "aarch64::web/review/style.css": "91eced9abbc318a385e588639c030020",
-    "aarch64::release/taskmanage/quiz/practice.cpython-313-x86_64-linux-gnu.so": "7998378f9800652bbe8d27991cdeb545",
-    "aarch64::release/taskmanage/quiz/routes.cpython-313-x86_64-linux-gnu.so": "5563c071d7826aca8d900db1917839d1",
+    "aarch64::release/taskmanage/quiz/routes.cpython-313-x86_64-linux-gnu.so": "6b6ef206f542694bedb518a3937a44c2",
     "x86_64::web/admin.html": "cd1bf6229bfcc68ee0fa0cfed9fd99d8",
     "x86_64::web/admin/app.js": "08517646503d6502a0730ce944f087ed",
     "x86_64::web/admin/style.css": "1831cb7d42685d3afaf22c3e1444ad2b",
@@ -179,5 +178,5 @@
     "aarch64::web/admin/app.js": "08517646503d6502a0730ce944f087ed",
     "aarch64::web/admin/style.css": "1831cb7d42685d3afaf22c3e1444ad2b"
   },
-  "last_git_commit": "1b09faa199d8fb4bb1a2ddd3b40d240fc6911862"
+  "last_git_commit": "0f6cb0a629b8d02528876fc60c612e7ce62b5810"
 }
