@@ -128,14 +128,14 @@
     "x86_64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "aarch64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "x86_64::./taskmanage/quiz/auth.py": "9a8e4a78559471719b212128505e040e",
-    "x86_64::./taskmanage/quiz/routes.py": "5c43864ae4dd2534eaac7cf799944728",
-    "x86_64::web/quiz.html": "764a2a9707c4a695c1b7f1ff0c6d17d7",
+    "x86_64::./taskmanage/quiz/routes.py": "57089f2ff67fb8b12153107fce295830",
+    "x86_64::web/quiz.html": "26cace4956ad0537632e16e187dab368",
     "x86_64::web/quiz/app.js": "c6ce954981cfbdc7382a22c7f327e401",
     "x86_64::web/quiz/style.css": "e723358900b36ce1a0d712a3400b4726",
     "aarch64::./taskmanage/quiz/auth.py": "9a8e4a78559471719b212128505e040e",
-    "aarch64::./taskmanage/quiz/routes.py": "5c43864ae4dd2534eaac7cf799944728",
+    "aarch64::./taskmanage/quiz/routes.py": "57089f2ff67fb8b12153107fce295830",
     "aarch64::release/taskmanage/quiz/__init__.py": "3fd6105db8cc13ec4c79b923b5a9160e",
-    "aarch64::web/quiz.html": "764a2a9707c4a695c1b7f1ff0c6d17d7",
+    "aarch64::web/quiz.html": "26cace4956ad0537632e16e187dab368",
     "aarch64::web/quiz/app.js": "c6ce954981cfbdc7382a22c7f327e401",
     "aarch64::web/quiz/style.css": "e723358900b36ce1a0d712a3400b4726",
     "x86_64::./taskmanage/quiz/csv_import.py": "175c01ae32a2222ac1af7b107c6ec44b",
@@ -175,7 +175,14 @@
     "x86_64::web/admin/style.css": "1831cb7d42685d3afaf22c3e1444ad2b",
     "aarch64::web/admin.html": "cd1bf6229bfcc68ee0fa0cfed9fd99d8",
     "aarch64::web/admin/app.js": "08517646503d6502a0730ce944f087ed",
-    "aarch64::web/admin/style.css": "1831cb7d42685d3afaf22c3e1444ad2b"
+    "aarch64::web/admin/style.css": "1831cb7d42685d3afaf22c3e1444ad2b",
+    "x86_64::web/history.html": "b97e5e834513c024af35baf2b1d17157",
+    "x86_64::web/history/app.js": "40361017b018e77632bbff14c161965f",
+    "x86_64::web/history/style.css": "05073fcb67f50be0b9cbd33c3f7a9f48",
+    "aarch64::release/taskmanage/quiz/routes.cpython-313-x86_64-linux-gnu.so": "a821779e79ea7ed4007bdf926f4a8aed",
+    "aarch64::web/history.html": "b97e5e834513c024af35baf2b1d17157",
+    "aarch64::web/history/app.js": "40361017b018e77632bbff14c161965f",
+    "aarch64::web/history/style.css": "05073fcb67f50be0b9cbd33c3f7a9f48"
   },
-  "last_git_commit": "ba23aa8f1cee86d70d88ecac6491683467f54fd7"
+  "last_git_commit": "211d1eb51bfa38eb8ea3f8887efefd8b515c57e3"
 }
