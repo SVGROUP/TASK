@@ -178,10 +178,10 @@
     "aarch64::web/admin/style.css": "1831cb7d42685d3afaf22c3e1444ad2b",
     "x86_64::web/history.html": "38fdccea4d24df6151ed31309396391e",
     "x86_64::web/history/app.js": "3e897e7118deb03a03bcf169fd25ca33",
-    "x86_64::web/history/style.css": "926265f59f238fb63e567fb131cf0aae",
+    "x86_64::web/history/style.css": "e599437fa7a41e23936845647267fe32",
     "aarch64::web/history.html": "38fdccea4d24df6151ed31309396391e",
     "aarch64::web/history/app.js": "3e897e7118deb03a03bcf169fd25ca33",
-    "aarch64::web/history/style.css": "926265f59f238fb63e567fb131cf0aae"
+    "aarch64::web/history/style.css": "e599437fa7a41e23936845647267fe32"
   },
-  "last_git_commit": "172dd4e28704ce3dc1c9043ca2e00bc11a568562"
+  "last_git_commit": "d4aa1d0c50953108f4b757b3a64915b6093d0847"
 }
