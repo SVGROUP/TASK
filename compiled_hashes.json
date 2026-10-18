@@ -130,13 +130,13 @@
     "x86_64::./taskmanage/quiz/auth.py": "9a8e4a78559471719b212128505e040e",
     "x86_64::./taskmanage/quiz/routes.py": "57089f2ff67fb8b12153107fce295830",
     "x86_64::web/quiz.html": "2310bb4996fb1cd31291192a3b683299",
-    "x86_64::web/quiz/app.js": "8b0512212ce9c29e828f9bd70bd49550",
+    "x86_64::web/quiz/app.js": "c5b4437899ace7dd0d5f779571a87dbb",
     "x86_64::web/quiz/style.css": "e28236148bda7cc9a1a3fe8d46c439a8",
     "aarch64::./taskmanage/quiz/auth.py": "9a8e4a78559471719b212128505e040e",
     "aarch64::./taskmanage/quiz/routes.py": "57089f2ff67fb8b12153107fce295830",
     "aarch64::release/taskmanage/quiz/__init__.py": "3fd6105db8cc13ec4c79b923b5a9160e",
     "aarch64::web/quiz.html": "2310bb4996fb1cd31291192a3b683299",
-    "aarch64::web/quiz/app.js": "8b0512212ce9c29e828f9bd70bd49550",
+    "aarch64::web/quiz/app.js": "c5b4437899ace7dd0d5f779571a87dbb",
     "aarch64::web/quiz/style.css": "e28236148bda7cc9a1a3fe8d46c439a8",
     "x86_64::./taskmanage/quiz/csv_import.py": "175c01ae32a2222ac1af7b107c6ec44b",
     "x86_64::./taskmanage/quiz/generator.py": "983d1a44394d969c85ef9304a137aca3",
@@ -183,5 +183,5 @@
     "aarch64::web/history/app.js": "40361017b018e77632bbff14c161965f",
     "aarch64::web/history/style.css": "05073fcb67f50be0b9cbd33c3f7a9f48"
   },
-  "last_git_commit": "d36ea82bddc28fe84a04595146c9b57bb1debb57"
+  "last_git_commit": "71448613b8acd86d0b89946eb9f8ae9506b2224c"
 }
