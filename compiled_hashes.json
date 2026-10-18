@@ -176,12 +176,12 @@
     "aarch64::web/admin.html": "cd1bf6229bfcc68ee0fa0cfed9fd99d8",
     "aarch64::web/admin/app.js": "08517646503d6502a0730ce944f087ed",
     "aarch64::web/admin/style.css": "1831cb7d42685d3afaf22c3e1444ad2b",
-    "x86_64::web/history.html": "b97e5e834513c024af35baf2b1d17157",
-    "x86_64::web/history/app.js": "40361017b018e77632bbff14c161965f",
-    "x86_64::web/history/style.css": "d6b433a15ae44b37afd9147e4e3372d1",
-    "aarch64::web/history.html": "b97e5e834513c024af35baf2b1d17157",
-    "aarch64::web/history/app.js": "40361017b018e77632bbff14c161965f",
-    "aarch64::web/history/style.css": "d6b433a15ae44b37afd9147e4e3372d1"
+    "x86_64::web/history.html": "38fdccea4d24df6151ed31309396391e",
+    "x86_64::web/history/app.js": "3e897e7118deb03a03bcf169fd25ca33",
+    "x86_64::web/history/style.css": "926265f59f238fb63e567fb131cf0aae",
+    "aarch64::web/history.html": "38fdccea4d24df6151ed31309396391e",
+    "aarch64::web/history/app.js": "3e897e7118deb03a03bcf169fd25ca33",
+    "aarch64::web/history/style.css": "926265f59f238fb63e567fb131cf0aae"
   },
-  "last_git_commit": "50019c21b2e5ff5c7cdcfd9481a37a3e10512ed4"
+  "last_git_commit": "172dd4e28704ce3dc1c9043ca2e00bc11a568562"
 }
