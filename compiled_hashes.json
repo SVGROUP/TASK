@@ -128,15 +128,15 @@
     "x86_64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "aarch64::web/shared/js/moment/zh-cn.min.js": "9a2bfe158e3a1833f24d16a9097a6ed5",
     "x86_64::./taskmanage/quiz/auth.py": "9a8e4a78559471719b212128505e040e",
-    "x86_64::./taskmanage/quiz/routes.py": "57089f2ff67fb8b12153107fce295830",
+    "x86_64::./taskmanage/quiz/routes.py": "4b7c99c9c53e2dd43f51d6e9442318f9",
     "x86_64::web/quiz.html": "2310bb4996fb1cd31291192a3b683299",
-    "x86_64::web/quiz/app.js": "e884ad5bcee90a4773cbafec2df2d0b9",
+    "x86_64::web/quiz/app.js": "debaf1e43cdad55bb0e8fd0fde498029",
     "x86_64::web/quiz/style.css": "e28236148bda7cc9a1a3fe8d46c439a8",
     "aarch64::./taskmanage/quiz/auth.py": "9a8e4a78559471719b212128505e040e",
-    "aarch64::./taskmanage/quiz/routes.py": "57089f2ff67fb8b12153107fce295830",
+    "aarch64::./taskmanage/quiz/routes.py": "4b7c99c9c53e2dd43f51d6e9442318f9",
     "aarch64::release/taskmanage/quiz/__init__.py": "3fd6105db8cc13ec4c79b923b5a9160e",
     "aarch64::web/quiz.html": "2310bb4996fb1cd31291192a3b683299",
-    "aarch64::web/quiz/app.js": "e884ad5bcee90a4773cbafec2df2d0b9",
+    "aarch64::web/quiz/app.js": "debaf1e43cdad55bb0e8fd0fde498029",
     "aarch64::web/quiz/style.css": "e28236148bda7cc9a1a3fe8d46c439a8",
     "x86_64::./taskmanage/quiz/csv_import.py": "175c01ae32a2222ac1af7b107c6ec44b",
     "x86_64::./taskmanage/quiz/generator.py": "983d1a44394d969c85ef9304a137aca3",
@@ -181,7 +181,8 @@
     "x86_64::web/history/style.css": "26a8977d36b09022ca6d8109d30785fa",
     "aarch64::web/history.html": "ff9729c613f192a2a0112005bc15fa88",
     "aarch64::web/history/app.js": "3e897e7118deb03a03bcf169fd25ca33",
-    "aarch64::web/history/style.css": "26a8977d36b09022ca6d8109d30785fa"
+    "aarch64::web/history/style.css": "26a8977d36b09022ca6d8109d30785fa",
+    "aarch64::release/taskmanage/quiz/routes.cpython-313-x86_64-linux-gnu.so": "2ffa091398cb95141c7b64a36b9601ff"
   },
-  "last_git_commit": "05c8720b05f73f1b4dfcf5580dbc4b86f4935569"
+  "last_git_commit": "ba272e3dee5edf85da5690450ca007f0bc2dd298"
 }
