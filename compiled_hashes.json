@@ -139,9 +139,9 @@
     "aarch64::web/quiz/app.js": "debaf1e43cdad55bb0e8fd0fde498029",
     "aarch64::web/quiz/style.css": "e28236148bda7cc9a1a3fe8d46c439a8",
     "x86_64::./taskmanage/quiz/csv_import.py": "175c01ae32a2222ac1af7b107c6ec44b",
-    "x86_64::./taskmanage/quiz/generator.py": "983d1a44394d969c85ef9304a137aca3",
+    "x86_64::./taskmanage/quiz/generator.py": "40d0e7705967002aded57163d3d58810",
     "aarch64::./taskmanage/quiz/csv_import.py": "175c01ae32a2222ac1af7b107c6ec44b",
-    "aarch64::./taskmanage/quiz/generator.py": "983d1a44394d969c85ef9304a137aca3",
+    "aarch64::./taskmanage/quiz/generator.py": "40d0e7705967002aded57163d3d58810",
     "x86_64::./taskmanage/quiz/ocr.py": "8c81c0a8c0b6a4f37a531a7bcebd0af5",
     "x86_64::./taskmanage/quiz/practice.py": "d08c111180915e9c67b9c1da0b4fddd4",
     "x86_64::./migrate_quiz_practice.py": "efd8cabcec3399614fa8d41cb767d333",
@@ -161,14 +161,14 @@
     "x86_64::web/review.html": "49506216d674a272c5323148141cb6ac",
     "x86_64::web/result/app.js": "7dfc2968c2e8948a4c9019dae40dcf54",
     "x86_64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
-    "x86_64::web/review/app.js": "a48e54112319f094877d70550b98e190",
+    "x86_64::web/review/app.js": "abaf09a8d90a281cb2d87323371b0a31",
     "x86_64::web/review/style.css": "be0e95352bfaa6a337e18724ee556854",
     "aarch64::./taskmanage/quiz/cleanup.py": "441a9e3bf603149d0d63713b6ae3d326",
     "aarch64::web/result.html": "50ad1cde72128969ef7283a96653ca3f",
     "aarch64::web/review.html": "49506216d674a272c5323148141cb6ac",
     "aarch64::web/result/app.js": "7dfc2968c2e8948a4c9019dae40dcf54",
     "aarch64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
-    "aarch64::web/review/app.js": "a48e54112319f094877d70550b98e190",
+    "aarch64::web/review/app.js": "abaf09a8d90a281cb2d87323371b0a31",
     "aarch64::web/review/style.css": "be0e95352bfaa6a337e18724ee556854",
     "x86_64::web/admin.html": "cd1bf6229bfcc68ee0fa0cfed9fd99d8",
     "x86_64::web/admin/app.js": "08517646503d6502a0730ce944f087ed",
@@ -182,7 +182,7 @@
     "aarch64::web/history.html": "ff9729c613f192a2a0112005bc15fa88",
     "aarch64::web/history/app.js": "3e897e7118deb03a03bcf169fd25ca33",
     "aarch64::web/history/style.css": "26a8977d36b09022ca6d8109d30785fa",
-    "aarch64::release/taskmanage/quiz/routes.cpython-313-x86_64-linux-gnu.so": "2ffa091398cb95141c7b64a36b9601ff"
+    "aarch64::release/taskmanage/quiz/generator.cpython-313-x86_64-linux-gnu.so": "b8b51fac06ed4bce3c0ccdfc8882093c"
   },
-  "last_git_commit": "ba272e3dee5edf85da5690450ca007f0bc2dd298"
+  "last_git_commit": "be7f9df1d4eabb8bce27ea7dde9145acdc6c5a60"
 }
