@@ -161,14 +161,14 @@
     "x86_64::web/review.html": "49506216d674a272c5323148141cb6ac",
     "x86_64::web/result/app.js": "7dfc2968c2e8948a4c9019dae40dcf54",
     "x86_64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
-    "x86_64::web/review/app.js": "abaf09a8d90a281cb2d87323371b0a31",
+    "x86_64::web/review/app.js": "87a6a8237b2a8dad5263c8f7793bb627",
     "x86_64::web/review/style.css": "be0e95352bfaa6a337e18724ee556854",
     "aarch64::./taskmanage/quiz/cleanup.py": "441a9e3bf603149d0d63713b6ae3d326",
     "aarch64::web/result.html": "50ad1cde72128969ef7283a96653ca3f",
     "aarch64::web/review.html": "49506216d674a272c5323148141cb6ac",
     "aarch64::web/result/app.js": "7dfc2968c2e8948a4c9019dae40dcf54",
     "aarch64::web/result/style.css": "dc8339f0152042a30d29e16283de3b1f",
-    "aarch64::web/review/app.js": "abaf09a8d90a281cb2d87323371b0a31",
+    "aarch64::web/review/app.js": "87a6a8237b2a8dad5263c8f7793bb627",
     "aarch64::web/review/style.css": "be0e95352bfaa6a337e18724ee556854",
     "x86_64::web/admin.html": "cd1bf6229bfcc68ee0fa0cfed9fd99d8",
     "x86_64::web/admin/app.js": "2f93173971c88522002a7398f5dd2f3e",
@@ -181,8 +181,7 @@
     "x86_64::web/history/style.css": "26a8977d36b09022ca6d8109d30785fa",
     "aarch64::web/history.html": "ff9729c613f192a2a0112005bc15fa88",
     "aarch64::web/history/app.js": "3e897e7118deb03a03bcf169fd25ca33",
-    "aarch64::web/history/style.css": "26a8977d36b09022ca6d8109d30785fa",
-    "aarch64::release/taskmanage/quiz/csv_import.cpython-313-x86_64-linux-gnu.so": "fdbfbe1764676c2745da679787d8c776"
+    "aarch64::web/history/style.css": "26a8977d36b09022ca6d8109d30785fa"
   },
-  "last_git_commit": "4ac5c43f8382c70b0fd4094b65454a6d0cf319fa"
+  "last_git_commit": "803584e095f4ad2a7baf79182dd5273caf42da69"
 }
