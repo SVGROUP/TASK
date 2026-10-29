@@ -181,7 +181,10 @@
     "x86_64::web/history/style.css": "26a8977d36b09022ca6d8109d30785fa",
     "aarch64::web/history.html": "ff9729c613f192a2a0112005bc15fa88",
     "aarch64::web/history/app.js": "3e897e7118deb03a03bcf169fd25ca33",
-    "aarch64::web/history/style.css": "26a8977d36b09022ca6d8109d30785fa"
+    "aarch64::web/history/style.css": "26a8977d36b09022ca6d8109d30785fa",
+    "x86_64::./tests/test_simulate_quiz_learning_stats_migration.py": "79dab9321ac4bc4e8c53c917322a71e5",
+    "aarch64::./tests/test_simulate_quiz_learning_stats_migration.py": "79dab9321ac4bc4e8c53c917322a71e5",
+    "aarch64::release/test_simulate_quiz_learning_stats_migration.cpython-313-x86_64-linux-gnu.so": "84d8f4ea25ccec8ddb7c8b01139c99e2"
   },
-  "last_git_commit": "85ab3864d3540f6f180bcb3b23aba17b7743bf71"
+  "last_git_commit": "f7906091eba3e5d825c503d01708b07ac58b20de"
 }
