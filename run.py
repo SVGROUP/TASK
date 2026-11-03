@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 from taskmanage.app import main
 
-ver = "2026-11-03 07:05:35"
-ts = 1793660735
+ver = "2026-11-03 08:37:39"
+ts = 1793666259
 if __name__ == "__main__":
     import os
     os.environ["TASKMANAGE_VERSION"] = ver
