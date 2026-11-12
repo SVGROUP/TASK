@@ -139,9 +139,9 @@
     "aarch64::web/quiz/app.js": "3b63524c632fa3dcc624e39248c776f8",
     "aarch64::web/quiz/style.css": "3d567a4be877952913fbe030afd89ce4",
     "x86_64::./taskmanage/quiz/csv_import.py": "c4f977920eff706a21ac98c2b1e5495e",
-    "x86_64::./taskmanage/quiz/generator.py": "b2e082970337550ee5ce6a501a88e8f1",
+    "x86_64::./taskmanage/quiz/generator.py": "16f9b6fcdcf07e324b71960ef1f044eb",
     "aarch64::./taskmanage/quiz/csv_import.py": "c4f977920eff706a21ac98c2b1e5495e",
-    "aarch64::./taskmanage/quiz/generator.py": "b2e082970337550ee5ce6a501a88e8f1",
+    "aarch64::./taskmanage/quiz/generator.py": "16f9b6fcdcf07e324b71960ef1f044eb",
     "x86_64::./taskmanage/quiz/ocr.py": "8c81c0a8c0b6a4f37a531a7bcebd0af5",
     "x86_64::./taskmanage/quiz/practice.py": "a65d2002b60a5380e1453fd1a6477510",
     "x86_64::./migrate_quiz_practice.py": "efd8cabcec3399614fa8d41cb767d333",
@@ -190,8 +190,7 @@
     "aarch64::web/quiz/learning.js": "8907aaf67169e93d4ef58d1fa555bc07",
     "x86_64::./taskmanage/quiz/review_cycle.py": "6abd4e4b340483b4ede6a4bc29534f53",
     "aarch64::./taskmanage/quiz/review_cycle.py": "6abd4e4b340483b4ede6a4bc29534f53",
-    "aarch64::release/taskmanage/quiz/practice.cpython-313-x86_64-linux-gnu.so": "155457a5f5d1e0abe1791738776210f2",
-    "aarch64::release/taskmanage/quiz/routes.cpython-313-x86_64-linux-gnu.so": "7f34bb4f0f1cdd879d9df04978e073e7"
+    "aarch64::release/taskmanage/quiz/generator.cpython-313-x86_64-linux-gnu.so": "5c1d4921a4afc94245eba6f2beefee47"
   },
-  "last_git_commit": "919340366f84c686e24467eb7399b1bbc70916c5"
+  "last_git_commit": "b03326e8129ed73d60162ea031bb8d108a63a262"
 }
