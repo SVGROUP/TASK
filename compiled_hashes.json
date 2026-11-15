@@ -61,7 +61,7 @@
     "x86_64::./taskmanage/notifier.py": "98cc1c5224576d5739aca86f4ecd8ebe",
     "x86_64::./taskmanage/calendar/routes.py": "60f03f0e42ce0464fb450b21c43d4560",
     "x86_64::./taskmanage/calendar/auth.py": "2875f4edbceb412c3b0f6c3fce63374e",
-    "x86_64::./taskmanage/app.py": "fb2a3fe6a45cae45c3a3b46ead4d3cef",
+    "x86_64::./taskmanage/app.py": "77d35c5689b672d13707ef005c7d24d7",
     "x86_64::./taskmanage/scheduler.py": "a1224e130e8cf20556ebba9d8a75b851",
     "x86_64::./taskmanage/common/db.py": "79d91a02afe9b2a4578e57ff6ea3fc00",
     "x86_64::./taskmanage/common/auth.py": "321c154e4b9105cab03535619e6819a9",
@@ -90,7 +90,7 @@
     "aarch64::./taskmanage/notifier.py": "98cc1c5224576d5739aca86f4ecd8ebe",
     "aarch64::./taskmanage/calendar/routes.py": "60f03f0e42ce0464fb450b21c43d4560",
     "aarch64::./taskmanage/calendar/auth.py": "2875f4edbceb412c3b0f6c3fce63374e",
-    "aarch64::./taskmanage/app.py": "fb2a3fe6a45cae45c3a3b46ead4d3cef",
+    "aarch64::./taskmanage/app.py": "77d35c5689b672d13707ef005c7d24d7",
     "aarch64::./taskmanage/scheduler.py": "a1224e130e8cf20556ebba9d8a75b851",
     "aarch64::./taskmanage/common/db.py": "79d91a02afe9b2a4578e57ff6ea3fc00",
     "aarch64::./taskmanage/common/auth.py": "321c154e4b9105cab03535619e6819a9",
@@ -156,14 +156,14 @@
     "aarch64::web/practice.html": "abb608b65ba6fb66994edff294291d8f",
     "aarch64::web/practice/app.js": "cbbe7fa12c188347719d2131acaf8eac",
     "aarch64::web/practice/style.css": "43cdb8b529127975cab810e42f44d597",
-    "x86_64::./taskmanage/quiz/cleanup.py": "441a9e3bf603149d0d63713b6ae3d326",
+    "x86_64::./taskmanage/quiz/cleanup.py": "e7880d6788047d5709321b3380990890",
     "x86_64::web/result.html": "04059a36622488178c9cb280aa6212c5",
     "x86_64::web/review.html": "14fcc02a1ec6c7be9bbd71176ad696d2",
     "x86_64::web/result/app.js": "a1b83354d17785f6778d59aadc1c7aa9",
     "x86_64::web/result/style.css": "d4ca642b61970abbef9a92d0bbb6565a",
     "x86_64::web/review/app.js": "bcbc93ac0b6d754c44deb6f06219a6f8",
     "x86_64::web/review/style.css": "e3eea8358080116c580eb2a59a0eb05e",
-    "aarch64::./taskmanage/quiz/cleanup.py": "441a9e3bf603149d0d63713b6ae3d326",
+    "aarch64::./taskmanage/quiz/cleanup.py": "e7880d6788047d5709321b3380990890",
     "aarch64::web/result.html": "04059a36622488178c9cb280aa6212c5",
     "aarch64::web/review.html": "14fcc02a1ec6c7be9bbd71176ad696d2",
     "aarch64::web/result/app.js": "a1b83354d17785f6778d59aadc1c7aa9",
@@ -191,7 +191,9 @@
     "x86_64::./taskmanage/quiz/review_cycle.py": "17ad2d79f4360db1948e75835629477f",
     "aarch64::./taskmanage/quiz/review_cycle.py": "17ad2d79f4360db1948e75835629477f",
     "x86_64::web/shared/js/review_note_bbcode.js": "e97405f0f14d71864ba0634d7fe88898",
-    "aarch64::web/shared/js/review_note_bbcode.js": "e97405f0f14d71864ba0634d7fe88898"
+    "aarch64::web/shared/js/review_note_bbcode.js": "e97405f0f14d71864ba0634d7fe88898",
+    "aarch64::release/taskmanage/app.cpython-313-x86_64-linux-gnu.so": "c16b30ad6d70a9bdce6d10a3ea14e0b7",
+    "aarch64::release/taskmanage/quiz/cleanup.cpython-313-x86_64-linux-gnu.so": "e6b6579d31988f0e10ec670224d49ada"
   },
-  "last_git_commit": "4d9fb06125df476ecb222664cadffd484e096dfd"
+  "last_git_commit": "75574fd28cf0b04cfd565d56f7b6d0622d082117"
 }
