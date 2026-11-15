@@ -130,13 +130,13 @@
     "x86_64::./taskmanage/quiz/auth.py": "9a8e4a78559471719b212128505e040e",
     "x86_64::./taskmanage/quiz/routes.py": "647b9ab188328934e2cb0eb165c89f11",
     "x86_64::web/quiz.html": "bc350433708b4a956718b0f61254b6d5",
-    "x86_64::web/quiz/app.js": "2c1631d190990a07ba3b1af6d21a581e",
+    "x86_64::web/quiz/app.js": "f0c1f0c5f255ae2a9ff9527a3dfb2c83",
     "x86_64::web/quiz/style.css": "3d567a4be877952913fbe030afd89ce4",
     "aarch64::./taskmanage/quiz/auth.py": "9a8e4a78559471719b212128505e040e",
     "aarch64::./taskmanage/quiz/routes.py": "647b9ab188328934e2cb0eb165c89f11",
     "aarch64::release/taskmanage/quiz/__init__.py": "3fd6105db8cc13ec4c79b923b5a9160e",
     "aarch64::web/quiz.html": "bc350433708b4a956718b0f61254b6d5",
-    "aarch64::web/quiz/app.js": "2c1631d190990a07ba3b1af6d21a581e",
+    "aarch64::web/quiz/app.js": "f0c1f0c5f255ae2a9ff9527a3dfb2c83",
     "aarch64::web/quiz/style.css": "3d567a4be877952913fbe030afd89ce4",
     "x86_64::./taskmanage/quiz/csv_import.py": "c4f977920eff706a21ac98c2b1e5495e",
     "x86_64::./taskmanage/quiz/generator.py": "16f9b6fcdcf07e324b71960ef1f044eb",
@@ -191,10 +191,7 @@
     "x86_64::./taskmanage/quiz/review_cycle.py": "17ad2d79f4360db1948e75835629477f",
     "aarch64::./taskmanage/quiz/review_cycle.py": "17ad2d79f4360db1948e75835629477f",
     "x86_64::web/shared/js/review_note_bbcode.js": "e97405f0f14d71864ba0634d7fe88898",
-    "aarch64::web/shared/js/review_note_bbcode.js": "e97405f0f14d71864ba0634d7fe88898",
-    "aarch64::release/taskmanage/quiz/practice.cpython-313-x86_64-linux-gnu.so": "9d838d8bc660d5f223018ac198a03ba0",
-    "aarch64::release/taskmanage/quiz/review_cycle.cpython-313-x86_64-linux-gnu.so": "b911245f47ca98c947b9f0c7788f7675",
-    "aarch64::release/taskmanage/quiz/routes.cpython-313-x86_64-linux-gnu.so": "be1ce9a3ba2fe63a207b8c382aa01a39"
+    "aarch64::web/shared/js/review_note_bbcode.js": "e97405f0f14d71864ba0634d7fe88898"
   },
-  "last_git_commit": "fdfb7256dedce5646358f1d047075d8a7d255dd9"
+  "last_git_commit": "4d9fb06125df476ecb222664cadffd484e096dfd"
 }
